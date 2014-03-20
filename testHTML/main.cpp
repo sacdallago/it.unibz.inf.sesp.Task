@@ -1,6 +1,7 @@
 #include <QApplication>
 #include "html5applicationviewer.h"
 #include "Task.h"
+#include "dialog.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     viewer.setOrientation(Html5ApplicationViewer::ScreenOrientationAuto);
     viewer.showExpanded();
     viewer.loadFile(QLatin1String("html/index.html"));
+
+    Dialog dialog();
 
     return app.exec();
 }

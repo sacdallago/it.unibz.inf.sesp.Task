@@ -15,7 +15,5 @@ int main(int argc, char *argv[])
     viewer.showExpanded();
     viewer.loadFile(QLatin1String("html/index.html"));
 
-    Dialog dialog();
-
     return app.exec();
 }

@@ -16,9 +16,8 @@ namespace Status{
  //Relation Definition
 namespace Relatives{
     enum{
-        FATHER = 0,
-        CHILDREN = 1,
-        BOTH = 2
+        ROOT = 0,
+        CHILD = 1
     };
 }
 
@@ -27,11 +26,11 @@ struct Task{
     unsigned long long id = 0;
     int importance = 0;
     int durationInH = 0;
-    double rank = 0.0;
     string Name = "DEFAULT";
     int status = Status::TODO;
-    int relatives = Relatives::FATHER;
+    int relatives = Relatives::ROOT;
     QList<Task> successors;
+    QList<Task> predecessors;
 };
 
 typedef struct Task Task;

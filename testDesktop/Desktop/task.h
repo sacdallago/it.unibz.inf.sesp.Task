@@ -2,6 +2,7 @@
 #define TASK_H
 
 #include <QList>
+#include <QString>
 
 using namespace std;
 
@@ -22,17 +23,23 @@ namespace Relatives{
 }
 
 //Task Definition
+QString getTime();
+
 struct Task{
     unsigned long long id = 0;
     int importance = 0;
     int durationInH = 0;
-    string Name = "DEFAULT";
+    QString name = "DEFAULT";
+    QString description = "NO DESCRITPION.";
+    QString time = getTime();
     int status = Status::TODO;
     int relatives = Relatives::ROOT;
-    QList<Task> successors;
-    QList<Task> predecessors;
+    QList<Task*> successors;
+    QList<Task*> predecessors;
 };
 
 typedef struct Task Task;
+
+QString printTask(Task);
 
 #endif // TASK_H

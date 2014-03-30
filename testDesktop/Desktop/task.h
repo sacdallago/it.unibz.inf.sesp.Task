@@ -36,10 +36,20 @@ struct Task{
     int relatives = Relatives::ROOT;
     QList<Task*> successors;
     QList<Task*> predecessors;
-};
 
+    int discovered = 0;
+};
 typedef struct Task Task;
 
-QString printTask(Task);
+QString taskSuccessors(Task*, size_t level=0);
+QString taskPredecessors(Task*, size_t*, size_t level = 0);
+QString drawGraph(Task* start, size_t level = 1);
+QString drawTree(Task* start, size_t level = 0);
+QString graph(Task *start,QList<Task*> *discovered, size_t *depth, size_t level);
+bool relate(Task *predecessor, Task *successor);
+bool formsCycle(Task *addition, Task *target);
+
+QString printTask(Task*);
+bool checkCycle(Task* target, Task* successor);
 
 #endif // TASK_H

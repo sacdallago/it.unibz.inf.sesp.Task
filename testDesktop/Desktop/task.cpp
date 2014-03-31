@@ -75,6 +75,21 @@ QString drawTree(Task* start, size_t level){
     return result;
 }
 
+
+/*
+ * ATTENZIONE!!! SIZE_T E' UNSIGNED!!!! TROVARE VERSIONE SIGNED ED DISEGNARE ALBERO IN BASE AD UNA NUOVA STRUCT
+ * struct node{
+ *      Task* t;
+ *      signed size_t level;
+ * }
+ */
+
+struct node{
+     Task* t;
+      signed size_t level;
+ };
+
+
 QString graph(Task *start,QList<Task*> *discovered, size_t *depth, size_t level){
     QString result = "";
     discovered->append(start);
@@ -91,10 +106,10 @@ QString graph(Task *start,QList<Task*> *discovered, size_t *depth, size_t level)
     }
     for(Task *t : start->successors){
         if(!discovered->contains(t)){
-            result += graph(t,discovered, depth,level+1);
+            result += graph(t,discovered, depth,level-1);
         }
     }
-    result+= QString::fromStdString(std::string(level, '\t' ));
+    result+= QString::fromStdString(std::string(0, '\t' ));
     result+= QString::number(level) + ", ID: "+ QString::number(start->id) + ", Name: " + start->name;
     result+= "\n";
     //cout << result.toStdString() <<endl;

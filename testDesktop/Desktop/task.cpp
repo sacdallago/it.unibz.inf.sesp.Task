@@ -86,7 +86,7 @@ QString drawTree(Task* start, size_t level){
 
 struct node{
      Task* t;
-      signed size_t level;
+     size_t level;
  };
 
 

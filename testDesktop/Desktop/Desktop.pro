@@ -14,11 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         widget.cpp \
-    task.cpp \
     connection.cpp
 
 HEADERS  += widget.h \
-    task.h \
     connection.h \
     mysql_connection.h \
     mysql_driver.h \

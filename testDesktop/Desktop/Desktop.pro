@@ -14,7 +14,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         widget.cpp \
-    connection.cpp
+    connection.cpp \
+    task.cpp \
+    taskutilities.cpp \
+    utilities.cpp
 
 HEADERS  += widget.h \
     connection.h \
@@ -34,7 +37,10 @@ HEADERS  += widget.h \
     cppconn/resultset_metadata.h \
     cppconn/sqlstring.h \
     cppconn/statement.h \
-    cppconn/warning.h
+    cppconn/warning.h \
+    task.h \
+    taskutilities.h \
+    utilities.h
 
 
 FORMS    += widget.ui

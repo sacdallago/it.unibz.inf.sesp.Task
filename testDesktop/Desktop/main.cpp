@@ -1,5 +1,6 @@
 #include "widget.h"
 #include "task.h"
+#include "taskutilities.h"
 #include <iostream>
 #include <QApplication>
 
@@ -8,82 +9,49 @@ int main(int argc, char *argv[]) {
     //Widget w;
     //w.show();
 
-
-
     //      TEST AREA
     using namespace std;
-    Task a, b, c, d, e ,f;
-
-    //Tasks get loaded from DATABASE
-
-    a.id = 1;
-    b.id = 2;
-    c.id = 3;
-    d.id = 4;
-    e.id = 5;
-    f.id = 6;
-
-    a.name = "a";
-    b.name = "b";
-    c.name = "c";
-    d.name = "d";
-    e.name = "e";
-    f.name = "f";
+    Task a = Task(1,1,1,"a"), b = Task(2,1,1,"b"), c = Task(3,1,1,"c"), d = Task(4,1,1,"d"), e = Task(5,1,1,"e") ,f = Task(6,1,1,"f");
 
     //Dependencies get loaded from DATABASE
-    if (formsCycle(&a,&b)){
-        cout <<  "Forms cycle!" << endl;
-    } else {
+    if (TaskUtilities::relate(&a,&b)){
         cout <<  "Doesn't form cycle!" << endl;
-        relate(&a,&b);
+    } else {
+        cout <<  "Forms cycle!" << endl;
     }
-    if (formsCycle(&a,&c)){
-        cout <<  "Forms cycle!" << endl;
-    } else {
+    if (TaskUtilities::relate(&a,&c)){
+            cout <<  "Doesn't form cycle!" << endl;
+        } else {
+            cout <<  "Forms cycle!" << endl;
+        }
+    if (TaskUtilities::relate(&c,&e)){
         cout <<  "Doesn't form cycle!" << endl;
-        relate(&a,&c);
+    } else {
+        cout <<  "Forms cycle!" << endl;
     }
-    if (formsCycle(&c,&e)){
-        cout <<  "Forms cycle!" << endl;
-    } else {
+    if (TaskUtilities::relate(&c,&f)){
         cout <<  "Doesn't form cycle!" << endl;
-        relate(&c,&e);
+    } else {
+        cout <<  "Forms cycle!" << endl;
     }
-    if (formsCycle(&c,&f)){
-        cout <<  "Forms cycle!" << endl;
-    } else {
+    if (TaskUtilities::relate(&d,&f)){
         cout <<  "Doesn't form cycle!" << endl;
-        relate(&c,&f);
-    }
-    if (formsCycle(&d,&f)){
-        cout <<  "Forms cycle!" << endl;
     } else {
-        cout <<  "Doesn't form cycle!" << endl;
-        relate(&d,&f);
+        cout <<  "Forms cycle!" << endl;
     }
 
     //Cycle
-    if (formsCycle(&c,&b)){
-        cout <<  "Forms cycle!" << endl;
-    } else {
+    if (TaskUtilities::relate(&c,&b)){
         cout <<  "Doesn't form cycle!" << endl;
-        relate(&c,&b);
+    } else {
+        cout <<  "Forms cycle!" << endl;
     }
 
-    b.predecessors.append(&c);
-    c.successors.append(&b);
-
-    string tree = drawTree(&c).toUtf8().constData();
+    string tree = a.drawGraph().toUtf8().constData();
     cout << tree << endl;
-
-    string graph = drawGraph(&c).toUtf8().constData();
-    cout << graph << endl;
     cout << "OK" << endl;
     return 0;
     //      END OF TEST AREA
-
-
-
 
     //return a.exec();
 }

@@ -28,7 +28,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define _SQL_CONNECTION_H_
 
 #include <map>
-#include <boost/variant.hpp>
+//#include <boost/variant.hpp>
 
 #include "build_config.h"
 #include "warning.h"

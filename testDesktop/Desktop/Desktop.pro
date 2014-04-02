@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,34 +18,14 @@ SOURCES += main.cpp\
     connection.cpp \
     task.cpp \
     taskutilities.cpp \
-    utilities.cpp
+    utilities.cpp \
+    collection.cpp
 
 HEADERS  += widget.h \
     connection.h \
-    mysql_connection.h \
-    mysql_driver.h \
-    mysql_error.h \
-    cppconn/build_config.h \
-    cppconn/config.h \
-    cppconn/connection.h \
-    cppconn/datatype.h \
-    cppconn/driver.h \
-    cppconn/exception.h \
-    cppconn/metadata.h \
-    cppconn/parameter_metadata.h \
-    cppconn/prepared_statement.h \
-    cppconn/resultset.h \
-    cppconn/resultset_metadata.h \
-    cppconn/sqlstring.h \
-    cppconn/statement.h \
-    cppconn/warning.h \
     task.h \
     taskutilities.h \
-    utilities.h
-
+    utilities.h \
+    collection.h
 
 FORMS    += widget.ui
-
-unix|win32: LIBS += -lmysqlcppconn
-
-unix|win32: LIBS += -lmysqlcppconn-static

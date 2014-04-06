@@ -129,11 +129,45 @@ QString Task::drawGraph(qint64 level){
     }
     for(qint64 k : treeGraph.keys()){
         for(Task* t : treeGraph[k]){
-            s+= QString::fromStdString(std::string(height+offset-k, '\t' )) +QString::number(t->getId());
-            if(!t->predecessors.empty()){
+            s+= QString::fromStdString(std::string(offset+k-depth, '\t' )) +QString::number(t->getId());
+            if(!t->successors.empty()){
                 s+= "E(";
                 QString p = "";
-                for(Task* t1 : t->predecessors){
+                for(Task* t1 : t->successors){
+                    p+= QString::number(t1->getId()) + ", ";
+                }
+                s+=p.left(p.size()-2) + ")";
+            }
+
+            s+= "\n";
+        }
+    }
+    return s;
+}
+
+QString Task::drawGraph(QList<Task*> *discovered, qint64 level, bool printInstructions){
+    QList<edge> edges;
+    qint64 depth = 1;
+    qint64 height = -1;
+    qint64 offset = graph(this,&edges, discovered, &depth, &height, level);
+    QString s = "";
+    if(printInstructions){
+        s+="\nNodes are ordered based on hight (first nodes (roots) are represented on the left\n";
+        s+="and are at height " + QString::number(height+offset) + ").\n";
+        s+="The first number represents the node's ID and the numbers in parenthesis the child\n";
+        s+="nodes ID's. So, for example, 1E(2, 3) means 1 is father of 2 and 3.\n";
+    }
+    QMap<qint64, QList<Task*> > treeGraph;
+    for(edge e : edges){
+        treeGraph[e.level + offset].append(e.to);
+    }
+    for(qint64 k : treeGraph.keys()){
+        for(Task* t : treeGraph[k]){
+            s+= QString::fromStdString(std::string(offset+k-depth, '\t' )) +QString::number(t->getId());
+            if(!t->successors.empty()){
+                s+= "E(";
+                QString p = "";
+                for(Task* t1 : t->successors){
                     p+= QString::number(t1->getId()) + ", ";
                 }
                 s+=p.left(p.size()-2) + ")";
@@ -155,6 +189,15 @@ QString Task::printTask(){
     result += "Child(1) or Root(0): " + QString::number(relatives) + "\n";
     result += "Done(-1), todo(0) or active(1): " + QString::number(status) + "\n";
     result += "Creation on: " + time + "\n";
+    result += "Successors: ";
+    for(Task *t : successors){
+        result += QString::number(t->getId()) +", ";
+    }
+    result += "\nPredecessors: ";
+    for(Task *t : predecessors){
+        result += QString::number(t->getId()) +", ";
+    }
+    result += "\n";
     return result;
 }
 

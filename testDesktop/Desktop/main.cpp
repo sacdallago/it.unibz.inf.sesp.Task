@@ -1,10 +1,14 @@
 #include "widget.h"
-#include "task.h"
 #include "collection.h"
 #include "connection.h"
-#include "taskutilities.h"
 #include <iostream>
 #include <QApplication>
+
+#if __has_extension(cxx_range_for)
+#warning No Real Warning!
+#else
+#warning __has_extension(cxx_range_for) is false
+#endif
 
 int main(int argc, char *argv[]) {
     //QApplication a(argc, argv);
@@ -12,61 +16,36 @@ int main(int argc, char *argv[]) {
     //w.show();
 
     //      DATABASE TEST AREA
-    Connection connection;
+    //Connection connection;
 
-    if(connection.close()){
-        cout << "The connection has been closed, id est, it was opened before! :) A good sign!" <<endl;
-    }
+    //if(connection.close()){
+    //    cout << "The connection has been closed, id est, it was opened before! :) A good sign!" <<endl;
+    //}
 
     //      TASK TEST AREA
     using namespace std;
     Collection col;
-    col.addItem(new Task(1,1,1,"a"));
-    col.addItem(new Task(2,1,1,"b"));
-    col.addItem(new Task(3,1,1,"c"));
-    col.addItem(new Task(4,1,1,"d"));
-    col.addItem(new Task(5,1,1,"e"));
-    col.addItem(new Task(6,1,1,"f"));
-    col.addItem(new Task(7,1,1,"g"));
+    col.addItem(new Task(14,6,5,"14"));
+    col.addItem(new Task(15,3,6,"15"));
+    col.addItem(new Task(109,8,2,"109"));
+    col.addItem(new Task(54,4,6,"54"));
+    col.addItem(new Task(34,3,1,"34"));
+    col.addItem(new Task(63,9,8,"63"));
+    col.addItem(new Task(6,1,2,"6"));
+    col.addItem(new Task(35,6,2,"35"));
+    col.addItem(new Task(99,9,1,"99"));
+    col.addItem(new Task(69,3,4,"69"));
 
-    //Dependencies get loaded from DATABASE
-    if (TaskUtilities::relate(col.get(1),col.get(2))){
-        cout <<  "Doesn't form cycle!" << endl;
-    } else {
-        cout <<  "Forms cycle!" << endl;
-    }
-    if (TaskUtilities::relate(col.get(1),col.get(3))){
-            cout <<  "Doesn't form cycle!" << endl;
-        } else {
-            cout <<  "Forms cycle!" << endl;
-        }
-    if (TaskUtilities::relate(col.get(3),col.get(5))){
-        cout <<  "Doesn't form cycle!" << endl;
-    } else {
-        cout <<  "Forms cycle!" << endl;
-    }
-    if (TaskUtilities::relate(col.get(3),col.get(6))){
-        cout <<  "Doesn't form cycle!" << endl;
-    } else {
-        cout <<  "Forms cycle!" << endl;
-    }
-    if (TaskUtilities::relate(col.get(4),col.get(6))){
-        cout <<  "Doesn't form cycle!" << endl;
-    } else {
-        cout <<  "Forms cycle!" << endl;
-    }
+    col.relate(15,109);
+    col.relate(15,63);
+    col.relate(63,6);
+    col.relate(69,6);
+    col.relate(54,34);
 
-    //Cycle
-    if (TaskUtilities::relate(col.get(3),col.get(2))){
-        cout <<  "Doesn't form cycle!" << endl;
-    } else {
-        cout <<  "Forms cycle!" << endl;
-    }
+    string s = col.printForest().toUtf8().constData();
+    cout << "Forest:\n" << s << endl;
 
-    string tree = (*col.get(1)).drawGraph().toUtf8().constData();
-    cout << tree << endl;
-
-    return 0;
+    col.getRoots();
     //      END OF TEST AREA
 
     //return a.exec();

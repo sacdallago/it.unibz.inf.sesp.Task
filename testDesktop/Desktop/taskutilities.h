@@ -2,6 +2,8 @@
 #define TASKUTILITIES_H
 
 #include "task.h"
+#include <QList>
+#include <QString>
 
 namespace TaskUtilities{
     /*!
@@ -11,6 +13,7 @@ namespace TaskUtilities{
      * \return returns false if the relation to be established forms a cycle! True elsewise.
      */
     bool relate(Task *predecessor, Task *successor);
+    QString printList(QList<Task*>*);
 }
 
 #endif // TASKUTILITIES_H

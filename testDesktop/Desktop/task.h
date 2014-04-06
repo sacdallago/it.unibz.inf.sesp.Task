@@ -71,6 +71,7 @@ public:
 
     qint64 graph(Task* caller, QList<edge> *edges, QList<Task*> *discovered, qint64 *depth, qint64 *height, qint64 level);
     QString drawGraph(qint64 level = 1);
+    QString drawGraph(QList<Task*>*, qint64 level = 1,  bool printInstructions = false);
 
     QString printTask();
 

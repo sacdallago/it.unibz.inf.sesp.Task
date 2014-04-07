@@ -3,7 +3,7 @@
 Collection::Collection() {
     rootsUpToDate = true;
     leavesUpToDate = true;
-    maxDependency = 0;
+    //maxDependency = 0;
     maxTime = 0;
 }
 
@@ -142,4 +142,46 @@ QString Collection::printForest(){
         }
     }
     return result;
+}
+
+//O(nlogn) This could be donw at the insertion phase!!!!!!!!!!! To speed up at least this part. It would slow down retriefal SLIGHTLY but it's worth a shot!
+qint64 todoListAccessory(Task *t, QHash<Task*,qint64> *map, qint64 level, qint64 *maxLevel){
+    if(*maxLevel < level){
+        *maxLevel = level;
+    }
+    if(map->contains(t)){
+        if(map->value(t) < level){
+            map->insert(t,level);
+        }
+    } else {
+        map->insert(t, level);
+    }
+    for(Task *pre : *t->getPredecessors()){
+        return todoListAccessory(pre, map, level+1, maxLevel);
+    }
+    return level;
+}
+
+//VERY BAD!!! O(n4)
+QList<Task*> Collection::getTodoList(){
+    QList<Task*> list;
+    qint64 maxDependency = 0;
+    QList<Task*>* leaves = getLeaves();
+    QHash<Task*, qint64> hash;
+
+    for(Task *leaf : *leaves){
+        todoListAccessory(leaf,&hash, 1, &maxDependency);
+    }
+
+    cout << "max(dependency):\t" << maxDependency << "\tdependency quantum:\t" << 10.0/maxDependency << endl;
+    cout << "max(duration):\t" << maxTime << "\tduration quantum:\t" << 10.0/maxTime << endl;
+
+    foreach (Task *key, hash.keys()){
+        cout << key->getId() << "\tis at level\t" << hash.value(key) << "\t";
+        qreal rank = ((key->getImportance()/2.0)-((key->getDurationInH()*10.0/maxTime)/2)+5)*(5.0/6.0)+(hash.value(key)*10.0/maxDependency)*(1.0/6.0);
+        cout << "Rank:\t" << rank << endl;
+    }
+
+
+    return list;
 }

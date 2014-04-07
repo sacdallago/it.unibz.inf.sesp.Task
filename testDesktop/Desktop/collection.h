@@ -7,18 +7,12 @@
 
 class Collection {
 private:
-    struct info {
-        Task *task;
-        qint64 level;
-    };
-
     QList<Task*> roots;
     QList<Task*> leaves;
     QList<Task*> all;
     bool rootsUpToDate;
     bool leavesUpToDate;
     qint64 maxTime;
-    qint64 maxDependency;
     void calculateMaxTime();
 public:
     Collection();
@@ -29,6 +23,7 @@ public:
     bool relate(qint64,qint64);
     QList<Task*>* getRoots();
     QList<Task*>* getLeaves();
+    QList<Task*> getTodoList();
     const QList<Task*>* getAll();
     QString printForest();
 };

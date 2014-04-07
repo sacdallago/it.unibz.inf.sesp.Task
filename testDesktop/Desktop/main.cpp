@@ -4,12 +4,6 @@
 #include <iostream>
 #include <QApplication>
 
-#if __has_extension(cxx_range_for)
-#warning No Real Warning!
-#else
-#warning __has_extension(cxx_range_for) is false
-#endif
-
 int main(int argc, char *argv[]) {
     //QApplication a(argc, argv);
     //Widget w;
@@ -45,7 +39,7 @@ int main(int argc, char *argv[]) {
     string s = col.printForest().toUtf8().constData();
     cout << "Forest:\n" << s << endl;
 
-    col.getRoots();
+    col.getTodoList();
     //      END OF TEST AREA
 
     //return a.exec();

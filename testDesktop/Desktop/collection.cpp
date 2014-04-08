@@ -145,7 +145,7 @@ QString Collection::printForest(){
 }
 
 //O(nlogn) This could be donw at the insertion phase!!!!!!!!!!! To speed up at least this part. It would slow down retriefal SLIGHTLY but it's worth a shot!
-qint64 todoListAccessory(Task *t, QHash<Task*,qint64> *map, qint64 level, qint64 *maxLevel){
+void todoListAccessory(Task *t, QHash<Task*,qint64> *map, qint64 level, qint64 *maxLevel){
     if(*maxLevel < level){
         *maxLevel = level;
     }
@@ -157,9 +157,9 @@ qint64 todoListAccessory(Task *t, QHash<Task*,qint64> *map, qint64 level, qint64
         map->insert(t, level);
     }
     for(Task *pre : *t->getPredecessors()){
-        return todoListAccessory(pre, map, level+1, maxLevel);
+        //cout << pre->getId() << " ";
+        todoListAccessory(pre, map, level+1, maxLevel);
     }
-    return level;
 }
 
 //VERY BAD!!! O(n4)
@@ -168,18 +168,50 @@ QList<Task*> Collection::getTodoList(){
     qint64 maxDependency = 0;
     QList<Task*>* leaves = getLeaves();
     QHash<Task*, qint64> hash;
+    QMap<qreal, Task*> map;
 
     for(Task *leaf : *leaves){
         todoListAccessory(leaf,&hash, 1, &maxDependency);
     }
 
-    cout << "max(dependency):\t" << maxDependency << "\tdependency quantum:\t" << 10.0/maxDependency << endl;
     cout << "max(duration):\t" << maxTime << "\tduration quantum:\t" << 10.0/maxTime << endl;
+    cout << "max(dependency):\t" << maxDependency << "\tdependency quantum:\t" << 10.0/maxDependency << endl << endl;
 
     foreach (Task *key, hash.keys()){
-        cout << key->getId() << "\tis at level\t" << hash.value(key) << "\t";
-        qreal rank = ((key->getImportance()/2.0)-((key->getDurationInH()*10.0/maxTime)/2)+5)*(5.0/6.0)+(hash.value(key)*10.0/maxDependency)*(1.0/6.0);
-        cout << "Rank:\t" << rank << endl;
+        qreal rank = ((key->getImportance()/2.0)-((key->getDurationInH()*(10.0/maxTime))/2.0)+5)*(5.0/6.0)+(hash.value(key)*10.0/maxDependency)*(1.0/6.0);
+        if(map.contains(rank)){
+            cout << "Duplicate!!!! Fix with timestamp!" << endl;
+        }
+        map.insert(-rank,key);
+    }
+
+    QMap<qreal, Task*>::iterator i;
+
+    bool wantNext = false;
+    while(!map.empty()){
+        for(i = map.begin(); i != map.end() ; ++i){
+            wantNext = false;
+            cout << "Now looking at: " << map[i.key()]->getId() << "\n";
+            foreach (Task *predecessor, *map[i.key()]->getPredecessors()){
+               if(!list.contains(predecessor)){
+                    cout << "\tList doesn't contain " << predecessor->getId() << endl;
+                    wantNext = true;
+                    break;
+               }
+            }
+            if(!wantNext){
+                cout << "----->All dependencies met, adding "<< map.value(i.key())->getId() << endl;
+                list.append(map.value(i.key()));
+                map.remove(i.key());
+                break;
+            }
+        }
+        cout << endl;
+    }
+
+    cout << "Order in which you should approach tasks:" << endl;
+    foreach(Task *ordered, list){
+        cout << "ID:\t" << ordered->getId() << endl;
     }
 
 

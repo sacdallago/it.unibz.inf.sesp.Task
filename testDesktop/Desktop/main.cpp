@@ -1,13 +1,16 @@
 #include "widget.h"
 #include "collection.h"
 #include "connection.h"
+#include "mainwindow.h"
 #include <iostream>
 #include <QApplication>
 
 int main(int argc, char *argv[]) {
-    //QApplication a(argc, argv);
-    //Widget w;
-    //w.show();
+
+    //Launches main window
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
     //      DATABASE TEST AREA
     //Connection connection;
@@ -42,5 +45,5 @@ int main(int argc, char *argv[]) {
     col.getTodoList();
     //      END OF TEST AREA
 
-    //return a.exec();
+    return a.exec();
 }

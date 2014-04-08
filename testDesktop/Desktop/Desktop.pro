@@ -19,13 +19,27 @@ SOURCES += main.cpp\
     task.cpp \
     taskutilities.cpp \
     utilities.cpp \
-    collection.cpp
+    collection.cpp \
+    mainwindow.cpp \
+    addtaskdialog.cpp \
+    ../taskwidget.cpp
 
 HEADERS  += widget.h \
     connection.h \
     task.h \
     taskutilities.h \
     utilities.h \
-    collection.h
+    collection.h \
+    mainwindow.h \
+    addtaskdialog.h \
+    ../taskwidget.h
 
-FORMS    += widget.ui
+FORMS    += widget.ui \
+    mainwindow.ui \
+    addtaskdialog.ui \
+    ../taskwidget.ui
+
+CONFIG += c++11
+
+RESOURCES += \
+    images.qrc

@@ -41,7 +41,7 @@
      <x>10</x>
      <y>10</y>
      <width>261</width>
-     <height>149</height>
+     <height>141</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -66,17 +66,25 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QSpinBox" name="prioritySpinBox"/>
+     <widget class="QSpinBox" name="prioritySpinBox">
+      <property name="maximum">
+       <number>10</number>
+      </property>
+     </widget>
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="effortLabel">
       <property name="text">
-       <string>Effort</string>
+       <string>Duration</string>
       </property>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QSpinBox" name="effortSpinBox"/>
+     <widget class="QSpinBox" name="effortSpinBox">
+      <property name="suffix">
+       <string> h</string>
+      </property>
+     </widget>
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="dependsOnLabel">
@@ -97,92 +105,15 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="formLayoutWidget_2">
+  <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>150</y>
      <width>381</width>
-     <height>111</height>
+     <height>101</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="formLayout_2">
-    <item row="1" column="1">
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>160</y>
-     <width>373</width>
-     <height>103</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QWidget" name="formLayoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>93</x>
-     <y>163</y>
-     <width>261</width>
-     <height>149</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout_3">
-    <property name="fieldGrowthPolicy">
-     <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-    </property>
-    <item row="0" column="0">
-     <widget class="QLabel" name="nameLabel_2">
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="nameLineEdit_2"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="priorityLabel_2">
-      <property name="text">
-       <string>Priority</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QSpinBox" name="prioritySpinBox_2"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="effortLabel_2">
-      <property name="text">
-       <string>Effort</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QSpinBox" name="effortSpinBox_2"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="dependsOnLabel_2">
-      <property name="text">
-       <string>Depends on</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QComboBox" name="dependsOnComboBox_2"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="description3Label_2">
-      <property name="text">
-       <string>Description</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
  </widget>
  <resources/>

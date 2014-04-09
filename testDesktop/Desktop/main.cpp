@@ -16,6 +16,8 @@ int main(int argc, char *argv[]) {
     //Connection connection;
     //connection.selectQuery("SELECT id FROM task;");
 
+    //vediamo se va
+
     //if(connection.close()){
     //    cout << "The connection has been closed, id est, it was opened before! :) A good sign!" <<endl;
     //}

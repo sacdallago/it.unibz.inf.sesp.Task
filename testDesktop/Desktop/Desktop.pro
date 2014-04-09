@@ -22,7 +22,7 @@ SOURCES += main.cpp\
     collection.cpp \
     mainwindow.cpp \
     addtaskdialog.cpp \
-    ../taskwidget.cpp
+    taskwidget.cpp
 
 HEADERS  += widget.h \
     connection.h \
@@ -32,12 +32,12 @@ HEADERS  += widget.h \
     collection.h \
     mainwindow.h \
     addtaskdialog.h \
-    ../taskwidget.h
+    taskwidget.h
 
 FORMS    += widget.ui \
     mainwindow.ui \
     addtaskdialog.ui \
-    ../taskwidget.ui
+    taskwidget.ui
 
 CONFIG += c++11
 

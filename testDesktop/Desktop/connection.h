@@ -1,9 +1,9 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
-
+#include <iostream>
 #include <QtSql>
 #include <QString>
-
+using namespace std;
 class Connection {
 private:
     QSqlDatabase db;
@@ -23,6 +23,11 @@ public:
      * \return returns true if the connection has been closed, otherwise false!
      */
     bool close();
+
+    QString** selectQuery(QString s);
+    bool insertTask(QString id, QString name, qint64 importance, qint64 duration, QString description, qint64 status, qint64 relatives);
+
+
 
     //destroyer closes connection my default
     ~Connection();

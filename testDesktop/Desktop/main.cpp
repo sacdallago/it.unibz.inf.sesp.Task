@@ -13,7 +13,8 @@ int main(int argc, char *argv[]) {
     w.show();
 
     //      DATABASE TEST AREA
-    //Connection connection;
+    Connection connection;
+    connection.selectQuery("SELECT id FROM task;");
 
     //if(connection.close()){
     //    cout << "The connection has been closed, id est, it was opened before! :) A good sign!" <<endl;

@@ -22,4 +22,5 @@ void MainWindow::on_actionAdd_Task_triggered()
 {
   AddTaskDialog addDialog;
   addDialog.exec();
+
 }

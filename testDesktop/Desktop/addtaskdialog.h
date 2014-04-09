@@ -20,6 +20,8 @@ private slots:
 
     void on_buttonBox_rejected();
 
+    void on_dependsOnComboBox_activated(const QString &arg1);
+
 private:
     Ui::AddTaskDialog *ui;
 };

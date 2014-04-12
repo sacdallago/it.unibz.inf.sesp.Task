@@ -1,9 +1,10 @@
 #ifndef TASKUTILITIES_H
 #define TASKUTILITIES_H
 
-#include "task.h"
+#include "collection.h"
 #include <QList>
 #include <QString>
+#include <QVariant>
 
 namespace TaskUtilities{
     /*!
@@ -14,6 +15,8 @@ namespace TaskUtilities{
      */
     bool relate(Task *predecessor, Task *successor);
     QString printList(QList<Task*>*);
+    void tasksFromQuery(Collection *, const QMap<QString, QList<QVariant> *> *);
+    void relateFromQuery(Collection *, const QMap<QString, QList<QVariant> *> *);
 }
 
 #endif // TASKUTILITIES_H

@@ -3,7 +3,6 @@
 
 #include <QList>
 #include "task.h"
-#include "taskutilities.h"
 
 class Collection {
 private:

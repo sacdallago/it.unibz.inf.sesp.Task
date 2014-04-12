@@ -4,15 +4,24 @@
 
 using namespace std;
 //CONSTRUCTOR
-Task::Task(qint64 id, qint64 importance, qint64 durationInH, QString name, QString description, qint64 status, qint64 relatives){
+Task::Task(qint64 id, qint64 importance, qint64 durationInH, QString name, QString description, qint64 status){
     this->id = id;
     this->importance = importance;
     this->durationInH = durationInH;
     this->name = name;
     this->description = description;
     this->status = status;
-    this->relatives = relatives;
     time = getCurrentTime();
+}
+
+Task::Task(qint64 id, qint64 importance, qint64, QString name, QString description, qint64 status, QString creation){
+    this->id = id;
+    this->importance = importance;
+    this->durationInH = durationInH;
+    this->name = name;
+    this->description = description;
+    this->status = status;
+    time = creation;
 }
 
 //METHODS
@@ -186,7 +195,6 @@ QString Task::printTask(){
     result += "Task Description: " + description + "\n";
     result += "Task Importance: " + QString::number(importance) + "\n";
     result += "Task Duration (h): " + QString::number(durationInH) + "\n";
-    result += "Child(1) or Root(0): " + QString::number(relatives) + "\n";
     result += "Done(-1), todo(0) or active(1): " + QString::number(status) + "\n";
     result += "Creation on: " + time + "\n";
     result += "Successors: ";
@@ -245,15 +253,13 @@ QString Task::getTime() const {
 void Task::setTimeToCurrentTime() {
     time = getTime();
 }
+void Task::setTime(const QString &value){
+    time = value;
+}
+
 qint64 Task::getStatus() const {
     return status;
 }
 void Task::setStatus(const qint64 &value) {
     status = value;
-}
-qint64 Task::getRelatives() const {
-    return relatives;
-}
-void Task::setRelatives(const qint64 &value) {
-    relatives = value;
 }

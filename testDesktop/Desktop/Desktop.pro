@@ -43,3 +43,6 @@ CONFIG += c++11
 
 RESOURCES += \
     images.qrc
+
+OTHER_FILES += \
+    Database.txt

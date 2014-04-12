@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS relation;
+DROP TABLE IF EXISTS task;
+
+CREATE  TABLE task (
+        id SERIAL ,
+        name VARCHAR(45) NOT NULL ,
+        importance INT NOT NULL ,
+        duration INT  NOT  NULL ,
+        description VARCHAR(225) DEFAULT '<<No description provided.>>' ,
+        creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        status INT DEFAULT 0,
+        PRIMARY KEY (id)
+);
+
+CREATE  TABLE relation (
+        father INT NOT NULL,
+                FOREIGN KEY (father)
+                REFERENCES task (id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE,
+        child INT NOT NULL,
+                FOREIGN KEY (child)
+                REFERENCES task (id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE,
+        PRIMARY KEY (father, child)
+);
+
+INSERT INTO task (name, importance, duration, description) VALUES ('init', 1, 4, 'This is the first process');
+INSERT INTO task (name, importance, duration, description) VALUES ('firefox', 2, 2, 'This process is for firefox');
+
+INSERT INTO relation(father, child) VALUES (1, 2);

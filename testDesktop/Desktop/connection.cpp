@@ -18,27 +18,6 @@ bool Connection::close(){
     return false;
 }
 
-
-/*
-QString** Connection::selectQuery(QString s){
-    QSqlQuery query;
-    query.exec(s);
-    int i = 0;
-    QString **ret;
-    ret = new QString*[query.size()];
-
-    while (query.next()){
-        ret[i] = new QString[query.numRowsAffected()];
-        for (int j = 0; j<query.numRowsAffected(); j++){
-            ret[i][j] = query.value(j).toString();
-            cout << query.value(j).constData();
-        }
-        i=i+1;
-    }
-    return ret;
-}
-*/
-
 QString Connection::whereCreator(QList<QString> *wheres){
     if(wheres == NULL || wheres->size() == 0){
         return "";
@@ -55,13 +34,13 @@ QString Connection::whereCreator(QList<QString> *wheres){
 
 }
 
-QString Connection::filterCreator(QList<QString> *filters){
-    if(filters == NULL || filters->size() == 0){
-        return "*";
+QString Connection::filterCreator(QList<QString> filters){
+    if(filters.size() == 0){
+        return "* ";
     } else {
         QString result;
-        for(int i=0;i<filters->size();i++){
-            result += filters->value(i) + ", ";
+        for(int i=0;i<filters.size();i++){
+            result += filters.value(i) + ", ";
         }
         result = result.left(result.size()-2) + " ";
         return result;
@@ -70,35 +49,31 @@ QString Connection::filterCreator(QList<QString> *filters){
 }
 
 QList<QString>* Connection::getColumnNames(QString relation) {
-    QList<QString>* result = new QList<QString>();
+    QList<QString> *result = new QList<QString>();
     QSqlQuery q;
-    try{
-        cout << "Executing query: SELECT column_name FROM information_schema.columns WHERE table_name = '" << relation.toUtf8().constData() << "';" << endl;
-        q.exec("SELECT column_name FROM information_schema.columns WHERE table_name = '" + relation + "';");
-        while (q.next()){
-            result->append(q.value(0).toString());
-        }
-    } catch (QSqlError er){
-        //error
+
+    cout << "Executing query: SELECT column_name FROM information_schema.columns WHERE table_name = '" << relation.toUtf8().constData() << "';" << endl;
+    q.exec("SELECT column_name FROM information_schema.columns WHERE table_name = '" + relation + "';");
+    while (q.next()){
+        result->append(q.value(0).toString());
     }
     return result;
 }
 
-QMap<QString, QList<QString>* > Connection::select(QString relation, QList<QString>* filters,QList<QString>* wheres){
-    QMap<QString, QList<QString>* > result;
+QMap<QString, QList<QVariant>* > Connection::select(QString relation, QList<QString>* filters, QList<QString>* wheres){
+    QMap<QString, QList<QVariant>* > result;
     QString filter, where;
-    if(filters == NULL){
-        filters = new QList<QString>(*getColumnNames(relation));
+    if(filters == NULL || filters->size() == 0){
+        filters = getColumnNames(relation);
     }
-    filter = filterCreator(filters);
-    cout << (filters == NULL) << endl;
+    filter = filterCreator(*filters);
     if(wheres == NULL){
         where = "";
     } else {
         where = whereCreator(wheres);
     }
 
-    QString q = "SELECT " + filter + "FROM '" + relation + "' " + where + ";";
+    QString q = "SELECT " + filter + "FROM " + relation + " " + where + ";";
 
     cout << "Executing query: "<< q.toUtf8().constData() << endl;
     QSqlQuery query;
@@ -107,25 +82,54 @@ QMap<QString, QList<QString>* > Connection::select(QString relation, QList<QStri
         int i = 0;
         for(QString s : *filters){
             if(!result.contains(s)){
-                result.insert(s,new QList<QString>());
+                result.insert(s,new QList<QVariant>());
             }
-            result.value(s)->append(query.value(i).toString());
+            result.value(s)->append(query.value(i));
             i++;
         }
     }
-    //cout << (filters == NULL) << endl;
     return result;
 }
 
-bool Connection::insertTask(QString id, QString name, qint64 importance, qint64 duration, QString description, qint64 status, qint64 relatives){
-    QSqlQuery query;
-    bool ret = query.exec((QString(
-   "INSERT INTO task (id, name, importance, duration, description, status, relatives) "
-   "VALUES('%1','%2','%3','%4','%5','%6','%7')").arg(id).arg(name).arg(importance).arg(duration).arg(description).arg(status).arg(relatives)));
-    return ret;
+Task* Connection::getTask(qint64 id){
+    QList<QString> where;
+    where.append("id=" + QString::number(id));
+    QMap<QString, QList<QVariant>* > task = select("task",NULL,&where);
+    qint64 importance = task.value("importance")->value(0).toInt();
+    qint64 durationInH = task.value("duration")->value(0).toInt();
+    QString name = task.value("name")->value(0).toString();
+    QString description = task.value("description")->value(0).toString();
+    qint64 status = task.value("status")->value(0).toInt();
+    QString time = task.value("creation")->value(0).toString();
+    return new Task(id,importance,durationInH,name,description,status,time);
 }
 
+Task* Connection::insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status){
+    QSqlQuery query;
+    bool successful = query.exec((QString(
+   "INSERT INTO task (name, importance, duration, description, status) "
+   "VALUES('%1','%2','%3','%4','%5') RETURNING id").arg(name).arg(importance).arg(duration).arg(description).arg(status)));
+    if(!successful){
+        return NULL;
+    }
+    query.next();
+    return getTask(query.value(0).toInt());
+}
 
+QString Connection::printQuery(const QMap<QString, QList<QVariant> *> *query, bool verbose){
+    QString result="";
+    for (QString s : query->keys()){
+        result += s + "\t\t";
+        foreach (QVariant t, *query->value(s)){
+            result += t.toString() + "\t";
+        }
+        result += "\n";
+    }
+    if(verbose){
+        cout << result.toUtf8().constData();
+    }
+    return result;
+}
 
 Connection::~Connection(){
     close();

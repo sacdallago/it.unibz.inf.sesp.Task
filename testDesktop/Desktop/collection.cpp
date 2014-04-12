@@ -1,4 +1,5 @@
 #include "collection.h"
+#include "taskutilities.h"
 
 Collection::Collection() {
     rootsUpToDate = true;
@@ -179,8 +180,8 @@ QList<Task*> Collection::getTodoList(){
 
     foreach (Task *key, hash.keys()){
         qreal rank = ((key->getImportance()/2.0)-((key->getDurationInH()*(10.0/maxTime))/2.0)+5)*(5.0/6.0)+(hash.value(key)*10.0/maxDependency)*(1.0/6.0);
-        if(map.contains(rank)){
-            cout << "Duplicate!!!! Fix with timestamp!" << endl;
+        if(map.contains(-rank)){
+            cout << "Duplicate!!!! will be descarted" << endl;
         }
         map.insert(-rank,key);
     }

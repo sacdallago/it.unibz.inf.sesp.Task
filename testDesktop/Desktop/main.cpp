@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "collection.h"
 #include "connection.h"
+#include "taskutilities.h"
 #include "mainwindow.h"
 #include <iostream>
 #include <QApplication>
@@ -8,9 +9,9 @@
 int main(int argc, char *argv[]) {
 
     //Launches main window
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    //QApplication a(argc, argv);
+    //MainWindow w;
+    //w.show();
 
     //      DATABASE TEST AREA
     Connection connection;
@@ -24,20 +25,16 @@ int main(int argc, char *argv[]) {
     cout << connection.whereCreator().toUtf8().constData() << endl;
 
     //vediamo se va
-    QList<QString> *attributes = NULL;
-    cout << (attributes == NULL) << endl;
+    QMap<QString, QList<QVariant>* > tasks = connection.select("task");
+    QMap<QString, QList<QVariant>* > relations = connection.select("relation");
 
-    QMap<QString, QList<QString>* > result = connection.select("task", attributes);
+    Collection col;
+    TaskUtilities::tasksFromQuery(&col, &tasks);
+    TaskUtilities::relateFromQuery(&col, &relations);
 
-    cout << (attributes == NULL) << endl;
+    col.getTodoList();
 
-    //for (QString s : *attributes){
-        //cout << s.toUtf8().constData() << "\t";
-        //foreach (QString t, *result.value(s)){
-        //    cout << t.toUtf8().constData() << "\t";
-        //}
-        //cout << endl;
-    //}
+    //cout << connection.insertTask("From the app",1,2,"This is interesting",0)->drawTree().toUtf8().constData() << endl;
 
     //if(connection.close()){
     //    cout << "The connection has been closed, id est, it was opened before! :) A good sign!" <<endl;
@@ -71,5 +68,7 @@ int main(int argc, char *argv[]) {
     */
     //      END OF TEST AREA
 
-    return a.exec();
+    //return a.exec();
+
+    return 0;
 }

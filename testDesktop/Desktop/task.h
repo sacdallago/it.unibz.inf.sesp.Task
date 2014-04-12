@@ -19,13 +19,6 @@ namespace Status{
     };
 }
 
-namespace Relatives{
-    enum{
-        ROOT = 0,
-        CHILD = 1
-    };
-}
-
 class Task {
 
 private:
@@ -42,7 +35,6 @@ private:
     QString description;
     QString time;
     qint64 status;
-    qint64 relatives;
     QList<Task*> successors;
     QList<Task*> predecessors;
 public:
@@ -56,7 +48,8 @@ public:
      * \param status, status. Loaded from db, states weather it is done, to be done or active.
      * \param relatives, states if the task is a root or a child (no difference between leaf or inner child).
      */
-    Task(qint64 id = 0, qint64 importance = 0, qint64 durationInH = 0, QString name = "DEFAULT", QString description = "NO DESCRITPION.", qint64 status = Status::TODO, qint64 relatives = Relatives::ROOT);
+    Task(qint64 id = 0, qint64 importance = 0, qint64 durationInH = 0, QString name = "DEFAULT", QString description = "NO DESCRITPION.", qint64 status = Status::TODO);
+    Task(qint64 id, qint64 importance, qint64, QString name, QString description, qint64 status, QString creation);
 
     void addSuccessor(Task *);
     void addPredecessor(Task *);
@@ -90,10 +83,9 @@ public:
     void setDescription(const QString &value);
     QString getTime() const;
     void setTimeToCurrentTime();
+    void setTime(const QString &value);
     qint64 getStatus() const;
     void setStatus(const qint64 &value);
-    qint64 getRelatives() const;
-    void setRelatives(const qint64 &value);
 };
 
 #endif // TASK_H

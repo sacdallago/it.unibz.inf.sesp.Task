@@ -4,6 +4,7 @@
 #include <QtSql>
 #include <QString>
 #include <QtSql/QSqlResult>
+#include "task.h"
 
 using namespace std;
 class Connection {
@@ -26,12 +27,16 @@ public:
      */
     bool close();
 
-    QMap<QString,QList<QString>* > select(QString relation, QList<QString>* = NULL ,QList<QString>* wheres = NULL);
-    bool insertTask(QString id, QString name, qint64 importance, qint64 duration, QString description, qint64 status, qint64 relatives);
+    QMap<QString,QList<QVariant>* > select(QString relation, QList<QString>* = NULL ,QList<QString>* wheres = NULL);
 
     QString whereCreator(QList<QString>* w = NULL);
-    QString filterCreator(QList<QString>* f = NULL);
+    QString filterCreator(QList<QString>);
     QList<QString> *getColumnNames(QString relation);
+    QString printQuery(const QMap<QString,QList<QVariant>* >*, bool verbose = false);
+
+    //Project related
+    Task* getTask(qint64 id);
+    Task* insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status);
 
     //destroyer closes connection my default
     ~Connection();

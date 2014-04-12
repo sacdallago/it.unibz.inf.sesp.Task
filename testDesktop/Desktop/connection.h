@@ -3,6 +3,8 @@
 #include <iostream>
 #include <QtSql>
 #include <QString>
+#include <QtSql/QSqlResult>
+
 using namespace std;
 class Connection {
 private:
@@ -24,10 +26,12 @@ public:
      */
     bool close();
 
-    QString** selectQuery(QString s);
+    QMap<QString,QList<QString>* > select(QString relation, QList<QString>* = NULL ,QList<QString>* wheres = NULL);
     bool insertTask(QString id, QString name, qint64 importance, qint64 duration, QString description, qint64 status, qint64 relatives);
 
-
+    QString whereCreator(QList<QString>* w = NULL);
+    QString filterCreator(QList<QString>* f = NULL);
+    QList<QString> *getColumnNames(QString relation);
 
     //destroyer closes connection my default
     ~Connection();

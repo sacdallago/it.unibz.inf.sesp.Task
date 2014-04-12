@@ -13,16 +13,38 @@ int main(int argc, char *argv[]) {
     w.show();
 
     //      DATABASE TEST AREA
-    //Connection connection;
+    Connection connection;
     //connection.selectQuery("SELECT id FROM task;");
 
+    QList<QString> wheres;
+    wheres.append("id = 1");
+    wheres.append("name = 'Something'");
+    wheres.append("importance = 6");
+
+    cout << connection.whereCreator().toUtf8().constData() << endl;
+
     //vediamo se va
+    QList<QString> *attributes = NULL;
+    cout << (attributes == NULL) << endl;
+
+    QMap<QString, QList<QString>* > result = connection.select("task", attributes);
+
+    cout << (attributes == NULL) << endl;
+
+    //for (QString s : *attributes){
+        //cout << s.toUtf8().constData() << "\t";
+        //foreach (QString t, *result.value(s)){
+        //    cout << t.toUtf8().constData() << "\t";
+        //}
+        //cout << endl;
+    //}
 
     //if(connection.close()){
     //    cout << "The connection has been closed, id est, it was opened before! :) A good sign!" <<endl;
     //}
 
     //      TASK TEST AREA
+    /*
     using namespace std;
     Collection col;
     col.addItem(new Task(14,6,5,"14"));
@@ -46,6 +68,7 @@ int main(int argc, char *argv[]) {
     cout << "Forest:\n" << s << endl;
 
     col.getTodoList();
+    */
     //      END OF TEST AREA
 
     return a.exec();

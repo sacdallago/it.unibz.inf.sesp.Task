@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
-    <height>600</height>
+    <width>650</width>
+    <height>648</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>670</width>
+    <width>650</width>
     <height>16777215</height>
    </size>
   </property>
@@ -39,14 +39,8 @@
       <x>0</x>
       <y>0</y>
       <width>670</width>
-      <height>1000</height>
+      <height>600</height>
      </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>670</width>
-      <height>1080</height>
-     </size>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -57,7 +51,7 @@
        <x>0</x>
        <y>0</y>
        <width>668</width>
-       <height>998</height>
+       <height>598</height>
       </rect>
      </property>
     </widget>
@@ -68,7 +62,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>670</width>
+     <width>650</width>
      <height>20</height>
     </rect>
    </property>

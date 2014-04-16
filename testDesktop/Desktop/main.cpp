@@ -9,14 +9,24 @@
 int main(int argc, char *argv[]) {
 
     //Launches main window
-    //QApplication a(argc, argv);
-    //MainWindow w;
-    //w.show();
+    QApplication a(argc, argv);
+
+    Collection tasks;
+    Connection connection;
+
+    QMap<QString, QList<QVariant>* > taskslist = connection.select("task");
+    QMap<QString, QList<QVariant>* > relations = connection.select("relation");
+
+    TaskUtilities::tasksFromQuery(&tasks, &taskslist);
+    TaskUtilities::relateFromQuery(&tasks, &relations);
+
+    MainWindow w (0, &tasks);
+    w.show();
 
     //      DATABASE TEST AREA
-    Connection connection;
+    //Connection connection;
     //connection.selectQuery("SELECT id FROM task;");
-
+    /*
     QList<QString> wheres;
     wheres.append("id = 1");
     wheres.append("name = 'Something'");
@@ -32,7 +42,7 @@ int main(int argc, char *argv[]) {
     TaskUtilities::tasksFromQuery(&col, &tasks);
     TaskUtilities::relateFromQuery(&col, &relations);
 
-    col.getTodoList();
+    //col.getTodoList();
 
     //cout << connection.insertTask("From the app",1,2,"This is interesting",0)->drawTree().toUtf8().constData() << endl;
 
@@ -68,7 +78,7 @@ int main(int argc, char *argv[]) {
     */
     //      END OF TEST AREA
 
-    //return a.exec();
+    return a.exec();
 
-    return 0;
+    //return 0;
 }

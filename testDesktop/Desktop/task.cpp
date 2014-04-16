@@ -14,7 +14,7 @@ Task::Task(qint64 id, qint64 importance, qint64 durationInH, QString name, QStri
     time = getCurrentTime();
 }
 
-Task::Task(qint64 id, qint64 importance, qint64, QString name, QString description, qint64 status, QString creation){
+Task::Task(qint64 id, qint64 importance, qint64 durationInH, QString name, QString description, qint64 status, QString creation){
     this->id = id;
     this->importance = importance;
     this->durationInH = durationInH;

@@ -2,6 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "connection.h"
+#include "addtaskdialog.h"
+#include "collection.h"
+#include "taskutilities.h"
+#include "taskwidget.h"
+#include <QtWidgets>
+#include <QLabel>
 
 namespace Ui {
 class MainWindow;
@@ -12,7 +19,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0, Collection *tasks = new Collection() );
     ~MainWindow();
 
 private slots:
@@ -20,6 +27,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QVBoxLayout *taskListArea;
+
+    Collection *tasks;
+
+    void refreshList();
+
 };
 
 #endif // MAINWINDOW_H

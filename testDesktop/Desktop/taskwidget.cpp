@@ -3,7 +3,9 @@
 #include <QWidget>
 #include <QMessageBox>
 #include "task.h"
+#include <iostream>
 
+using namespace std;
 
 TaskWidget::TaskWidget(QWidget *parent) :
     QWidget(parent),
@@ -15,6 +17,20 @@ TaskWidget::TaskWidget(QWidget *parent) :
     //ui->descriptionText->setText(task.getDescription());
     ui->setupUi(this);
 
+
+}
+
+void TaskWidget::fillWidget(Task *t)
+{ ui->titleLabel->setText(t->getName());
+    ui->descriptionText->setText(t->getDescription());
+    QString priority;
+    priority.append(QString("%1").arg(t->getImportance()));
+    ui->priorityLabel->setText(priority);
+    QString effort;
+    effort.append(QString("%1").arg(t->getDurationInH()));
+    ui->effortValueLabel->setText(effort);
+
+    this->id = t->getId();
 }
 
 TaskWidget::~TaskWidget()
@@ -30,9 +46,14 @@ void TaskWidget::on_pushButton_3_clicked()
     confirm.exec();
 
 }
-
-//Add some panel infos to the Task
-void TaskWidget::on_toolButton_clicked()
+qint64 TaskWidget::getId() const
 {
-
+    return id;
 }
+
+void TaskWidget::setId(qint64 value)
+{
+    id = value;
+}
+
+

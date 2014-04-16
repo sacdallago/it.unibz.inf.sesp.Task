@@ -5,7 +5,7 @@ CREATE  TABLE task (
         id SERIAL ,
         name VARCHAR(45) NOT NULL ,
         importance INT NOT NULL ,
-        duration INT  NOT  NULL ,
+        duration INT NOT  NULL ,
         description VARCHAR(225) DEFAULT '<<No description provided.>>' ,
         creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         status INT DEFAULT 0,
@@ -26,7 +26,19 @@ CREATE  TABLE relation (
         PRIMARY KEY (father, child)
 );
 
-INSERT INTO task (name, importance, duration, description) VALUES ('init', 1, 4, 'This is the first process');
-INSERT INTO task (name, importance, duration, description) VALUES ('firefox', 2, 2, 'This process is for firefox');
+INSERT INTO task VALUES (14,'14', 6, 5, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (15,'15', 3, 6, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (109,'109', 8, 2, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (54,'54', 4, 6, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (34,'34', 3, 1, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (63,'63', 9, 8, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (6,'6', 1, 2, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (35,'35', 6, 2, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (99,'99', 9, 1, DEFAULT, DEFAULT);
+INSERT INTO task VALUES (69,'69', 3, 4, DEFAULT, DEFAULT);
 
-INSERT INTO relation(father, child) VALUES (1, 2);
+INSERT INTO relation(father, child) VALUES (15, 109);
+INSERT INTO relation VALUES (54, 34);
+INSERT INTO relation VALUES (15, 63);
+INSERT INTO relation VALUES (63, 6);
+INSERT INTO relation VALUES (69, 6);

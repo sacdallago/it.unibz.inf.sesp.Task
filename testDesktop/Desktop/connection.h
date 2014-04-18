@@ -37,6 +37,14 @@ public:
     //Project related
     Task* getTask(qint64 id);
     Task* insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status);
+    bool insertTask(Task *);
+    bool removeTask(Task *);
+    bool deleteRelation(qint64 father, qint64 child);
+    bool insertRelation(qint64 father, qint64 child);
+    bool insertRelations(Task *father);
+    bool insertRelations(QList<Task*> *fathers, QList<Task*> *children);
+    bool update(Task *modified);
+
 
     //destroyer closes connection my default
     ~Connection();

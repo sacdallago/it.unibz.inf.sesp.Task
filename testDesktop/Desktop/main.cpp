@@ -11,10 +11,9 @@ int main(int argc, char *argv[]) {
         QApplication a(argc, argv);
 
         Collection tasks;
-        Connection connection;
 
-        QMap<QString, QList<QVariant>* > taskslist = connection.select("task");
-        QMap<QString, QList<QVariant>* > relations = connection.select("relation");
+        QMap<QString, QList<QVariant>* > taskslist = tasks.getConnection()->select("task");
+        QMap<QString, QList<QVariant>* > relations = tasks.getConnection()->select("relation");
 
         TaskUtilities::tasksFromQuery(&tasks, &taskslist);
         TaskUtilities::relateFromQuery(&tasks, &relations);

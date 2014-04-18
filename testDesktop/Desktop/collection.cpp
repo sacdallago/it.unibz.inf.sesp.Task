@@ -1,10 +1,10 @@
 #include "collection.h"
 #include "taskutilities.h"
 
-Collection::Collection() {
+Collection::Collection(Connection *c) {
     rootsUpToDate = true;
     leavesUpToDate = true;
-    //maxDependency = 0;
+    connection = c;
     maxTime = 0;
 }
 
@@ -17,6 +17,14 @@ void Collection::addItem(Task *t){
     leavesUpToDate = false;
 }
 
+Task* Collection::addItem(QString name, qint64 importance, qint64 duration, QString description, qint64 status){
+    Task *toBeAdded = connection->insertTask(name,importance,duration,description,status);
+    if(toBeAdded != NULL){
+        addItem(toBeAdded);
+    }
+    return toBeAdded;
+}
+
 //Performance = k = O(n)
 void Collection::calculateMaxTime(){
     for(Task *t : all){
@@ -26,24 +34,44 @@ void Collection::calculateMaxTime(){
     }
 }
 
-void Collection::removeItem(Task *t){
-    QList<Task*> *su= t->getSuccessors();
-    QList<Task*> *pre= t->getPredecessors();
-    for(Task *s: *su){
+Connection *Collection::getConnection(){
+    return connection;
+}
+
+bool Collection::removeItem(Task *t){
+    if(t != NULL && connection->removeTask(t)){
+        QList<Task*> *su= t->getSuccessors();
+        QList<Task*> *pre= t->getPredecessors();
+        for(Task *s: *su){
+            //Every successor will be a child of every predecessor
+            for(Task *p: *pre){
+                p->getSuccessors()->removeOne(t);
+            }
+            s->getPredecessors()->removeOne(t);
+        }
+        for(Task *p: *pre){
+            //REMOVE FROM DATABASE!!
+            p->getSuccessors()->removeOne(t);
+        }
         //REMOVE FROM DATABASE!!
-        s->getPredecessors()->removeOne(t);
+        all.removeOne(t);
+        if(t->getDurationInH() == maxTime){
+            calculateMaxTime();
+        }
+        rootsUpToDate = false;
+        leavesUpToDate = false;
+        return true;
+    } else {
+        return false;
     }
-    for(Task *p: *pre){
-        //REMOVE FROM DATABASE!!
-        p->getSuccessors()->removeOne(t);
-    }
-    //REMOVE FROM DATABASE!!
-    all.removeOne(t);
-    if(t->getDurationInH() == maxTime){
-        calculateMaxTime();
-    }
-    rootsUpToDate = false;
-    leavesUpToDate = false;
+}
+
+bool Collection::update(Task * t){
+
+}
+
+bool Collection::removeItem(qint64 id){
+    return removeItem(get(id));
 }
 
 void Collection::emptyCollection(){
@@ -70,6 +98,24 @@ bool Collection::relate(qint64 predecessor,qint64 successor){
         if(TaskUtilities::relate(pre,suc)){
             rootsUpToDate = false;
             leavesUpToDate = false;
+            connection->insertRelation(predecessor,successor);
+            return true;
+        }
+        return false;
+    } else {
+        return false;
+    }
+}
+
+bool Collection::unrelate(qint64 predecessor,qint64 successor){
+    Task* pre = get(predecessor);
+    Task* suc = get(successor);
+    if(pre != NULL && suc != NULL){
+        if(pre->getSuccessors()->contains(suc)){
+            rootsUpToDate = false;
+            leavesUpToDate = false;
+            connection->deleteRelation(predecessor,successor);
+            pre->getSuccessors()->removeOne(suc);
             return true;
         }
         return false;
@@ -181,7 +227,7 @@ QList<Task*> Collection::getTodoList(){
     foreach (Task *key, hash.keys()){
         qreal rank = ((key->getImportance()/2.0)-((key->getDurationInH()*(10.0/maxTime))/2.0)+5)*(5.0/6.0)+(hash.value(key)*10.0/maxDependency)*(1.0/6.0);
         if(map.contains(-rank)){
-            cout << "Duplicate!!!! will be descarted" << endl;
+            cout << "Duplicate!!!!" << endl;
         }
         map.insert(-rank,key);
     }
@@ -194,11 +240,11 @@ QList<Task*> Collection::getTodoList(){
             wantNext = false;
             cout << "Now looking at: " << map[i.key()]->getId() << "\n";
             foreach (Task *predecessor, *map[i.key()]->getPredecessors()){
-               if(!list.contains(predecessor)){
+                if(!list.contains(predecessor)){
                     cout << "\tList doesn't contain " << predecessor->getId() << endl;
                     wantNext = true;
                     break;
-               }
+                }
             }
             if(!wantNext){
                 cout << "----->All dependencies met, adding "<< map.value(i.key())->getId() << endl;
@@ -214,7 +260,6 @@ QList<Task*> Collection::getTodoList(){
     foreach(Task *ordered, list){
         cout << "ID:\t" << ordered->getId() << endl;
     }
-
 
     return list;
 }

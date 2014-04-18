@@ -106,14 +106,50 @@ Task* Connection::getTask(qint64 id){
 
 Task* Connection::insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status){
     QSqlQuery query;
-    bool successful = query.exec((QString(
-   "INSERT INTO task (name, importance, duration, description, status) "
-   "VALUES('%1','%2','%3','%4','%5') RETURNING id").arg(name).arg(importance).arg(duration).arg(description).arg(status)));
+    QString q = "INSERT INTO task (name, importance, duration, description, status) VALUES('"+name+"',"+QString::number(importance)+","+QString::number(duration)+",'"+description+"',"+QString::number(status)+") RETURNING id;";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    bool successful = query.exec(q);
     if(!successful){
         return NULL;
     }
     query.next();
     return getTask(query.value(0).toInt());
+}
+
+bool Connection::deleteRelation(qint64 father, qint64 child){
+    QSqlQuery query;
+    QString q = "DELETE FROM relation WHERE father = " + QString::number(father) + " AND child = " + QString::number(child) + ";";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
+}
+
+bool Connection::insertRelation(qint64 father, qint64 child){
+    QSqlQuery query;
+    QString q = "INSERT INTO relation VALUES (" + QString::number(father) + "," + QString::number(child) + ");";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
+}
+
+bool Connection::insertRelations(Task *father){
+    QString q = "";
+    for(Task *child : *father->getPredecessors()){
+        q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ");\n";
+    }
+    QSqlQuery query;
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
+}
+
+bool Connection::insertRelations(QList<Task *> *fathers, QList<Task *> *children){
+    QString q = "";
+    for(Task *father : *fathers){
+        for(Task *child : *children){
+                q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ");\n";
+            }
+    }
+    QSqlQuery query;
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
 }
 
 QString Connection::printQuery(const QMap<QString, QList<QVariant> *> *query, bool verbose){
@@ -129,6 +165,20 @@ QString Connection::printQuery(const QMap<QString, QList<QVariant> *> *query, bo
         cout << result.toUtf8().constData();
     }
     return result;
+}
+
+bool Connection::removeTask(Task *t){
+    QSqlQuery query;
+    QString q = "DELETE FROM task WHERE id=" + QString::number(t->getId()) + ";";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
+}
+
+bool update(Task *modified){
+    QSqlQuery query;
+    QString q = "DELETE FROM task WHERE id=" + QString::number(t->getId()) + ";";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
 }
 
 Connection::~Connection(){

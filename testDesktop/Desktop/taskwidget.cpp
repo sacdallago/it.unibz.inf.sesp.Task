@@ -4,17 +4,17 @@
 #include <QMessageBox>
 #include "task.h"
 #include <iostream>
+#include <collection.h>
 
 using namespace std;
 
-TaskWidget::TaskWidget(QWidget *parent) :
+TaskWidget::TaskWidget(QWidget *parent ,Collection *tasks) :
     QWidget(parent),
 
     ui(new Ui::TaskWidget)
 {
-    // this->task = task;
-    //ui->titleLabel->setText(task.getName());
-    //ui->descriptionText->setText(task.getDescription());
+
+    this->tasks = tasks;
     ui->setupUi(this);
 
 
@@ -30,7 +30,7 @@ void TaskWidget::fillWidget(Task *t)
     effort.append(QString("%1").arg(t->getDurationInH()));
     ui->effortValueLabel->setText(effort);
 
-    this->id = t->getId();
+    this->task = t;
 }
 
 TaskWidget::~TaskWidget()
@@ -42,18 +42,20 @@ TaskWidget::~TaskWidget()
 void TaskWidget::on_pushButton_3_clicked()
 {
 
-    QMessageBox confirm;
-    confirm.exec();
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Confirm", "Delete Task?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+        cout << "Yes was clicked" << endl;
+        //cout << "Deleting task n: " << this->task->getId() << " Name: " << this->task->getName() << endl;
+        tasks->removeItem(this->task);
 
-}
-qint64 TaskWidget::getId() const
-{
-    return id;
+      } else {
+        cout << "Yes was *not* clicked";
+      }
 }
 
-void TaskWidget::setId(qint64 value)
-{
-    id = value;
-}
+
+
 
 

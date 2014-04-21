@@ -28,10 +28,15 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *taskListArea;
+    QLabel *statusLabel;
 
     Collection *tasks;
+    QList <Task*> ordered;
+
+    int elements;
 
     void refreshList();
+    QColor generateRandomColor(QColor mix);
 
 };
 

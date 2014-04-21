@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "task.h"
+#include "collection.h"
 
 namespace Ui {
 class TaskWidget;
@@ -13,12 +14,9 @@ class TaskWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit TaskWidget(QWidget *parent = 0);
+    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = new Collection() );
     ~TaskWidget();
     void fillWidget(Task *t);
-
-    qint64 getId() const;
-    void setId(qint64 value);
 
 private slots:
 
@@ -28,7 +26,8 @@ private slots:
 private:
     Ui::TaskWidget *ui;
 
-    qint64 id;
+    Task *task;
+    Collection *tasks;
 
 };
 

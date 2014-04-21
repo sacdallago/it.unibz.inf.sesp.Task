@@ -9,8 +9,13 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
 {
 
      this->tasks = tasks;
+     this->statusLabel = new QLabel();
+     elements = 0;
 
      ui->setupUi(this);
+     ui->statusbar->addWidget(statusLabel);
+     taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
+
      refreshList();
      cout << "TaskWidgets added from DB" <<endl;
 
@@ -24,25 +29,60 @@ MainWindow::~MainWindow()
 
 void MainWindow::refreshList(){
 
-    taskListArea = new QVBoxLayout(ui->scrollArea);
-    QList<Task*> ordered = tasks->getTodoList();
 
-    int elements = ordered.size() ;
+    if(elements != 0){
+        delete taskListArea;
+        taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
+        ordered.clear();
+        }
+
+        ordered = tasks->getTodoList();
+        this->elements = ordered.size();
+
+    /*
+    QPalette pal(palette());
+    QColor wtColor;
+    */
 
     for (Task* t : ordered){
-       TaskWidget * wt = new TaskWidget();
-        wt->fillWidget(t);
-        taskListArea->addWidget(wt);
+       TaskWidget * wt = new TaskWidget(NULL, tasks);
+
+       /*
+       pal.setColor(QPalette::Background, Qt::blue);
+       wt->setAutoFillBackground(true);
+       wtColor = generateRandomColor(pal.color(QPalette::Background));
+       pal.setColor(QPalette::Background, wtColor);
+       wt->setPalette(pal);
+       */
+
+       wt->fillWidget(t);
+       taskListArea->addWidget(wt);
     }
 
-    QLabel * l = new QLabel("Total tasks:  "+QString::number(elements));
-    taskListArea->addWidget(l);
-    //taskListArea->update();
-    ui->scrollArea->setLayout(taskListArea);
+    statusLabel->setText("Total tasks:  "+QString::number(elements));
 
     ui->scrollArea->repaint();
+    ui->statusbar->repaint();
 
 }
+
+QColor generateRandomColor(QColor mix) {
+    int red = qrand();
+    int green = qrand();
+    int blue = qrand();
+
+    // mix the color
+    if (mix.isValid()) {
+        red = (red + mix.red()) / 2;
+        green = (green + mix.green()) / 2;
+        blue = (blue + mix.blue()) / 2;
+    }
+
+    QColor color;
+    color.setRgb(red, green, blue);
+    return color;
+}
+
 
 void MainWindow::on_actionAdd_Task_triggered()
 {

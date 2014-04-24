@@ -42,6 +42,6 @@ void TaskUtilities::tasksFromQuery(Collection *c, const QMap<QString, QList<QVar
 void TaskUtilities::relateFromQuery(Collection *c, const QMap<QString, QList<QVariant> *> *query){
     qint64 elements = query->first()->size();
     for(qint64 i=0;i<elements;i++){
-        c->relate(query->value("father")->value(i).toInt(),query->value("child")->value(i).toInt());
+        c->relate(query->value("father")->value(i).toInt(),query->value("child")->value(i).toInt(),false);
     }
 }

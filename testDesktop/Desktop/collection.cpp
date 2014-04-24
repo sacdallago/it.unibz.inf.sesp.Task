@@ -8,6 +8,15 @@ Collection::Collection(Connection *c) {
     maxTime = 0;
 }
 
+//Performance = k = O(n)
+void Collection::calculateMaxTime(){
+    for(Task *t : all){
+        if(t->getDurationInH() > maxTime){
+            maxTime = t->getDurationInH();
+        }
+    }
+}
+
 void Collection::addItem(Task *t){
     all.append(t);
     if(t->getDurationInH() > maxTime){
@@ -18,68 +27,91 @@ void Collection::addItem(Task *t){
 }
 
 Task* Collection::addItem(QString name, qint64 importance, qint64 duration, QString description, qint64 status){
-    Task *toBeAdded = connection->insertTask(name,importance,duration,description,status);
+    Task *toBeAdded = toBeAdded = connection->insertTask(name,importance,duration,description,status);
     if(toBeAdded != NULL){
         addItem(toBeAdded);
     }
     return toBeAdded;
 }
 
-//Performance = k = O(n)
-void Collection::calculateMaxTime(){
-    for(Task *t : all){
-        if(t->getDurationInH() > maxTime){
-            maxTime = t->getDurationInH();
-        }
-    }
-}
-
 Connection *Collection::getConnection(){
     return connection;
 }
 
-bool Collection::removeItem(Task *t){
-    if(t != NULL && connection->removeTask(t)){
-        QList<Task*> *su= t->getSuccessors();
-        QList<Task*> *pre= t->getPredecessors();
-        for(Task *s: *su){
-            //Every successor will be a child of every predecessor
+bool Collection::removeItem(Task *t,bool updateDB){
+    if(updateDB){
+        if(t != NULL && connection->removeTask(t)){
+            QList<Task*> *su= t->getSuccessors();
+            QList<Task*> *pre= t->getPredecessors();
+            for(Task *p: *pre){
+                //Every successor will be a child of every predecessor
+                for(Task *s: *su){
+                    // NOT NEEDED! DATABASE CASCADES connection->deleteRelation(t->getId(),s->getId());
+                    s->getPredecessors()->removeOne(t);
+                    //relate(p,s);
+                }
+                // NOT NEEDED! DATABASE CASCADES connection->deleteRelation(p->getId(),t->getId());
+                p->getSuccessors()->removeOne(t);
+            }
+            for(Task *p: *pre){
+                for(Task *s: *su){
+                    relate(p,s);
+                }
+            }
+            all.removeOne(t);
+            if(t->getDurationInH() == maxTime){
+                calculateMaxTime();
+            }
+            rootsUpToDate = false;
+            leavesUpToDate = false;
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        if(t != NULL){
+            QList<Task*> *su= t->getSuccessors();
+            QList<Task*> *pre= t->getPredecessors();
+            for(Task *s: *su){
+                //Every successor will be a child of every predecessor
+                for(Task *p: *pre){
+                    p->getSuccessors()->removeOne(t);
+                }
+                s->getPredecessors()->removeOne(t);
+            }
             for(Task *p: *pre){
                 p->getSuccessors()->removeOne(t);
             }
-            s->getPredecessors()->removeOne(t);
+            all.removeOne(t);
+            if(t->getDurationInH() == maxTime){
+                calculateMaxTime();
+            }
+            rootsUpToDate = false;
+            leavesUpToDate = false;
+            return true;
+        } else {
+            return false;
         }
-        for(Task *p: *pre){
-            //REMOVE FROM DATABASE!!
-            p->getSuccessors()->removeOne(t);
-        }
-        //REMOVE FROM DATABASE!!
-        all.removeOne(t);
-        if(t->getDurationInH() == maxTime){
-            calculateMaxTime();
-        }
-        rootsUpToDate = false;
-        leavesUpToDate = false;
-        return true;
-    } else {
-        return false;
     }
 }
 
 bool Collection::update(Task * t){
-
+    return connection->update(t);
 }
 
-bool Collection::removeItem(qint64 id){
-    return removeItem(get(id));
+bool Collection::removeItem(qint64 id,bool updateDB){
+    return removeItem(get(id), updateDB);
 }
 
-void Collection::emptyCollection(){
+void Collection::emptyCollection(bool updateDB){
     all.clear();
     roots.clear();
     leaves.clear();
     rootsUpToDate = true;
     leavesUpToDate = true;
+    if(updateDB){
+       connection->clear();
+    }
 }
 
 Task* Collection::get(qint64 id){
@@ -91,14 +123,16 @@ Task* Collection::get(qint64 id){
     return NULL;
 }
 
-bool Collection::relate(qint64 predecessor,qint64 successor){
-    Task* pre = get(predecessor);
-    Task* suc = get(successor);
+bool Collection::relate(Task* predecessor,Task* successor,bool updateDB){
+    Task* pre = predecessor;
+    Task* suc = successor;
     if(pre != NULL && suc != NULL){
         if(TaskUtilities::relate(pre,suc)){
             rootsUpToDate = false;
             leavesUpToDate = false;
-            connection->insertRelation(predecessor,successor);
+            if(updateDB){
+                connection->insertRelation(predecessor->getId(),successor->getId());
+            }
             return true;
         }
         return false;
@@ -107,15 +141,56 @@ bool Collection::relate(qint64 predecessor,qint64 successor){
     }
 }
 
-bool Collection::unrelate(qint64 predecessor,qint64 successor){
+bool Collection::relate(qint64 predecessor,qint64 successor,bool updateDB){
+    Task* pre = get(predecessor);
+    Task* suc = get(successor);
+    if(pre != NULL && suc != NULL){
+        if(TaskUtilities::relate(pre,suc)){
+            rootsUpToDate = false;
+            leavesUpToDate = false;
+            if(updateDB){
+                connection->insertRelation(predecessor,successor);
+            }
+            return true;
+        }
+        return false;
+    } else {
+        return false;
+    }
+}
+
+bool Collection::unrelate(qint64 predecessor,qint64 successor, bool updateDB){
     Task* pre = get(predecessor);
     Task* suc = get(successor);
     if(pre != NULL && suc != NULL){
         if(pre->getSuccessors()->contains(suc)){
             rootsUpToDate = false;
             leavesUpToDate = false;
-            connection->deleteRelation(predecessor,successor);
+            if(updateDB){
+                connection->deleteRelation(predecessor,successor);
+            }
             pre->getSuccessors()->removeOne(suc);
+            suc->getPredecessors()->removeOne(pre);
+            return true;
+        }
+        return false;
+    } else {
+        return false;
+    }
+}
+
+bool Collection::unrelate(Task* predecessor,Task* successor, bool updateDB){
+    Task* pre = predecessor;
+    Task* suc = successor;
+    if(pre != NULL && suc != NULL){
+        if(pre->getSuccessors()->contains(suc)){
+            rootsUpToDate = false;
+            leavesUpToDate = false;
+            if(updateDB){
+                connection->deleteRelation(predecessor->getId(),successor->getId());
+            }
+            pre->getSuccessors()->removeOne(suc);
+            suc->getPredecessors()->removeOne(pre);
             return true;
         }
         return false;

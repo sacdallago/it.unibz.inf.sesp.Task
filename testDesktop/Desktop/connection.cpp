@@ -174,9 +174,16 @@ bool Connection::removeTask(Task *t){
     return query.exec(q);
 }
 
-bool update(Task *modified){
+bool Connection::update(Task *modified){
     QSqlQuery query;
-    QString q = "DELETE FROM task WHERE id=" + QString::number(t->getId()) + ";";
+    QString q = "UPDATE SET (name, importance, duration, description, status) = ('"+modified->getName()+"',"+QString::number(modified->getImportance())+","+QString::number(modified->getDurationInH())+",'"+modified->getDescription()+"',"+QString::number(modified->getStatus())+") FROM task WHERE id=" + QString::number(modified->getId()) + ";";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    return query.exec(q);
+}
+
+bool Connection::clear(){
+    QSqlQuery query;
+    QString q = "DELETE FROM task;DELETE FROM relation;";
     cout << "Executing query: "<< q.toUtf8().constData() << endl;
     return query.exec(q);
 }

@@ -44,6 +44,7 @@ public:
     bool insertRelations(Task *father);
     bool insertRelations(QList<Task*> *fathers, QList<Task*> *children);
     bool update(Task *modified);
+    bool clear();
 
 
     //destroyer closes connection my default

@@ -1,3 +1,4 @@
+/* SENZA LOGIN */
 DROP TABLE IF EXISTS relation;
 DROP TABLE IF EXISTS task;
 
@@ -42,3 +43,73 @@ INSERT INTO relation VALUES (54, 34);
 INSERT INTO relation VALUES (15, 63);
 INSERT INTO relation VALUES (63, 6);
 INSERT INTO relation VALUES (69, 6);
+
+
+
+/* CON LOGIN */
+DROP TABLE IF EXISTS relation;
+DROP TABLE IF EXISTS task;
+DROP TABLE IF EXISTS auth;
+
+CREATE  TABLE auth (
+        username text NOT NULL,
+        password text NOT NULL,
+        PRIMARY KEY (username)
+);
+
+CREATE  TABLE task (
+        id SERIAL ,
+        name VARCHAR(45) NOT NULL ,
+        importance INT NOT NULL ,
+        duration INT NOT  NULL ,
+        description VARCHAR(225) DEFAULT '<<No description provided.>>' ,
+        creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        status INT DEFAULT 0,
+        username text NOT NULL,
+                FOREIGN KEY (username)
+                REFERENCES auth (username)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE,
+        PRIMARY KEY (id)
+);
+
+CREATE  TABLE relation (
+        father INT NOT NULL,
+                FOREIGN KEY (father)
+                REFERENCES task (id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE,
+        child INT NOT NULL,
+                FOREIGN KEY (child)
+                REFERENCES task (id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE,
+        username text NOT NULL,
+                FOREIGN KEY (username)
+                REFERENCES auth (username)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE,
+        PRIMARY KEY (father, child, username)
+);
+
+INSERT INTO auth (username,password) VALUES ('user','password');
+INSERT INTO auth (username,password) VALUES ('christian','password');
+INSERT INTO auth (username,password) VALUES ('ettore','password');
+INSERT INTO auth (username,password) VALUES ('franz','password');
+
+INSERT INTO task (id,name,importance,duration,username) VALUES (14,'14', 6, 5, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (15,'15', 3, 6, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (109,'109', 8, 2, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (54,'54', 4, 6, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (34,'34', 3, 1, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (63,'63', 9, 8, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (6,'6', 1, 2, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (35,'35', 6, 2, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (99,'99', 9, 1, 'user');
+INSERT INTO task (id,name,importance,duration,username) VALUES (69,'69', 3, 4, 'user');
+
+INSERT INTO relation(father, child, username) VALUES (15, 109,'user');
+INSERT INTO relation VALUES (54, 34,'user');
+INSERT INTO relation VALUES (15, 63,'user');
+INSERT INTO relation VALUES (63, 6,'user');
+INSERT INTO relation VALUES (69, 6,'user');

@@ -6,9 +6,8 @@
 #include <QtSql/QSqlResult>
 #include "task.h"
 
-using namespace std;
 class Connection {
-private:
+protected:
     QSqlDatabase db;
 public:
     /*!
@@ -27,7 +26,7 @@ public:
      */
     bool close();
 
-    QMap<QString,QList<QVariant>* > select(QString relation, QList<QString>* = NULL ,QList<QString>* wheres = NULL);
+    QMap<QString,QList<QVariant>* > select(QString relation, QList<QString>* columns= NULL ,QList<QString>* wheres = NULL);
 
     QString whereCreator(QList<QString>* w = NULL);
     QString filterCreator(QList<QString>);

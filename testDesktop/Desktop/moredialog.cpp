@@ -1,20 +1,22 @@
 #include "moredialog.h"
 #include "ui_moredialog.h"
 #include <QtGui>
+#include <iostream>
 
 /**
  * @brief MoreDialog::MoreDialog
  * @param parent
  * @param TaskWidget wt
  */
+using namespace std;
+
 MoreDialog::MoreDialog(QWidget *parent, TaskWidget *wt) :
     QDialog(parent),
     ui(new Ui::MoreDialog)
 {
     this->wt = wt;
     ui->setupUi(this);
-    //getDependList();
-
+    lslayout = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
 }
 
@@ -22,22 +24,18 @@ MoreDialog::MoreDialog(QWidget *parent, TaskWidget *wt) :
  * @brief MoreDialog::getDependList creates a QLabel list of predecessors for a single task
  */
 void MoreDialog::getDependList(){
-    dlist = this->wt->getTask()->getPredecessors();
 
-    this->lslayout = new QVBoxLayout(this->ui->scrollAreaWidgetContents);
-    int i;
-    if (dlist->isEmpty()){
-        cout << "The task : " << "is a root" << endl;
-    }
-    for ( i = 0; i<dlist->size(); i++) {
-       Task *t = dlist->at(i);
-       t->printTask();
-       QLabel *l = new QLabel(t->getName());
-       lslayout->addWidget(l);
+    for ( Task *father : *t->getPredecessors()) {
+
+        QLabel *l = new QLabel(father->getName());
+        lslayout->addWidget(l);
 
     }
 
 }
+
+
+
 
 MoreDialog::~MoreDialog()
 {
@@ -54,6 +52,9 @@ void MoreDialog::fillWidget(Task *t)
     ui->descriptionText->setText(t->getDescription());
     ui->prioritySpinBox->setValue(t->getImportance());
     ui->durationSpinBox->setValue(t->getDurationInH());
+
+    this->t = t;
+    getDependList();
 
 }
 

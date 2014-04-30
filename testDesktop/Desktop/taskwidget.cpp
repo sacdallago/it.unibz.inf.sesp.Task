@@ -6,6 +6,7 @@
 #include <iostream>
 #include <collection.h>
 #include "moredialog.h"
+#include "mainwindow.h"
 
 using namespace std;
 
@@ -15,12 +16,12 @@ using namespace std;
  * @param parent
  * @param tasks
  */
-TaskWidget::TaskWidget(QWidget *parent ,Collection *tasks) :
+TaskWidget::TaskWidget(QWidget *parent , Collection *tasks, MainWindow *main) :
     QWidget(parent),
 
     ui(new Ui::TaskWidget)
 {
-
+    this->main = main;
     this->tasks = tasks;
     ui->setupUi(this);
 
@@ -70,10 +71,8 @@ void TaskWidget::on_pushButton_3_clicked()
       }
 }
 
-
-
 /**
-  Launch a more/edit menu box, MoreDialog.
+  Launch a more/edit menu box, MoreDialog that updates that task if "Save" is clicked.
  * @brief TaskWidget::on_pushButton_2_clicked
  */
 void TaskWidget::on_pushButton_2_clicked()
@@ -95,13 +94,25 @@ void TaskWidget::on_pushButton_2_clicked()
         }
         cout << "Task updated: " << endl;
         QString newt = this->task->printTask();
-       cout <<  newt.toStdString() << endl;
+        cout <<  newt.toStdString() << endl;
         this->fillWidget(task);
         this->repaint();
+        tasks->update(task);
+
     }
 }
+MainWindow *TaskWidget::getMain() const
+{
+    return main;
+}
 
-Task *TaskWidget::getTask() const
+void TaskWidget::setMain(MainWindow *value)
+{
+    main = value;
+}
+
+
+Task *TaskWidget::getTask()
 {
     return task;
 }

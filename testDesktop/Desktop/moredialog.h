@@ -17,8 +17,9 @@ public:
     explicit MoreDialog(QWidget *parent = 0, TaskWidget *wt = new TaskWidget());
     ~MoreDialog();
 
-    TaskWidget *getWt() const;
-    void setWt(TaskWidget *value);
+     TaskWidget *getWt() const;
+
+     void setWt(TaskWidget *value);
      void fillWidget(Task *t);
 
      Ui::MoreDialog *getUi() const;
@@ -32,6 +33,7 @@ public:
 private:
      Ui::MoreDialog *ui;
      TaskWidget *wt;
+     Task *t;
      QVBoxLayout *lslayout;
 
     QList<Task *> *dlist;

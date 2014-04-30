@@ -5,6 +5,7 @@
 #include "task.h"
 #include "collection.h"
 
+
 namespace Ui {
 class TaskWidget;
 }
@@ -14,12 +15,15 @@ class TaskWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = new Collection() );
+    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = new Collection(), MainWindow *main = new MainWindow());
     ~TaskWidget();
     void fillWidget(Task *t);
 
-    Task *getTask() const;
+    Task *getTask();
     void setTask(Task *value);
+
+    MainWindow *getMain() const;
+    void setMain(MainWindow *value);
 
 private slots:
 
@@ -33,6 +37,7 @@ private:
 
     Task *task;
     Collection *tasks;
+    MainWindow *main;
 
 };
 

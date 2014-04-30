@@ -48,21 +48,22 @@ void MainWindow::refreshList(){
         ordered = tasks->getTodoList();
         this->elements = ordered.size();
 
-    /*
+
     QPalette pal(palette());
     QColor wtColor;
-    */
+
 
     for (Task* t : ordered){
        TaskWidget * wt = new TaskWidget(NULL, tasks);
+       wt->setMain(this);
        widgets.append(wt);
-       /*
+
        pal.setColor(QPalette::Background, Qt::blue);
        wt->setAutoFillBackground(true);
        wtColor = generateRandomColor(pal.color(QPalette::Background));
        pal.setColor(QPalette::Background, wtColor);
        wt->setPalette(pal);
-       */
+
 
        wt->fillWidget(t);
        taskListArea->addWidget(wt);
@@ -76,10 +77,11 @@ void MainWindow::refreshList(){
 
 }
 
-QColor generateRandomColor(QColor mix) {
-    int red = qrand();
-    int green = qrand();
-    int blue = qrand();
+
+QColor MainWindow::generateRandomColor(QColor mix) {
+    int red = 90;
+    int green = 256;
+    int blue = 3;
 
     // mix the color
     if (mix.isValid()) {

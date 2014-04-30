@@ -11,18 +11,40 @@ bool TaskDatabase::login(QString taskUser, QString taskPassword){
     where.append("username = '" + taskUser + "'");
     where.append("password = '" + taskPassword + "'");
 
-    fil.append("id");
+    fil.append("username");
 
     try {
         QMap<QString, QList<QVariant> *> check  = Connection::select("auth",&fil,&where);
         if(!check.isEmpty()){
-            userID = check.first()->first().toInt();
-            cout << "User ID: " << userID << endl;
+            userID = 1;
+            username = check.first()->first().toString();
+            cout << "User found" << endl;
+            return true;
         } else {
+            userID = 0;
+            username = "";
             cout << "User not found!!" << endl;
+            return false;
         }
     } catch (...){
+        return false;
     }
+}
+
+bool TaskDatabase::createUser(QString taskUser, QString taskPassword){
+    QSqlQuery query;
+    QString q = "INSERT INTO auth VALUES ('" + taskUser + "','" + taskPassword + "');";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    query.prepare(q);
+    return query.exec();
+}
+
+bool TaskDatabase::deleteUser(QString taskUser){
+    QSqlQuery query;
+    QString q = "DELETE FROM auth WHERE username = '" + taskUser + "';";
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    query.prepare(q);
+    return query.exec();
 }
 
 void TaskDatabase::logout(){
@@ -31,7 +53,7 @@ void TaskDatabase::logout(){
 
 
 Task* TaskDatabase::getTask(qint64 id){
-    if(userIF != 0){
+    if(userID != 0){
         QList<QString> where;
         where.append("id=" + QString::number(id));
         QMap<QString, QList<QVariant>* > task = select("task",NULL,&where);
@@ -48,9 +70,9 @@ Task* TaskDatabase::getTask(qint64 id){
 }
 
 Task* TaskDatabase::insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status){
-    if(userIF != 0){
+    if(userID != 0){
         QSqlQuery query;
-        QString q = "INSERT INTO task (name, importance, duration, description, status) VALUES('"+name+"',"+QString::number(importance)+","+QString::number(duration)+",'"+description+"',"+QString::number(status)+") RETURNING id;";
+        QString q = "INSERT INTO task (name, importance, duration, description, status, username) VALUES('"+name+"',"+QString::number(importance)+","+QString::number(duration)+",'"+description+"',"+QString::number(status)+",'"+username+"') RETURNING id;";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
         bool successful = query.exec(q);
         if(!successful){
@@ -64,7 +86,7 @@ Task* TaskDatabase::insertTask(QString name, qint64 importance, qint64 duration,
 }
 
 bool TaskDatabase::deleteRelation(qint64 father, qint64 child){
-    if(userIF != 0){
+    if(userID != 0){
         QSqlQuery query;
         QString q = "DELETE FROM relation WHERE father = " + QString::number(father) + " AND child = " + QString::number(child) + ";";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
@@ -75,7 +97,7 @@ bool TaskDatabase::deleteRelation(qint64 father, qint64 child){
 }
 
 bool TaskDatabase::insertRelation(qint64 father, qint64 child){
-    if(userIF != 0){
+    if(userID != 0){
         QSqlQuery query;
         QString q = "INSERT INTO relation VALUES (" + QString::number(father) + "," + QString::number(child) + ");";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
@@ -86,7 +108,7 @@ bool TaskDatabase::insertRelation(qint64 father, qint64 child){
 }
 
 bool TaskDatabase::insertRelations(Task *father){
-    if(userIF != 0){
+    if(userID != 0){
         QString q = "";
         for(Task *child : *father->getPredecessors()){
             q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ");\n";
@@ -100,7 +122,7 @@ bool TaskDatabase::insertRelations(Task *father){
 }
 
 bool TaskDatabase::insertRelations(QList<Task *> *fathers, QList<Task *> *children){
-    if(userIF != 0){
+    if(userID != 0){
         QString q = "";
         for(Task *father : *fathers){
             for(Task *child : *children){
@@ -117,7 +139,7 @@ bool TaskDatabase::insertRelations(QList<Task *> *fathers, QList<Task *> *childr
 
 
 bool TaskDatabase::removeTask(Task *t){
-    if(userIF != 0){
+    if(userID != 0){
         QSqlQuery query;
         QString q = "DELETE FROM task WHERE id=" + QString::number(t->getId()) + ";";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
@@ -128,7 +150,7 @@ bool TaskDatabase::removeTask(Task *t){
 }
 
 bool TaskDatabase::update(Task *modified){
-    if(userIF != 0){
+    if(userID != 0){
         QSqlQuery query;
         QString q = "UPDATE SET (name, importance, duration, description, status) = ('"+modified->getName()+"',"+QString::number(modified->getImportance())+","+QString::number(modified->getDurationInH())+",'"+modified->getDescription()+"',"+QString::number(modified->getStatus())+") FROM task WHERE id=" + QString::number(modified->getId()) + ";";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
@@ -139,27 +161,12 @@ bool TaskDatabase::update(Task *modified){
 }
 
 bool TaskDatabase::clear(){
-    if(userIF != 0){
+    if(userID != 0){
         QSqlQuery query;
-        QString q = "DELETE FROM task;DELETE FROM relation;";
+        QString q = "DELETE FROM task; DELETE FROM relation; DELETE FROM auth";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
         return query.exec(q);
     } else {
         return false;
     }
-}
-
-QString TaskDatabase::printQuery(const QMap<QString, QList<QVariant> *> *query, bool verbose){
-    QString result="";
-    for (QString s : query->keys()){
-        result += s + "\t\t";
-        foreach (QVariant t, *query->value(s)){
-            result += t.toString() + "\t";
-        }
-        result += "\n";
-    }
-    if(verbose){
-        cout << result.toUtf8().constData();
-    }
-    return result;
 }

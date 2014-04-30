@@ -84,12 +84,7 @@ CREATE  TABLE relation (
                 REFERENCES task (id)
                 ON DELETE CASCADE
                 ON UPDATE CASCADE,
-        username text NOT NULL,
-                FOREIGN KEY (username)
-                REFERENCES auth (username)
-                ON DELETE CASCADE
-                ON UPDATE CASCADE,
-        PRIMARY KEY (father, child, username)
+        PRIMARY KEY (father, child)
 );
 
 INSERT INTO auth (username,password) VALUES ('user','password');
@@ -108,8 +103,8 @@ INSERT INTO task (id,name,importance,duration,username) VALUES (35,'35', 6, 2, '
 INSERT INTO task (id,name,importance,duration,username) VALUES (99,'99', 9, 1, 'user');
 INSERT INTO task (id,name,importance,duration,username) VALUES (69,'69', 3, 4, 'user');
 
-INSERT INTO relation(father, child, username) VALUES (15, 109,'user');
-INSERT INTO relation VALUES (54, 34,'user');
-INSERT INTO relation VALUES (15, 63,'user');
-INSERT INTO relation VALUES (63, 6,'user');
-INSERT INTO relation VALUES (69, 6,'user');
+INSERT INTO relation(father, child) VALUES (15, 109);
+INSERT INTO relation VALUES (54, 34);
+INSERT INTO relation VALUES (15, 63);
+INSERT INTO relation VALUES (63, 6);
+INSERT INTO relation VALUES (69, 6);

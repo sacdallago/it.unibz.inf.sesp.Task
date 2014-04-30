@@ -611,7 +611,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>More</string>
+    <string>Edit/More</string>
    </property>
   </widget>
  </widget>

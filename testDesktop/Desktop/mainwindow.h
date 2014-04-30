@@ -25,6 +25,8 @@ public:
 private slots:
     void on_actionAdd_Task_triggered();
 
+    void on_actionRefresh_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *taskListArea;
@@ -32,10 +34,12 @@ private:
 
     Collection *tasks;
     QList <Task*> ordered;
+    QList <TaskWidget*> widgets;
 
     int elements;
 
     void refreshList();
+    void clearList();
     QColor generateRandomColor(QColor mix);
 
 };

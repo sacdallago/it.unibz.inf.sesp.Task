@@ -27,14 +27,23 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::refreshList(){
-
+void MainWindow::clearList(){
 
     if(elements != 0){
         delete taskListArea;
         taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
         ordered.clear();
+        foreach(TaskWidget* wt, widgets){
+            delete wt;
         }
+        widgets.clear();
+        }
+}
+
+void MainWindow::refreshList(){
+
+
+        clearList();
 
         ordered = tasks->getTodoList();
         this->elements = ordered.size();
@@ -46,7 +55,7 @@ void MainWindow::refreshList(){
 
     for (Task* t : ordered){
        TaskWidget * wt = new TaskWidget(NULL, tasks);
-
+       widgets.append(wt);
        /*
        pal.setColor(QPalette::Background, Qt::blue);
        wt->setAutoFillBackground(true);
@@ -62,6 +71,7 @@ void MainWindow::refreshList(){
     statusLabel->setText("Total tasks:  "+QString::number(elements));
 
     ui->scrollArea->repaint();
+    ui->scrollAreaWidgetContents->repaint();
     ui->statusbar->repaint();
 
 }
@@ -90,4 +100,9 @@ void MainWindow::on_actionAdd_Task_triggered()
   addDialog.exec();
 
   refreshList();
+}
+
+void MainWindow::on_actionRefresh_2_triggered()
+{
+    refreshList();
 }

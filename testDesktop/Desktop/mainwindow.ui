@@ -81,6 +81,7 @@
      <string>Task</string>
     </property>
     <addaction name="actionAdd_Task"/>
+    <addaction name="actionRefresh_2"/>
    </widget>
    <addaction name="menuHome"/>
    <addaction name="menuTask"/>
@@ -104,6 +105,16 @@
   <action name="actionAdd_Task">
    <property name="text">
     <string>Add Task</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </action>
+  <action name="actionRefresh_2">
+   <property name="text">
+    <string>Refresh</string>
    </property>
   </action>
  </widget>

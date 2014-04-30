@@ -5,9 +5,16 @@
 #include "task.h"
 #include <iostream>
 #include <collection.h>
+#include "moredialog.h"
 
 using namespace std;
 
+/**
+  Constructor
+ * @brief TaskWidget::TaskWidget
+ * @param parent
+ * @param tasks
+ */
 TaskWidget::TaskWidget(QWidget *parent ,Collection *tasks) :
     QWidget(parent),
 
@@ -20,6 +27,11 @@ TaskWidget::TaskWidget(QWidget *parent ,Collection *tasks) :
 
 }
 
+/**
+  Fill the widget with the information taken from a Task
+ * @brief TaskWidget::fillWidget
+ * @param t
+ */
 void TaskWidget::fillWidget(Task *t)
 { ui->titleLabel->setText(t->getName());
     ui->descriptionText->setText(t->getDescription());
@@ -38,7 +50,10 @@ TaskWidget::~TaskWidget()
     delete ui;
 }
 
-//Ask confirmation to delete task
+/**
+ * @brief TaskWidget::on_pushButton_3_clicked
+ *        Ask confirmation and then delete a Task from the Collection
+ */
 void TaskWidget::on_pushButton_3_clicked()
 {
 
@@ -57,5 +72,42 @@ void TaskWidget::on_pushButton_3_clicked()
 
 
 
+/**
+  Launch a more/edit menu box, MoreDialog.
+ * @brief TaskWidget::on_pushButton_2_clicked
+ */
+void TaskWidget::on_pushButton_2_clicked()
+{
+    MoreDialog more;
+    more.fillWidget(task);
+    int result = more.exec();
+    cout << result << endl;
+    if(result == 1){
 
+        this->task->setName( more.getTitle());
+        this->task->setDescription(more.getDescription());
+        if(more.getEffort() != NULL){
+            this->task->setDurationInH(more.getEffort());
+        }
+
+        if(more.getPriority() != NULL){
+            this->task->setImportance(more.getPriority());
+        }
+        cout << "Task updated: " << endl;
+        QString newt = this->task->printTask();
+       cout <<  newt.toStdString() << endl;
+        this->fillWidget(task);
+        this->repaint();
+    }
+}
+
+Task *TaskWidget::getTask() const
+{
+    return task;
+}
+
+void TaskWidget::setTask(Task *value)
+{
+    task = value;
+}
 

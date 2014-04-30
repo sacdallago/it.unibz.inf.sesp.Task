@@ -13,7 +13,7 @@ public:
 
     bool login(QString taskUser, QString taskPassword);
     bool createUser(QString taskUser, QString taskPassword);
-    bool createUser(QString taskUser);
+    bool deleteUser(QString taskUser);
     void logout();
 
     Task* getTask(qint64 id);

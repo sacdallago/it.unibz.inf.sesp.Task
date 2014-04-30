@@ -18,10 +18,15 @@ public:
     ~TaskWidget();
     void fillWidget(Task *t);
 
+    Task *getTask() const;
+    void setTask(Task *value);
+
 private slots:
 
 
     void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::TaskWidget *ui;

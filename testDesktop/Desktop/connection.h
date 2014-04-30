@@ -27,6 +27,7 @@ public:
     bool close();
 
     QMap<QString,QList<QVariant>* > select(QString relation, QList<QString>* columns= NULL ,QList<QString>* wheres = NULL);
+    QMap<QString,QList<QVariant>* > select(QString relation, QString wheres);
 
     QString whereCreator(QList<QString>* w = NULL);
     QString filterCreator(QList<QString>);

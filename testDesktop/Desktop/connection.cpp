@@ -91,6 +91,30 @@ QMap<QString, QList<QVariant>* > Connection::select(QString relation, QList<QStr
     return result;
 }
 
+QMap<QString,QList<QVariant>* > Connection::select(QString relation, QString where){
+    QMap<QString, QList<QVariant>* > result;
+    QString filter;
+    QList<QString>* filters = getColumnNames(relation);
+    filter = filterCreator(*filters);
+
+    QString q = "SELECT " + filter + "FROM " + relation + " " + where + ";";
+
+    cout << "Executing query: "<< q.toUtf8().constData() << endl;
+    QSqlQuery query;
+    query.exec(q);
+    while(query.next()){
+        int i = 0;
+        for(QString s : *filters){
+            if(!result.contains(s)){
+                result.insert(s,new QList<QVariant>());
+            }
+            result.value(s)->append(query.value(i));
+            i++;
+        }
+    }
+    return result;
+}
+
 Task* Connection::getTask(qint64 id){
     QList<QString> where;
     where.append("id=" + QString::number(id));

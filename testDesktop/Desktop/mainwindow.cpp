@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
 
      this->tasks = tasks;
      this->statusLabel = new QLabel();
+     this->basicColor = Qt::blue;
      elements = 0;
 
      ui->setupUi(this);
@@ -27,6 +28,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * @brief MainWindow::clearList clear old task data for refreshing
+ */
 void MainWindow::clearList(){
 
     if(elements != 0){
@@ -40,6 +44,9 @@ void MainWindow::clearList(){
         }
 }
 
+/**
+ * @brief MainWindow::refreshList refresh the task list on screen from the DB
+ */
 void MainWindow::refreshList(){
 
     clearList();
@@ -56,7 +63,7 @@ void MainWindow::refreshList(){
         TaskWidget * wt = new TaskWidget(NULL, tasks);
         widgets.append(wt);
 
-        pal.setColor(QPalette::Background, Qt::blue);
+        pal.setColor(QPalette::Background, basicColor);
         wt->setAutoFillBackground(true);
         wtColor = generateRandomColor(pal.color(QPalette::Background));
         pal.setColor(QPalette::Background, wtColor);
@@ -95,7 +102,7 @@ QColor MainWindow::generateRandomColor(QColor mix) {
 
     QColor color;
     color.setRgb(red, green, blue);
-    color.setAlpha(80);
+    color.setAlpha(90);
     return color;
 }
 
@@ -116,4 +123,18 @@ void MainWindow::on_actionAdd_Task_triggered()
 void MainWindow::on_actionRefresh_2_triggered()
 {
     refreshList();
+}
+
+/**
+ * @brief MainWindow::on_actionChange_color_triggered change the basic color palette for the tasks
+ */
+void MainWindow::on_actionChange_color_triggered()
+{
+    QColorDialog chooser;
+    int result = chooser.exec();
+
+    if(result == 1){
+        basicColor = chooser.selectedColor();
+        refreshList();
+    }
 }

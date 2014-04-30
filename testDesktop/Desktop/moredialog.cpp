@@ -2,18 +2,22 @@
 #include "ui_moredialog.h"
 #include <QtGui>
 
-MoreDialog::MoreDialog(QWidget *parent, TaskWidget *wt) :
+
+MoreDialog::MoreDialog(QWidget *parent, TaskWidget *wt, MainWindow *main) :
     QDialog(parent),
     ui(new Ui::MoreDialog)
 {
     this->wt = wt;
+    this->main = main;
     ui->setupUi(this);
     lslayout = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
 
 }
 
-
+/**
+ * @brief MoreDialog::getDependList get the task predecessors list
+ */
 void MoreDialog::getDependList(){
 
     for ( Task *father : *t->getPredecessors()) {
@@ -30,6 +34,10 @@ MoreDialog::~MoreDialog()
     delete ui;
 }
 
+/**
+ * @brief MoreDialog::fillWidget
+ * @param Task t
+ */
 void MoreDialog::fillWidget(Task *t)
 {
 
@@ -72,6 +80,16 @@ void MoreDialog::setT(Task *value)
 {
     t = value;
 }
+MainWindow *MoreDialog::getMain() const
+{
+    return main;
+}
+
+void MoreDialog::setMain(MainWindow *value)
+{
+    main = value;
+}
+
 
 
 Ui::MoreDialog *MoreDialog::getUi() const

@@ -2,37 +2,23 @@
 #include "ui_moredialog.h"
 #include <QtGui>
 
-/**
- * @brief MoreDialog::MoreDialog
- * @param parent
- * @param TaskWidget wt
- */
 MoreDialog::MoreDialog(QWidget *parent, TaskWidget *wt) :
     QDialog(parent),
     ui(new Ui::MoreDialog)
 {
     this->wt = wt;
     ui->setupUi(this);
-    //getDependList();
+    lslayout = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
 
 }
 
-/**
- * @brief MoreDialog::getDependList creates a QLabel list of predecessors for a single task
- */
-void MoreDialog::getDependList(){
-    dlist = this->wt->getTask()->getPredecessors();
 
-    this->lslayout = new QVBoxLayout(this->ui->scrollAreaWidgetContents);
-    int i;
-    if (dlist->isEmpty()){
-        cout << "The task : " << "is a root" << endl;
-    }
-    for ( i = 0; i<dlist->size(); i++) {
-       Task *t = dlist->at(i);
-       t->printTask();
-       QLabel *l = new QLabel(t->getName());
+void MoreDialog::getDependList(){
+
+    for ( Task *father : *t->getPredecessors()) {
+
+       QLabel *l = new QLabel(father->getName());
        lslayout->addWidget(l);
 
     }
@@ -44,54 +30,49 @@ MoreDialog::~MoreDialog()
     delete ui;
 }
 
-/**
- * @brief MoreDialog::fillWidget fills the editable widget with task information
- * @param Task t
- */
 void MoreDialog::fillWidget(Task *t)
 {
+
+    this->t = t;
     ui->titleLabel->setText(t->getName());
     ui->descriptionText->setText(t->getDescription());
     ui->prioritySpinBox->setValue(t->getImportance());
     ui->durationSpinBox->setValue(t->getDurationInH());
 
+    getDependList();
+
 }
 
-/**
- * @brief MoreDialog::getDescription get the description of a Task in plain text from the More Widget
- * @return QString
- */
 QString MoreDialog::getDescription() const {
 
    return ui->descriptionText->toPlainText();
 }
 
-/**
- * @brief MoreDialog::getTitle get the title from the More Widget
- * @return QString
- */
 QString MoreDialog::getTitle() const {
 
     return ui->titleLabel->toPlainText();
 }
 
-/**
- * @brief MoreDialog::getPriority
- * @return qint64
- */
 qint64 MoreDialog::getPriority() const {
 
     return ui->prioritySpinBox->value();
 }
 
-/**
- * @brief MoreDialog::getEffort
- * @return qint64
- */
 qint64 MoreDialog::getEffort() const {
+
 
     return ui->durationSpinBox->value();
 }
+Task *MoreDialog::getT() const
+{
+    return t;
+}
+
+void MoreDialog::setT(Task *value)
+{
+    t = value;
+}
+
 
 Ui::MoreDialog *MoreDialog::getUi() const
 {

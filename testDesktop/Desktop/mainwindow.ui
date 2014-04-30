@@ -88,11 +88,19 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionLog_in">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/buttons/images/PNG/Button Next.png</normaloff>:/buttons/images/PNG/Button Next.png</iconset>
+   </property>
    <property name="text">
     <string>Log in</string>
    </property>
   </action>
   <action name="actionLog_out">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/buttons/images/PNG/Button Previous.png</normaloff>:/buttons/images/PNG/Button Previous.png</iconset>
+   </property>
    <property name="text">
     <string>Log out</string>
    </property>
@@ -103,6 +111,10 @@
    </property>
   </action>
   <action name="actionAdd_Task">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/buttons/images/PNG/Button Add.png</normaloff>:/buttons/images/PNG/Button Add.png</iconset>
+   </property>
    <property name="text">
     <string>Add Task</string>
    </property>
@@ -113,6 +125,10 @@
    </property>
   </action>
   <action name="actionRefresh_2">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/buttons/images/PNG/Button Refresh.png</normaloff>:/buttons/images/PNG/Button Refresh.png</iconset>
+   </property>
    <property name="text">
     <string>Refresh</string>
    </property>

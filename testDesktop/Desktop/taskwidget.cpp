@@ -80,6 +80,7 @@ void TaskWidget::on_pushButton_2_clicked()
 {
     MoreDialog more;
     more.fillWidget(task);
+
     int result = more.exec();
     cout << result << endl;
     if(result == 1){

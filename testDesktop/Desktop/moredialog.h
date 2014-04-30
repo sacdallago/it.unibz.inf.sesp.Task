@@ -29,9 +29,13 @@ public:
      qint64  getPriority() const;
      qint64  getEffort() const;
 
+     Task *getT() const;
+     void setT(Task *value);
+
 private:
      Ui::MoreDialog *ui;
      TaskWidget *wt;
+     Task *t;
      QVBoxLayout *lslayout;
 
     QList<Task *> *dlist;

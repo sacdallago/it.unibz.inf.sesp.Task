@@ -5,6 +5,7 @@
 #include "task.h"
 #include "collection.h"
 
+
 namespace Ui {
 class TaskWidget;
 }
@@ -14,7 +15,7 @@ class TaskWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = new Collection() );
+    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = new Collection());
     ~TaskWidget();
     void fillWidget(Task *t);
 

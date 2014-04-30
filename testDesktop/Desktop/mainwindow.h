@@ -21,16 +21,20 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0, Collection *tasks = new Collection() );
     ~MainWindow();
+     void refreshList();
 
 private slots:
     void on_actionAdd_Task_triggered();
 
     void on_actionRefresh_2_triggered();
 
+    void on_actionChange_color_triggered();
+
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *taskListArea;
     QLabel *statusLabel;
+    QColor basicColor;
 
     Collection *tasks;
     QList <Task*> ordered;
@@ -38,7 +42,7 @@ private:
 
     int elements;
 
-    void refreshList();
+
     void clearList();
     QColor generateRandomColor(QColor mix);
 

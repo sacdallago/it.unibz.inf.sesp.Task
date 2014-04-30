@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "taskwidget.h"
 #include <QVBoxLayout>
+#include <mainwindow.h>
 
 namespace Ui {
 class MoreDialog;
@@ -14,7 +15,7 @@ class MoreDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit MoreDialog(QWidget *parent = 0, TaskWidget *wt = new TaskWidget());
+    explicit MoreDialog(QWidget *parent = 0, TaskWidget *wt = new TaskWidget(), MainWindow *main = new MainWindow());
     ~MoreDialog();
 
     TaskWidget *getWt() const;
@@ -29,9 +30,17 @@ public:
      qint64  getPriority() const;
      qint64  getEffort() const;
 
+     Task *getT() const;
+     void setT(Task *value);
+
+     MainWindow *getMain() const;
+     void setMain(MainWindow *value);
+
 private:
      Ui::MoreDialog *ui;
      TaskWidget *wt;
+     Task *t;
+     MainWindow *main;
      QVBoxLayout *lslayout;
 
     QList<Task *> *dlist;

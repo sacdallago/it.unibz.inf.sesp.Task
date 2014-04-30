@@ -15,12 +15,11 @@ using namespace std;
  * @param parent
  * @param tasks
  */
-TaskWidget::TaskWidget(QWidget *parent ,Collection *tasks) :
+TaskWidget::TaskWidget(QWidget *parent , Collection *tasks) :
     QWidget(parent),
 
     ui(new Ui::TaskWidget)
 {
-
     this->tasks = tasks;
     ui->setupUi(this);
 
@@ -80,6 +79,7 @@ void TaskWidget::on_pushButton_2_clicked()
 {
     MoreDialog more;
     more.fillWidget(task);
+
     int result = more.exec();
     cout << result << endl;
     if(result == 1){
@@ -95,9 +95,10 @@ void TaskWidget::on_pushButton_2_clicked()
         }
         cout << "Task updated: " << endl;
         QString newt = this->task->printTask();
-       cout <<  newt.toStdString() << endl;
+        cout <<  newt.toStdString() << endl;
         this->fillWidget(task);
-        this->repaint();
+        tasks->update(task);
+
     }
 }
 

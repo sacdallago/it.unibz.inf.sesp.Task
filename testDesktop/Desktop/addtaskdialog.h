@@ -1,6 +1,7 @@
 #ifndef ADDTASKDIALOG_H
 #define ADDTASKDIALOG_H
 
+#include "collection.h"
 #include <QDialog>
 
 namespace Ui {
@@ -12,7 +13,7 @@ class AddTaskDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddTaskDialog(QWidget *parent = 0);
+    explicit AddTaskDialog(QWidget *parent = 0, Collection *coll = NULL);
     ~AddTaskDialog();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 
 private:
     Ui::AddTaskDialog *ui;
+    Collection* coll;
 };
 
 #endif // ADDTASKDIALOG_H

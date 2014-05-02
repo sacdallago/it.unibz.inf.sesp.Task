@@ -31,6 +31,10 @@ MainWindow::~MainWindow()
 
 }
 
+/**
+ * @brief MainWindow::confirmLogin asks for a login . If it isn't succesfull asks again.
+ * If login is successfull , starts main window with user task.
+ */
 void MainWindow::confirmLogin(){
     QString error = "Error! Wrong username or password.\nPlease try again";
     LoginDialog log;
@@ -43,21 +47,29 @@ void MainWindow::confirmLogin(){
     }
 
     user = log.getUser();
+    userLabel = new QLabel("Welcome " + user+ " !  | " );
+    ui->statusbar->insertWidget(0, userLabel);
     log.close();
+
     cout << user.toStdString() << endl;
     login();
     refreshList();
 }
 
+/**
+ * @brief MainWindow::login populate tsk list from db of confirmed User.
+ */
 void MainWindow::login(){
 
         tasks->populateFromDatabase();
-
 }
 
+/**
+ * @brief MainWindow::clearList clear task list and widgets list
+ */
 void MainWindow::clearList(){
 
-    if(elements != 0){
+    if(this->elements != 0){
         delete taskListArea;
         taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
         ordered.clear();
@@ -179,15 +191,21 @@ void MainWindow::on_actionAbout_triggered()
 
 }
 
+/**
+ * @brief MainWindow::on_actionView_Done_task_triggered view done tasks in main window
+ */
 void MainWindow::on_actionView_Done_task_triggered()
 {
     listype = true;
     refreshList();
 }
 
-
-void MainWindow::on_actionView_Tdod_Tasks_triggered()
+/**
+ * @brief MainWindow::on_actionView_Todo_Tasks_triggered view todo tasks in Main Window
+ */
+void MainWindow::on_actionView_Todo_Tasks_triggered()
 {
     listype = false;
     refreshList();
 }
+

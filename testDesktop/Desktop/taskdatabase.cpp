@@ -99,7 +99,7 @@ bool TaskDatabase::deleteRelation(qint64 father, qint64 child){
 bool TaskDatabase::insertRelation(qint64 father, qint64 child){
     if(userID != 0){
         QSqlQuery query;
-        QString q = "INSERT INTO relation VALUES (" + QString::number(father) + "," + QString::number(child) + ");";
+        QString q = "INSERT INTO relation VALUES (" + QString::number(father) + "," + QString::number(child) + ", '" + username + "');\n";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
         return query.exec(q);
     } else {
@@ -111,7 +111,7 @@ bool TaskDatabase::insertRelations(Task *father){
     if(userID != 0){
         QString q = "";
         for(Task *child : *father->getPredecessors()){
-            q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ");\n";
+            q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ", '" + username + "');\n";
         }
         QSqlQuery query;
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
@@ -126,7 +126,7 @@ bool TaskDatabase::insertRelations(QList<Task *> *fathers, QList<Task *> *childr
         QString q = "";
         for(Task *father : *fathers){
             for(Task *child : *children){
-                q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ");\n";
+                q += "INSERT INTO relation VALUES (" + QString::number(father->getId()) + "," + QString::number(child->getId()) + ", '" + username + "');\n";
             }
         }
         QSqlQuery query;
@@ -174,7 +174,7 @@ bool TaskDatabase::clear(){
 bool TaskDatabase::signalDone(qint64 task){
     if(userID != 0){
         QSqlQuery query;
-        QString q = "DELETE FROM relation WHERE father = " + QString::number(task) + " OR child = " + QString::number(task) + ";";
+        QString q = "UPDATE SET (status) = (1) FROM task WHERE id = " + QString::number(task) + "; DELETE FROM relation WHERE father = " + QString::number(task) + " OR child = " + QString::number(task) + ";";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
         return query.exec(q);
     } else {

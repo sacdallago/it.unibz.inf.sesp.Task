@@ -93,7 +93,11 @@ bool Collection::removeItem(Task *t,bool updateDB){
 
 void Collection::done(Task * t){
     t->setStatus(1);
-    update(t);
+    t->getPredecessors()->clear();
+    t->getSuccessors()->clear();
+    connection->signalDone(t->getId());
+    all.removeOne(t);
+    doneTasks.append(t);
 }
 
 bool Collection::update(Task * t){

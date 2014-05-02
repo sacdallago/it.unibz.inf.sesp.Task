@@ -51,11 +51,7 @@ void MainWindow::confirmLogin(){
 
 void MainWindow::login(){
 
-        QMap<QString, QList<QVariant>* > taskslist = tasks->getConnection()->select("task");
-        QMap<QString, QList<QVariant>* > relations = tasks->getConnection()->select("relation");
-
-        TaskUtilities::tasksFromQuery(tasks, &taskslist);
-        TaskUtilities::relateFromQuery(tasks, &relations);
+        tasks->populateFromDatabase();
 
 }
 

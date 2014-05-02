@@ -100,6 +100,8 @@ public:
 
     void logout();
 
+    void populateFromDatabase();
+
     // Retrieval
     Task* get(qint64);
     QList<Task*>* getRoots();

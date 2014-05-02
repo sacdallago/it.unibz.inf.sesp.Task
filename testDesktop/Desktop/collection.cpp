@@ -18,8 +18,10 @@ void Collection::calculateMaxTime(){
 void Collection::addItem(Task *t){
     if(t->getStatus() != 0){
         doneTasks.append(t);
+        cout << "done" << endl;
     } else {
         all.append(t);
+        cout << "todo" << endl;
     }
     if(t->getDurationInH() > maxTime){
         maxTime = t->getDurationInH();
@@ -335,4 +337,11 @@ bool Collection::login(QString taskUser, QString taskPassword){
 
 void Collection::logout(){
     connection->logout();
+}
+
+void Collection::populateFromDatabase(){
+    QMap<QString, QList<QVariant>* > taskslist = connection->select("task", "username = '" + connection->getUsername() + "'");
+    QMap<QString, QList<QVariant>* > relations = connection->select("relation");
+    TaskUtilities::tasksFromQuery(this, &taskslist);
+    TaskUtilities::relateFromQuery(this, &relations);
 }

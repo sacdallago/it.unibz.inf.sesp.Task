@@ -97,7 +97,7 @@ QMap<QString,QList<QVariant>* > Connection::select(QString relation, QString whe
     QList<QString>* filters = getColumnNames(relation);
     filter = filterCreator(*filters);
 
-    QString q = "SELECT " + filter + "FROM " + relation + " " + where + ";";
+    QString q = "SELECT " + filter + "FROM " + relation + " WHERE " + where + ";";
 
     cout << "Executing query: "<< q.toUtf8().constData() << endl;
     QSqlQuery query;

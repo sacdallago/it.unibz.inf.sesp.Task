@@ -1,5 +1,10 @@
 #include "taskdatabase.h"
 
+
+QString TaskDatabase::getUsername() const {
+    return username;
+}
+
 TaskDatabase::TaskDatabase(QString driver, QString server, QString db, QString username, QString password) : Connection(driver,server,db,username,password){
     userID = 0;
     cout << "Remember to login." << endl;

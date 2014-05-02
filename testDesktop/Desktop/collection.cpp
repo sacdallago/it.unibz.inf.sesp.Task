@@ -18,10 +18,8 @@ void Collection::calculateMaxTime(){
 void Collection::addItem(Task *t){
     if(t->getStatus() != 0){
         doneTasks.append(t);
-        cout << "done" << endl;
     } else {
         all.append(t);
-        cout << "todo" << endl;
     }
     if(t->getDurationInH() > maxTime){
         maxTime = t->getDurationInH();
@@ -279,6 +277,9 @@ QList<Task*> Collection::getDoneList(){
 
 QList<Task*> Collection::getTodoList(){
     QList<Task*> list;
+    if(all.isEmpty()){
+        return list;
+    }
     qint64 maxDependency = 0;
     QList<Task*>* leaves = getLeaves();
     QHash<Task*, qint64> hash;

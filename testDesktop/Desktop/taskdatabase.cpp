@@ -157,7 +157,7 @@ bool TaskDatabase::removeTask(Task *t){
 bool TaskDatabase::update(Task *modified){
     if(userID != 0){
         QSqlQuery query;
-        QString q = "UPDATE SET (name, importance, duration, description, status) = ('"+modified->getName()+"',"+QString::number(modified->getImportance())+","+QString::number(modified->getDurationInH())+",'"+modified->getDescription()+"',"+QString::number(modified->getStatus())+") FROM task WHERE id=" + QString::number(modified->getId()) + ";";
+        QString q = "UPDATE task SET (name, importance, duration, description, status) = ('"+modified->getName()+"',"+QString::number(modified->getImportance())+","+QString::number(modified->getDurationInH())+",'"+modified->getDescription()+"',"+QString::number(modified->getStatus())+") WHERE id=" + QString::number(modified->getId()) + ";";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
         return query.exec(q);
     } else {
@@ -179,7 +179,7 @@ bool TaskDatabase::clear(){
 bool TaskDatabase::signalDone(qint64 task){
     if(userID != 0){
         QSqlQuery query;
-        QString q = "UPDATE SET (status) = (1) FROM task WHERE id = " + QString::number(task) + "; DELETE FROM relation WHERE father = " + QString::number(task) + " OR child = " + QString::number(task) + ";";
+        QString q = "UPDATE task SET status = 1 WHERE id = " + QString::number(task) + "; DELETE FROM relation WHERE father = " + QString::number(task) + " OR child = " + QString::number(task) + ";";
         cout << "Executing query: "<< q.toUtf8().constData() << endl;
         return query.exec(q);
     } else {

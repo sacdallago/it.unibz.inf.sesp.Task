@@ -47,7 +47,7 @@ void MainWindow::confirmLogin(){
     }
 
     user = log.getUser();
-    userLabel = new QLabel("Welcome " + user+ " !  | " );
+    userLabel = new QLabel("Welcome " + user+ " ! " );
     ui->statusbar->insertWidget(0, userLabel);
     log.close();
 

@@ -60,8 +60,6 @@ private slots:
      */
     void on_actionView_Todo_Tasks_triggered();
 
-    void on_actionView_Tdod_Tasks_triggered();
-
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *taskListArea;

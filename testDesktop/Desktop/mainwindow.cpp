@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <logindialog.h>
 
 using namespace std;
 MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
@@ -7,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
 
     ui(new Ui::MainWindow)
 {
-
+     this->listype = false;
      this->tasks = tasks;
      this->statusLabel = new QLabel();
      this->basicColor = Qt::blue;
@@ -17,20 +18,47 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
      ui->statusbar->addWidget(statusLabel);
      taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
-     refreshList();
-     cout << "TaskWidgets added from DB" <<endl;
+     confirmLogin();
+     cout << "\n[GUI] Main Window initialized" <<endl;
 
 }
 
 
 MainWindow::~MainWindow()
 {
+    clearList();
     delete ui;
+
 }
 
-/**
- * @brief MainWindow::clearList clear old task data for refreshing
- */
+void MainWindow::confirmLogin(){
+    QString error = "Error! Wrong username or password.\nPlease try again";
+    LoginDialog log;
+    log.exec();
+
+    while(!tasks->login(log.getUser(), log.getPassword())){
+
+        log.setMessage(&error);
+        log.exec();
+    }
+
+    user = log.getUser();
+    log.close();
+    cout << user.toStdString() << endl;
+    login();
+    refreshList();
+}
+
+void MainWindow::login(){
+
+        QMap<QString, QList<QVariant>* > taskslist = tasks->getConnection()->select("task");
+        QMap<QString, QList<QVariant>* > relations = tasks->getConnection()->select("relation");
+
+        TaskUtilities::tasksFromQuery(tasks, &taskslist);
+        TaskUtilities::relateFromQuery(tasks, &relations);
+
+}
+
 void MainWindow::clearList(){
 
     if(elements != 0){
@@ -51,13 +79,16 @@ void MainWindow::refreshList(){
 
     clearList();
 
-    ordered = tasks->getTodoList();
-    this->elements = ordered.size();
+    if(listype){
+        ordered = tasks->getDoneList();
+    }else{
+        ordered = tasks->getTodoList();
+    }
 
+    this->elements = ordered.size();
 
     QPalette pal(palette());
     QColor wtColor;
-
 
     for (Task* t : ordered){
         TaskWidget * wt = new TaskWidget(NULL, tasks);
@@ -137,4 +168,30 @@ void MainWindow::on_actionChange_color_triggered()
         basicColor = chooser.selectedColor();
         refreshList();
     }
+}
+
+/**
+ * @brief MainWindow::on_actionLog_in_triggered
+ */
+void MainWindow::on_actionLog_in_triggered()
+{
+    confirmLogin();
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+
+}
+
+void MainWindow::on_actionView_Done_task_triggered()
+{
+    listype = true;
+    refreshList();
+}
+
+
+void MainWindow::on_actionView_Tdod_Tasks_triggered()
+{
+    listype = false;
+    refreshList();
 }

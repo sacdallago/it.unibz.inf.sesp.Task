@@ -9,7 +9,7 @@ private:
     qint64 userID;
     QString username;
 public:
-    TaskDatabase(QString driver = "QPSQL", QString server = "ufficio.zucchitours.com", QString db = "sesp_task", QString username = "sesp_tasker", QString password = "7m6wvT&0");
+    TaskDatabase(QString driver = "QPSQL", QString server = "ufficio.zucchitours.com", QString db = "sesp_task_test", QString username = "sesp_tasker", QString password = "7m6wvT&0");
 
     bool login(QString taskUser, QString taskPassword);
     bool createUser(QString taskUser, QString taskPassword);

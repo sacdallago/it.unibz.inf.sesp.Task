@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     taskwidget.cpp \
     taskdatabase.cpp \
     relations.cpp \
-    moredialog.cpp
+    moredialog.cpp \
+    logindialog.cpp
 
 HEADERS  += widget.h \
     connection.h \
@@ -38,14 +39,16 @@ HEADERS  += widget.h \
     taskwidget.h \
     taskdatabase.h \
     relations.h \
-    moredialog.h
+    moredialog.h \
+    logindialog.h
 
 FORMS    += widget.ui \
     mainwindow.ui \
     addtaskdialog.ui \
     taskwidget.ui \
     relations.ui \
-    moredialog.ui
+    moredialog.ui \
+    logindialog.ui
 
 CONFIG += c++11
 

@@ -112,3 +112,8 @@ void TaskWidget::setTask(Task *value)
     task = value;
 }
 
+
+void TaskWidget::on_pushButton_clicked()
+{
+    tasks->done(this->task);
+}

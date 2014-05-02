@@ -341,7 +341,7 @@ void Collection::logout(){
 
 void Collection::populateFromDatabase(){
     QMap<QString, QList<QVariant>* > taskslist = connection->select("task", "username = '" + connection->getUsername() + "'");
-    QMap<QString, QList<QVariant>* > relations = connection->select("relation");
+    QMap<QString, QList<QVariant>* > relations = connection->select("relation", "username = '" + connection->getUsername() + "'");
     TaskUtilities::tasksFromQuery(this, &taskslist);
     TaskUtilities::relateFromQuery(this, &relations);
 }

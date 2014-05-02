@@ -1,9 +1,7 @@
 #include "collection.h"
 #include "taskutilities.h"
 
-Collection::Collection(Connection *c) {
-    rootsUpToDate = true;
-    leavesUpToDate = true;
+Collection::Collection(TaskDatabase *c) {
     connection = c;
     maxTime = 0;
 }
@@ -18,12 +16,14 @@ void Collection::calculateMaxTime(){
 }
 
 void Collection::addItem(Task *t){
-    all.append(t);
+    if(t->getStatus() != 0){
+        doneTasks.append(t);
+    } else {
+        all.append(t);
+    }
     if(t->getDurationInH() > maxTime){
         maxTime = t->getDurationInH();
     }
-    rootsUpToDate = false;
-    leavesUpToDate = false;
 }
 
 Task* Collection::addItem(QString name, qint64 importance, qint64 duration, QString description, qint64 status){
@@ -34,7 +34,7 @@ Task* Collection::addItem(QString name, qint64 importance, qint64 duration, QStr
     return toBeAdded;
 }
 
-Connection *Collection::getConnection(){
+TaskDatabase *Collection::getConnection(){
     return connection;
 }
 
@@ -62,8 +62,6 @@ bool Collection::removeItem(Task *t,bool updateDB){
             if(t->getDurationInH() == maxTime){
                 calculateMaxTime();
             }
-            rootsUpToDate = false;
-            leavesUpToDate = false;
             return true;
         } else {
             return false;
@@ -86,13 +84,16 @@ bool Collection::removeItem(Task *t,bool updateDB){
             if(t->getDurationInH() == maxTime){
                 calculateMaxTime();
             }
-            rootsUpToDate = false;
-            leavesUpToDate = false;
             return true;
         } else {
             return false;
         }
     }
+}
+
+void Collection::done(Task * t){
+    t->setStatus(1);
+    update(t);
 }
 
 bool Collection::update(Task * t){
@@ -105,12 +106,8 @@ bool Collection::removeItem(qint64 id,bool updateDB){
 
 void Collection::emptyCollection(bool updateDB){
     all.clear();
-    roots.clear();
-    leaves.clear();
-    rootsUpToDate = true;
-    leavesUpToDate = true;
     if(updateDB){
-       connection->clear();
+        connection->clear();
     }
 }
 
@@ -128,8 +125,6 @@ bool Collection::relate(Task* predecessor,Task* successor,bool updateDB){
     Task* suc = successor;
     if(pre != NULL && suc != NULL){
         if(TaskUtilities::relate(pre,suc)){
-            rootsUpToDate = false;
-            leavesUpToDate = false;
             if(updateDB){
                 connection->insertRelation(predecessor->getId(),successor->getId());
             }
@@ -146,8 +141,6 @@ bool Collection::relate(qint64 predecessor,qint64 successor,bool updateDB){
     Task* suc = get(successor);
     if(pre != NULL && suc != NULL){
         if(TaskUtilities::relate(pre,suc)){
-            rootsUpToDate = false;
-            leavesUpToDate = false;
             if(updateDB){
                 connection->insertRelation(predecessor,successor);
             }
@@ -164,8 +157,6 @@ bool Collection::unrelate(qint64 predecessor,qint64 successor, bool updateDB){
     Task* suc = get(successor);
     if(pre != NULL && suc != NULL){
         if(pre->getSuccessors()->contains(suc)){
-            rootsUpToDate = false;
-            leavesUpToDate = false;
             if(updateDB){
                 connection->deleteRelation(predecessor,successor);
             }
@@ -184,8 +175,6 @@ bool Collection::unrelate(Task* predecessor,Task* successor, bool updateDB){
     Task* suc = successor;
     if(pre != NULL && suc != NULL){
         if(pre->getSuccessors()->contains(suc)){
-            rootsUpToDate = false;
-            leavesUpToDate = false;
             if(updateDB){
                 connection->deleteRelation(predecessor->getId(),successor->getId());
             }
@@ -214,15 +203,12 @@ void upwalk(Task *t, QList<Task*> *visited, QList<Task*> *roots){
 }
 
 QList<Task*>* Collection::getRoots(){
-    if(!rootsUpToDate){
-        roots.clear();
-        QList<Task*> visited;
-        for(Task* t : all){
-            upwalk(t,&visited,&roots);
-        }
+    QList<Task*> * roots = new QList<Task*>();
+    QList<Task*> visited;
+    for(Task* t : all){
+        upwalk(t,&visited,roots);
     }
-    rootsUpToDate = true;
-    return &roots;
+    return roots;
 }
 
 void downwalk(Task *t, QList<Task*> *visited, QList<Task*> *leaves){
@@ -240,15 +226,12 @@ void downwalk(Task *t, QList<Task*> *visited, QList<Task*> *leaves){
 }
 
 QList<Task*>* Collection::getLeaves(){
-    if(!leavesUpToDate){
-        leaves.clear();
-        QList<Task*> visited;
-        for(Task* t : all){
-            downwalk(t,&visited,&leaves);
-        }
+    QList<Task*> * leaves = new QList<Task*>();
+    QList<Task*> visited;
+    for(Task* t : all){
+        downwalk(t,&visited,leaves);
     }
-    leavesUpToDate = true;
-    return &leaves;
+    return leaves;
 }
 
 const QList<Task*>* Collection::getAll(){
@@ -284,7 +267,10 @@ void todoListAccessory(Task *t, QHash<Task*,qint64> *map, qint64 level, qint64 *
     }
 }
 
-//VERY BAD!!! O(n4)
+QList<Task*> Collection::getDoneList(){
+    return doneTasks;
+}
+
 QList<Task*> Collection::getTodoList(){
     QList<Task*> list;
     qint64 maxDependency = 0;
@@ -337,4 +323,12 @@ QList<Task*> Collection::getTodoList(){
     }
 
     return list;
+}
+
+bool Collection::login(QString taskUser, QString taskPassword){
+    return connection->login(taskUser,taskPassword);
+}
+
+void Collection::logout(){
+    connection->logout();
 }

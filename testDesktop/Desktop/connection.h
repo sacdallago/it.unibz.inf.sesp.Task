@@ -34,7 +34,7 @@ public:
     QList<QString> *getColumnNames(QString relation);
     QString printQuery(const QMap<QString,QList<QVariant>* >*, bool verbose = false);
 
-    //Project related
+    /*Project related
     Task* getTask(qint64 id);
     Task* insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status);
     bool insertTask(Task *);
@@ -45,6 +45,7 @@ public:
     bool insertRelations(QList<Task*> *fathers, QList<Task*> *children);
     bool update(Task *modified);
     bool clear();
+    */
 
 
     //destroyer closes connection my default

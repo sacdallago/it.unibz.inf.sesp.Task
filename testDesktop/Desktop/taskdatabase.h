@@ -18,6 +18,7 @@ public:
 
     Task* getTask(qint64 id);
     Task* insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status);
+    bool signalDone(qint64 task);
     bool insertTask(Task *);
     bool removeTask(Task *);
     bool deleteRelation(qint64 father, qint64 child);

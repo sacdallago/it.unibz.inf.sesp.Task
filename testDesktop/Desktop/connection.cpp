@@ -115,6 +115,30 @@ QMap<QString,QList<QVariant>* > Connection::select(QString relation, QString whe
     return result;
 }
 
+QString Connection::printQuery(const QMap<QString, QList<QVariant> *> *query, bool verbose){
+    QString result="";
+    for (QString s : query->keys()){
+        result += s + "\t\t";
+        foreach (QVariant t, *query->value(s)){
+            result += t.toString() + "\t";
+        }
+        result += "\n";
+    }
+    if(verbose){
+        cout << result.toUtf8().constData();
+    }
+    return result;
+}
+
+Connection::~Connection(){
+    close();
+}
+
+
+
+
+/*
+ *
 Task* Connection::getTask(qint64 id){
     QList<QString> where;
     where.append("id=" + QString::number(id));
@@ -176,21 +200,6 @@ bool Connection::insertRelations(QList<Task *> *fathers, QList<Task *> *children
     return query.exec(q);
 }
 
-QString Connection::printQuery(const QMap<QString, QList<QVariant> *> *query, bool verbose){
-    QString result="";
-    for (QString s : query->keys()){
-        result += s + "\t\t";
-        foreach (QVariant t, *query->value(s)){
-            result += t.toString() + "\t";
-        }
-        result += "\n";
-    }
-    if(verbose){
-        cout << result.toUtf8().constData();
-    }
-    return result;
-}
-
 bool Connection::removeTask(Task *t){
     QSqlQuery query;
     QString q = "DELETE FROM task WHERE id=" + QString::number(t->getId()) + ";";
@@ -211,7 +220,4 @@ bool Connection::clear(){
     cout << "Executing query: "<< q.toUtf8().constData() << endl;
     return query.exec(q);
 }
-
-Connection::~Connection(){
-    close();
-}
+*/

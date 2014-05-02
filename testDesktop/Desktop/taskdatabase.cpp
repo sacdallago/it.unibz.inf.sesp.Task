@@ -170,3 +170,14 @@ bool TaskDatabase::clear(){
         return false;
     }
 }
+
+bool TaskDatabase::signalDone(qint64 task){
+    if(userID != 0){
+        QSqlQuery query;
+        QString q = "DELETE FROM relation WHERE father = " + QString::number(task) + " OR child = " + QString::number(task) + ";";
+        cout << "Executing query: "<< q.toUtf8().constData() << endl;
+        return query.exec(q);
+    } else {
+        return false;
+    }
+}

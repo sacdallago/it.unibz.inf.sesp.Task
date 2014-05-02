@@ -3,20 +3,17 @@
 
 #include <QList>
 #include "task.h"
-#include "connection.h"
+#include "taskdatabase.h"
 
 class Collection {
 private:
-    QList<Task*> roots;
-    QList<Task*> leaves;
     QList<Task*> all;
-    bool rootsUpToDate;
-    bool leavesUpToDate;
+    QList<Task*> doneTasks;
     qint64 maxTime;
     void calculateMaxTime();
-    Connection *connection;
+    TaskDatabase *connection;
 public:
-    Collection(Connection * c = new Connection());
+    Collection(TaskDatabase * c = new TaskDatabase());
 
     //Operational -- insertions and deletions of new tasks + optional update reflection on DB.
     /*!
@@ -93,14 +90,25 @@ public:
      */
     bool update(Task *);
 
+    /*!
+     * \brief done Signals that a task has been done. Will take care of removing all relations and setting it's status to done!
+     * \param d The task that has been done
+     */
+    void done(Task * d);
+
+    bool login(QString taskUser, QString taskPassword);
+
+    void logout();
+
     // Retrieval
     Task* get(qint64);
     QList<Task*>* getRoots();
     QList<Task*>* getLeaves();
+    QList<Task*> getDoneList();
     QList<Task*> getTodoList();
     const QList<Task*>* getAll();
     QString printForest();
-    Connection *getConnection();
+    TaskDatabase *getConnection();
 };
 
 #endif // COLLECTION_H

@@ -6,7 +6,9 @@ LoginDialog::LoginDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::LoginDialog)
 {
+
     ui->setupUi(this);
+    exit = false;
 
 }
 
@@ -19,12 +21,23 @@ void LoginDialog::on_buttonBox_accepted()
 {
    user = ui->userLineEdit->text();
    password = ui->passwordLineEdit->text();
+
 }
 
 void LoginDialog::on_buttonBox_rejected()
 {
-
+    exit = true;
 }
+bool LoginDialog::getExit() const
+{
+    return exit;
+}
+
+void LoginDialog::setExit(bool value)
+{
+    exit = value;
+}
+
 
 void LoginDialog::setMessage(QString *message){
 

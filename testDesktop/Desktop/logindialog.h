@@ -26,6 +26,9 @@ public:
 
     void setMessage(QString *message);
 
+    bool getExit() const;
+    void setExit(bool value);
+
 private slots:
     void on_buttonBox_accepted();
 
@@ -35,6 +38,7 @@ private:
     Ui::LoginDialog *ui;
     QString user;
     QString password;
+    bool exit;
 
 };
 

@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
      ui->statusbar->addWidget(statusLabel);
      taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
-     confirmLogin();
      cout << "\n[GUI] Main Window initialized" <<endl;
 
 }
@@ -33,31 +32,36 @@ MainWindow::~MainWindow()
 
 /**
  * @brief MainWindow::confirmLogin asks for a login . If it isn't succesfull asks again.
- * If login is successfull , starts main window with user task.
+ * If login is successfull, populate main window with user task.
  */
 void MainWindow::confirmLogin(){
     QString error = "Error! Wrong username or password.\nPlease try again";
     LoginDialog log;
     log.exec();
 
-    while(!tasks->login(log.getUser(), log.getPassword())){
+    while(!log.getExit()){
 
-        log.setMessage(&error);
-        log.exec();
+        if(!tasks->login(log.getUser(), log.getPassword())){
+            log.setMessage(&error);
+            log.exec();
+        }else{
+            log.setExit(true);
+            user = log.getUser();
+            userLabel = new QLabel("Welcome " + user+ " ! " );
+            ui->statusbar->insertWidget(0, userLabel);
+            log.close();
+
+            cout << user.toStdString() << endl;
+            login();
+            refreshList();
+        }
     }
 
-    user = log.getUser();
-    userLabel = new QLabel("Welcome " + user+ " ! " );
-    ui->statusbar->insertWidget(0, userLabel);
-    log.close();
 
-    cout << user.toStdString() << endl;
-    login();
-    refreshList();
 }
 
 /**
- * @brief MainWindow::login populate tsk list from db of confirmed User.
+ * @brief MainWindow::login populate task list from db of confirmed User.
  */
 void MainWindow::login(){
 

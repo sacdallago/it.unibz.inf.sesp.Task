@@ -23,11 +23,11 @@ TaskWidget::TaskWidget(QWidget *parent , Collection *tasks) :
     this->tasks = tasks;
     ui->setupUi(this);
 
-
 }
 
 /**
-  Fill the widget with the information taken from a Task
+  Fill the widget with the information taken from a Task.
+  Delete "done" Button if status is not 0.
  * @brief TaskWidget::fillWidget
  * @param t
  */
@@ -42,6 +42,9 @@ void TaskWidget::fillWidget(Task *t)
     ui->effortValueLabel->setText(effort);
 
     this->task = t;
+    if(task->getStatus()!=0){
+        delete ui->pushButton;
+    }
 }
 
 TaskWidget::~TaskWidget()
@@ -60,12 +63,7 @@ void TaskWidget::on_pushButton_3_clicked()
       reply = QMessageBox::question(this, "Confirm", "Delete Task?",
                                     QMessageBox::Yes|QMessageBox::No);
       if (reply == QMessageBox::Yes) {
-        cout << "Yes was clicked" << endl;
-        //cout << "Deleting task n: " << this->task->getId() << " Name: " << this->task->getName() << endl;
         tasks->removeItem(this->task);
-
-      } else {
-        cout << "Yes was *not* clicked";
       }
 }
 
@@ -86,19 +84,11 @@ void TaskWidget::on_pushButton_2_clicked()
 
         this->task->setName( more.getTitle());
         this->task->setDescription(more.getDescription());
-        if(more.getEffort() != NULL){
-            this->task->setDurationInH(more.getEffort());
-        }
+        this->task->setDurationInH(more.getEffort());
+        this->task->setImportance(more.getPriority());
 
-        if(more.getPriority() != NULL){
-            this->task->setImportance(more.getPriority());
-        }
-        cout << "Task updated: " << endl;
-        QString newt = this->task->printTask();
-        cout <<  newt.toStdString() << endl;
         this->fillWidget(task);
         tasks->update(task);
-
     }
 }
 

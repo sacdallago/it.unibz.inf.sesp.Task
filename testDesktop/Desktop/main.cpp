@@ -11,6 +11,7 @@ int main(int argc, char *argv[]) {
 
         MainWindow w (0, &tasks);
         w.show();
+        w.confirmLogin();
 
         return a.exec();
 

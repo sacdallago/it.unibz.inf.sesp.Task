@@ -21,7 +21,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0, Collection *tasks = new Collection());
     ~MainWindow();
-     void refreshList();
+    void confirmLogin();
+    void refreshList();
 
 private slots:
      /**
@@ -80,7 +81,6 @@ private:
      */
     void clearList();
     void login();
-    void confirmLogin();
     QColor generateRandomColor(QColor mix);
 
 };

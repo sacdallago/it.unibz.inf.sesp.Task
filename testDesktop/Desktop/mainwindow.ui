@@ -72,6 +72,7 @@
     </property>
     <addaction name="actionLog_in"/>
     <addaction name="separator"/>
+    <addaction name="actionExit"/>
     <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuTask">
@@ -79,6 +80,7 @@
      <string>Task</string>
     </property>
     <addaction name="actionAdd_Task"/>
+    <addaction name="actionAdd_Relation"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -112,6 +114,9 @@
    <property name="text">
     <string>About</string>
    </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
   </action>
   <action name="actionAdd_Task">
    <property name="icon">
@@ -130,6 +135,9 @@
    <property name="text">
     <string>Refresh</string>
    </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
   </action>
   <action name="actionChange_color">
    <property name="icon">
@@ -144,10 +152,34 @@
    <property name="text">
     <string>Done Tasks</string>
    </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
   </action>
   <action name="actionView_Todo_Tasks">
    <property name="text">
     <string>Todo Tasks</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/buttons/images/PNG/Button Previous.png</normaloff>:/buttons/images/PNG/Button Previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAdd_Relation">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/buttons/images/PNG/Button Add.png</normaloff>:/buttons/images/PNG/Button Add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Relation</string>
    </property>
   </action>
  </widget>

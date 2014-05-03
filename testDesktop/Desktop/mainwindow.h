@@ -61,6 +61,10 @@ private slots:
      */
     void on_actionView_Todo_Tasks_triggered();
 
+    void on_actionExit_triggered();
+
+    void on_actionAdd_Relation_triggered();
+
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *taskListArea;

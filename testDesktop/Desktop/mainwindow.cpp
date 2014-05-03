@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <logindialog.h>
+#include <relations.h>
 
 using namespace std;
 MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
@@ -11,10 +12,11 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
      this->listype = false;
      this->tasks = tasks;
      this->statusLabel = new QLabel();
+     this->userLabel = new QLabel();
      this->basicColor = Qt::blue;
-     elements = 0;
 
      ui->setupUi(this);
+     ui->statusbar->addWidget(userLabel);
      ui->statusbar->addWidget(statusLabel);
      taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
@@ -36,19 +38,20 @@ MainWindow::~MainWindow()
  */
 void MainWindow::confirmLogin(){
     QString error = "Error! Wrong username or password.\nPlease try again";
+
     LoginDialog log;
     log.exec();
 
-    while(!log.getExit()){
+    while(!log.getExit()){      
 
         if(!tasks->login(log.getUser(), log.getPassword())){
             log.setMessage(&error);
             log.exec();
         }else{
+
+            tasks->login(log.getUser(), log.getPassword());
             log.setExit(true);
             user = log.getUser();
-            userLabel = new QLabel("Welcome " + user+ " ! " );
-            ui->statusbar->insertWidget(0, userLabel);
             log.close();
 
             cout << user.toStdString() << endl;
@@ -65,6 +68,7 @@ void MainWindow::confirmLogin(){
  */
 void MainWindow::login(){
 
+        userLabel->setText("Welcome " + user+ " ! " );
         tasks->populateFromDatabase();
 }
 
@@ -73,7 +77,7 @@ void MainWindow::login(){
  */
 void MainWindow::clearList(){
 
-    if(this->elements != 0){
+    if(elements != 0){
         delete taskListArea;
         taskListArea = new QVBoxLayout(ui->scrollAreaWidgetContents);
         ordered.clear();
@@ -97,7 +101,7 @@ void MainWindow::refreshList(){
         ordered = tasks->getTodoList();
     }
 
-    this->elements = ordered.size();
+    elements = ordered.size();
 
     QPalette pal(palette());
     QColor wtColor;
@@ -154,10 +158,13 @@ QColor MainWindow::generateRandomColor(QColor mix) {
  */
 void MainWindow::on_actionAdd_Task_triggered()
 {
-    AddTaskDialog addDialog;
-    addDialog.exec();
-
-    refreshList();
+    if(tasks->getConnection()->isUserLogged()){
+        AddTaskDialog addDialog(0, tasks);
+        addDialog.exec();
+        refreshList();
+    } else {
+        confirmLogin();
+    }
 }
 
 /**
@@ -180,16 +187,20 @@ void MainWindow::on_actionChange_color_triggered()
         basicColor = chooser.selectedColor();
         refreshList();
     }
+    chooser.close();
 }
 
 /**
- * @brief MainWindow::on_actionLog_in_triggered
+ * @brief MainWindow::on_actionLog_in_triggered launches log in dialog.
  */
 void MainWindow::on_actionLog_in_triggered()
 {
     confirmLogin();
 }
 
+/**
+ * @brief MainWindow::on_actionAbout_triggered shows an about dialog of the program.
+ */
 void MainWindow::on_actionAbout_triggered()
 {
 
@@ -213,3 +224,26 @@ void MainWindow::on_actionView_Todo_Tasks_triggered()
     refreshList();
 }
 
+/**
+ * @brief MainWindow::on_actionExit_triggered exit and clear data.
+ */
+void MainWindow::on_actionExit_triggered()
+{
+    clearList();
+    tasks->logout();
+    exit(0);
+}
+
+/**
+ * @brief MainWindow::on_actionAdd_Relation_triggered launches the relation add dialog.
+ */
+void MainWindow::on_actionAdd_Relation_triggered()
+{
+    if(tasks->getConnection()->isUserLogged()){
+    Relations rDialog (0, tasks);
+    rDialog.exec();
+    refreshList();
+    }else{
+       confirmLogin();
+    }
+}

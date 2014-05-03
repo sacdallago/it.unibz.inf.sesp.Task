@@ -79,14 +79,15 @@ void Relations::on_pushButton_2_clicked()//OK
 
             }else{
                 QMessageBox msg;
-                msg.setText("the relation wasn't added because caused a loop.");
+                msg.setText("The relation cannot be added because causes a loop.");
                 msg.exec();
 
             }
         }
          QMessageBox msg;
-         msg.setText("DONE!");
+         msg.setText("Relation updated!");
          msg.exec();
+         this->close();
     } else {
         QMessageBox msg;
         msg.setText("ERROR - Two of the tasks selected are the same. Please change them");

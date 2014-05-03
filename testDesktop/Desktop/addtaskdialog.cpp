@@ -37,7 +37,7 @@ void AddTaskDialog::on_buttonBox_accepted()
                           newTask.getImportance(),
                           newTask.getDurationInH(),
                           newTask.getDescription(),
-                          1);
+                          0);
 }
 
 void AddTaskDialog::on_buttonBox_rejected()
@@ -45,8 +45,3 @@ void AddTaskDialog::on_buttonBox_rejected()
 
 }
 
-//Generate a list of available Task for dependencies
-void AddTaskDialog::on_dependsOnComboBox_activated(const QString &arg1)
-{
-
-}

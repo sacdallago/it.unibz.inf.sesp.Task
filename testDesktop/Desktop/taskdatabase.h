@@ -27,6 +27,7 @@ public:
     bool insertRelations(QList<Task*> *fathers, QList<Task*> *children);
     bool update(Task *modified);
     bool clear();
+    bool isUserLogged();
     QString getUsername() const;
 };
 

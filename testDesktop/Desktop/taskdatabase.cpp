@@ -56,6 +56,10 @@ void TaskDatabase::logout(){
     userID = 0;
 }
 
+bool TaskDatabase::isUserLogged(){
+    return (userID != 0);
+}
+
 
 Task* TaskDatabase::getTask(qint64 id){
     if(userID != 0){

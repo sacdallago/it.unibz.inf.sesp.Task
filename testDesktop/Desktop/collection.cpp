@@ -297,7 +297,8 @@ QList<Task*> Collection::getTodoList(){
     qint64 maxDependency = 0;
     QList<Task*>* leaves = getLeaves();
     QHash<Task*, qint64> hash;
-    QMap<qreal, Task*> map;
+    QMap<qreal, QMap<QString, Task*>* > map;
+    qint64 noOfTasks = all.size();
 
     for(Task *leaf : *leaves){
         todoListAccessory(leaf,&hash, 1, &maxDependency);
@@ -310,32 +311,40 @@ QList<Task*> Collection::getTodoList(){
         qreal rank = ((key->getImportance()/2.0)-((key->getDurationInH()*(10.0/maxTime))/2.0)+5)*(5.0/6.0)+(hash.value(key)*10.0/maxDependency)*(1.0/6.0);
         if(map.contains(-rank)){
             cout << "Duplicate!!!!" << endl;
+        } else {
+            map.insert(-rank, new QMap<QString, Task*>());
         }
-        map.insert(-rank,key);
+        map.value(-rank)->insert(key->getTime(),key);
     }
 
-    QMap<qreal, Task*>::iterator i;
-
     bool wantNext = false;
-    while(!map.empty()){
-        for(i = map.begin(); i != map.end() ; ++i){
-            wantNext = false;
-            cout << "Now looking at: " << map[i.key()]->getId() << "\n";
-            foreach (Task *predecessor, *map[i.key()]->getPredecessors()){
-                if(!list.contains(predecessor)){
-                    cout << "\tList doesn't contain " << predecessor->getId() << endl;
-                    wantNext = true;
+
+    QMap<qreal, QMap<QString,Task*> * >::iterator j;
+    QMap<QString, Task* >::iterator k;
+    for(qint64 count = 0; count < noOfTasks; count++){
+        for(j = map.begin(); j != map.end() ; ++j){
+            for(k = map[j.key()]->begin(); k != map[j.key()]->end(); ++k){
+                wantNext = false;
+                cout << "Now looking at: " << map[j.key()]->value(k.key())->getId() << "\n";
+                foreach (Task *predecessor, *map[j.key()]->value(k.key())->getPredecessors()){
+                    if(!list.contains(predecessor)){
+                        cout << "\tList doesn't contain " << predecessor->getId() << endl;
+                        wantNext = true;
+                        break;
+                    }
+                }
+                if(!wantNext){
+                    cout << "----->All dependencies met, adding "<< map[j.key()]->value(k.key())->getId() << endl;
+                    list.append(map[j.key()]->value(k.key()));
+                    map[j.key()]->remove(k.key());
                     break;
                 }
             }
-            if(!wantNext){
-                cout << "----->All dependencies met, adding "<< map.value(i.key())->getId() << endl;
-                list.append(map.value(i.key()));
-                map.remove(i.key());
-                break;
+            if(map[j.key()]->isEmpty()){
+                delete map[j.key()];
+                map.remove(j.key());
             }
         }
-        cout << endl;
     }
 
     cout << "Order in which you should approach tasks:" << endl;

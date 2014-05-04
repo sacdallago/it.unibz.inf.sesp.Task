@@ -13,9 +13,8 @@ using namespace std;
 
 namespace Status{
     enum {
-        DONE = -1,
         TODO = 0,
-        ACTIVE = 1
+        DONE = 1
     };
 }
 

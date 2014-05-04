@@ -9,6 +9,24 @@
 class Connection {
 protected:
     QSqlDatabase db;
+    /*!
+     * \brief whereCreator creates a string representing the "where" part of a sql query
+     * \param w a list of where conditions, su as "age > 30".
+     * \return a string representing the "where" part of a sql query
+     */
+    QString whereCreator(QList<QString>* w = NULL);
+    /*!
+     * \brief filterCreator creates a string representing the select conditions. For example, if you pass a list containing
+     * "id", "age", it will create a string "id,age" to put in the "select" clause of the sql query.
+     * \return a string representing the "select" part of the query
+     */
+    QString filterCreator(QList<QString>);
+    /*!
+     * \brief getColumnNames creates a string representing the select conditions such that they map every column in the database.
+     * \param relation the name of the table to map the columns
+     * \return a string representing the "select" part of the query
+     */
+    QList<QString> *getColumnNames(QString relation);
 public:
     /*!
      * \brief Creates the connection
@@ -26,29 +44,32 @@ public:
      */
     bool close();
 
+    /*!
+     * \brief select performs select operation on database
+     * \param relation a strig representing the table or relation, such as "professors"
+     * \param columns a pointer to a list of strings, by default set to null (will query the database to get all the column names
+     * for the given table). If you want to select the "id" and "age" from the table professors, here you would bass a pointer to
+     * a list containing l[1]="id", l[2]="age".
+     * \param wheres a pointer to a list of strings, by default se to null, so that no filtering applies to the result set. Works
+     * as the columns parameter.
+     * \return returns a map where the key is the column name and the value a list of untipified variables
+     */
     QMap<QString,QList<QVariant>* > select(QString relation, QList<QString>* columns= NULL ,QList<QString>* wheres = NULL);
+    /*!
+     * \brief select performs select operation on database
+     * \param relation a strig representing the table or relation, such as "professors"
+     * \param wheres a string representing a condition, such as "age > 30"
+     * \return
+     */
     QMap<QString,QList<QVariant>* > select(QString relation, QString wheres);
 
-    QString whereCreator(QList<QString>* w = NULL);
-    QString filterCreator(QList<QString>);
-    QList<QString> *getColumnNames(QString relation);
+    /*!
+     * \brief printQuery fed with a query, will print every value in it in the columns indicated by the key
+     * \param verbose prints the thole thing to the cout destination
+     * \return returns the printed query as string, for further user
+     */
     QString printQuery(const QMap<QString,QList<QVariant>* >*, bool verbose = false);
 
-    /*Project related
-    Task* getTask(qint64 id);
-    Task* insertTask(QString name, qint64 importance, qint64 duration, QString description, qint64 status);
-    bool insertTask(Task *);
-    bool removeTask(Task *);
-    bool deleteRelation(qint64 father, qint64 child);
-    bool insertRelation(qint64 father, qint64 child);
-    bool insertRelations(Task *father);
-    bool insertRelations(QList<Task*> *fathers, QList<Task*> *children);
-    bool update(Task *modified);
-    bool clear();
-    */
-
-
-    //destroyer closes connection my default
     ~Connection();
 };
 

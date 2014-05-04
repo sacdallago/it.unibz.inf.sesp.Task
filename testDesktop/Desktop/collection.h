@@ -7,13 +7,32 @@
 
 class Collection {
 private:
+    /*!
+     * \brief all holds todo tasks, randomly
+     */
     QList<Task*> all;
+    /*!
+     * \brief doneTasks holds all done tasks, randomly
+     */
     QList<Task*> doneTasks;
+    /*!
+     * \brief maxTime indicates the maximum time of all todo tasks
+     */
     qint64 maxTime;
+    /*!
+     * \brief calculateMaxTime recalculates maxTime
+     */
     void calculateMaxTime();
+    /*!
+     * \brief connection holds the connection to the database where tasks are stored
+     */
     TaskDatabase *connection;
 public:
-    Collection(TaskDatabase * c = new TaskDatabase());
+    /*!
+     * \brief Collection Creates a bag where tasks can be put in or created and manages the time-scheduling operations
+     * \param connection a connection to a database holding tasks
+     */
+    Collection(TaskDatabase * connection = new TaskDatabase());
 
     //Operational -- insertions and deletions of new tasks + optional update reflection on DB.
     /*!
@@ -96,20 +115,64 @@ public:
      */
     void done(Task * d);
 
+    /*!
+     * \brief login maps login function from database
+     * \param taskUser username for the task user
+     * \param taskPassword password for the task user
+     * \return
+     */
     bool login(QString taskUser, QString taskPassword);
 
+    /*!
+     * \brief cleans the class
+     */
     void logout();
 
+    /*!
+     * \brief populateFromDatabase if the login has been done, this method populates the collection from the database, with the given user.
+     */
     void populateFromDatabase();
 
     // Retrieval
+    /*!
+     * \brief get a task from the bag
+     * \return retuns a pointer to a task in the bag, if there is any meeting the given id
+     */
     Task* get(qint64);
+    /*!
+     * \brief getRoots returns a list of all those tasks that have no precedessors
+     * \return a pointer to a list of pointers to tasks
+     */
     QList<Task*>* getRoots();
+    /*!
+     * \brief getLeaves returns a list of all those tasks that have predecessors but no successors
+     * \return a pointer to a list of pointers to tasks
+     */
     QList<Task*>* getLeaves();
+    /*!
+     * \brief getDoneList returns a randomly ordered list of done tasks
+     * \return a list of pointers to tasks
+     */
     QList<Task*> getDoneList();
+    /*!
+     * \brief getTodoList returns an ordered list of todo tasks, ordered in a FIFO fashion
+     * \return a list of pointers to tasks
+     */
     QList<Task*> getTodoList();
+    /*!
+     * \brief getAll returns unordered list of todo tasks
+     * \return a list of pointers to tasks
+     */
     const QList<Task*>* getAll();
+    /*!
+     * \brief printForest gives a graphical (textual) representation of the todo tasks graph
+     * \return returns a qstring representing such graph
+     */
     QString printForest();
+    /*!
+     * \brief getConnection
+     * \return returns a pointer to the task database, to call methods on it directly.
+     */
     TaskDatabase *getConnection();
 };
 

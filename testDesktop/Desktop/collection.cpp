@@ -20,9 +20,9 @@ void Collection::addItem(Task *t){
         doneTasks.append(t);
     } else {
         all.append(t);
-    }
-    if(t->getDurationInH() > maxTime){
-        maxTime = t->getDurationInH();
+        if(t->getDurationInH() > maxTime){
+            maxTime = t->getDurationInH();
+        }
     }
 }
 
@@ -58,9 +58,13 @@ bool Collection::removeItem(Task *t,bool updateDB){
                     relate(p,s);
                 }
             }
-            all.removeOne(t);
-            if(t->getDurationInH() == maxTime){
-                calculateMaxTime();
+            if(t->getStatus() != 0){
+                doneTasks.removeOne(t);
+            } else {
+                all.removeOne(t);
+                if(t->getDurationInH() == maxTime){
+                    calculateMaxTime();
+                }
             }
             return true;
         } else {
@@ -80,9 +84,13 @@ bool Collection::removeItem(Task *t,bool updateDB){
             for(Task *p: *pre){
                 p->getSuccessors()->removeOne(t);
             }
-            all.removeOne(t);
-            if(t->getDurationInH() == maxTime){
-                calculateMaxTime();
+            if(t->getStatus() != 0){
+                doneTasks.removeOne(t);
+            } else {
+                all.removeOne(t);
+                if(t->getDurationInH() == maxTime){
+                    calculateMaxTime();
+                }
             }
             return true;
         } else {
@@ -110,6 +118,7 @@ bool Collection::removeItem(qint64 id,bool updateDB){
 
 void Collection::emptyCollection(bool updateDB){
     all.clear();
+    doneTasks.clear();
     if(updateDB){
         connection->clear();
     }
@@ -117,6 +126,11 @@ void Collection::emptyCollection(bool updateDB){
 
 Task* Collection::get(qint64 id){
     for(Task *t : all){
+        if(t->getId() == id){
+            return t;
+        }
+    }
+    for(Task *t : doneTasks){
         if(t->getId() == id){
             return t;
         }
@@ -337,6 +351,7 @@ bool Collection::login(QString taskUser, QString taskPassword){
 }
 
 void Collection::logout(){
+    emptyCollection(false);
     connection->logout();
 }
 

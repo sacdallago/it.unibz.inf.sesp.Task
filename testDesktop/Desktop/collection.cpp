@@ -340,10 +340,11 @@ QList<Task*> Collection::getTodoList(){
                     break;
                 }
             }
+            /* something like this (not working on linux machines), would speed up the function!s
             if(map[j.key()]->isEmpty()){
-                //delete map[j.key()];
+                delete map[j.key()];
                 map.remove(j.key());
-            }
+            }*/
         }
     }
 

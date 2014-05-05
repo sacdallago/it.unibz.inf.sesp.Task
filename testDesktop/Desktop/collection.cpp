@@ -341,7 +341,7 @@ QList<Task*> Collection::getTodoList(){
                 }
             }
             if(map[j.key()]->isEmpty()){
-                delete map[j.key()];
+                //delete map[j.key()];
                 map.remove(j.key());
             }
         }

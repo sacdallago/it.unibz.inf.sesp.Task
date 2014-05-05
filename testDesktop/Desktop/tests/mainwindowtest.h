@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <tests/AutoTest.h>
+#include "mainwindow.h"
+#include "collection.h"
 
 class MainWindowTest : public QObject
 {
@@ -21,6 +23,9 @@ private slots:
         void test3();
         void cleanupTestCase();
 
+ private:
+        MainWindow *main;
+        Collection *coll;
 
 };
 

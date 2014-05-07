@@ -92,17 +92,27 @@ void TaskWidget::on_pushButton_2_clicked()
     }
 }
 
+/**
+ * @brief TaskWidget::getTask getter for the Task pointer
+ * @return
+ */
 Task *TaskWidget::getTask() const
 {
     return task;
 }
 
+/**
+ * @brief TaskWidget::setTask setter for the Task pointer
+ * @param value
+ */
 void TaskWidget::setTask(Task *value)
 {
     task = value;
 }
 
-
+/**
+ * @brief TaskWidget::on_pushButton_clicked flag the Task as "Done", status not 0.
+ */
 void TaskWidget::on_pushButton_clicked()
 {
     tasks->done(this->task);

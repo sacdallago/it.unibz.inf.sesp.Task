@@ -48,7 +48,7 @@ void MainWindow::confirmLogin(){
             log.setMessage(&error);
             log.exec();
         }else{
-
+            tasks->logout();
             tasks->login(log.getUser(), log.getPassword());
             log.setExit(true);
             user = log.getUser();

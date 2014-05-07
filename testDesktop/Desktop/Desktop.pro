@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += sql
+QT       += testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,7 +27,8 @@ SOURCES += main.cpp\
     taskdatabase.cpp \
     relations.cpp \
     moredialog.cpp \
-    logindialog.cpp
+    logindialog.cpp \
+    tests/mainwindowtest.cpp
 
 HEADERS  += widget.h \
     connection.h \
@@ -40,7 +42,9 @@ HEADERS  += widget.h \
     taskdatabase.h \
     relations.h \
     moredialog.h \
-    logindialog.h
+    logindialog.h \
+    tests/AutoTest.h \
+    tests/mainwindowtest.h
 
 FORMS    += widget.ui \
     mainwindow.ui \

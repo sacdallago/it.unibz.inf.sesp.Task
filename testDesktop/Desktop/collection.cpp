@@ -5,6 +5,12 @@ Collection::Collection(TaskDatabase *c) {
     connection = c;
     maxTime = 0;
 }
+Collection::~Collection(){
+    if(connection != NULL){
+        delete connection;
+        connection = NULL;
+    }
+}
 
 //Performance = k = O(n)
 void Collection::calculateMaxTime(){

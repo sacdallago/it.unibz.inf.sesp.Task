@@ -62,10 +62,10 @@ bool TaskDatabase::isUserLogged(){
 
 
 Task* TaskDatabase::getTask(qint64 id){
-    if(userID != 0){
         QList<QString> where;
         where.append("id=" + QString::number(id));
         QMap<QString, QList<QVariant>* > task = select("task",NULL,&where);
+     if(!task.empty()){
         qint64 importance = task.value("importance")->value(0).toInt();
         qint64 durationInH = task.value("duration")->value(0).toInt();
         QString name = task.value("name")->value(0).toString();

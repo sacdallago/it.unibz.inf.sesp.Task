@@ -174,6 +174,7 @@ public:
      * \return returns a pointer to the task database, to call methods on it directly.
      */
     TaskDatabase *getConnection();
+    ~Collection();
 };
 
 #endif // COLLECTION_H

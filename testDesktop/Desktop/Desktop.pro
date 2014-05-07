@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     relations.cpp \
     moredialog.cpp \
     logindialog.cpp \
-    tests/mainwindowtest.cpp
+    tests/mainwindowtest.cpp \
+    tests/collectiontest.cpp
 
 HEADERS  += widget.h \
     connection.h \
@@ -44,7 +45,8 @@ HEADERS  += widget.h \
     moredialog.h \
     logindialog.h \
     tests/AutoTest.h \
-    tests/mainwindowtest.h
+    tests/mainwindowtest.h \
+    tests/collectiontest.h
 
 FORMS    += widget.ui \
     mainwindow.ui \

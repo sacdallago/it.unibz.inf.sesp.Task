@@ -8,11 +8,14 @@ Connection::Connection(QString driver, QString server, QString db, QString usern
     this->db.setUserName(username);
     this->db.setPassword(password);
     this->db.open();
+    cout << "\t\t\tDATABASE OPEN CONNECTION" << endl;
 }
 
 bool Connection::close(){
     if(db.open()){
+        cout << "\t\t\tDATABASE CLOSE CONNECTION" << endl;
         db.close();
+        db.removeDatabase("qt_sql_default_connection");
         return true;
     }
     return false;

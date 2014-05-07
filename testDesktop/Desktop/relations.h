@@ -19,7 +19,7 @@ class Relations : public QDialog
     Q_OBJECT
 
 public:
-    explicit Relations(QWidget *parent = 0, Collection* coll = new Collection());
+    explicit Relations(QWidget *parent = 0, Collection* coll = NULL);
     ~Relations();
 
 private slots:

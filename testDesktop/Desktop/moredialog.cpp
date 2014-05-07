@@ -3,12 +3,10 @@
 #include <QtGui>
 
 
-MoreDialog::MoreDialog(QWidget *parent, TaskWidget *wt, MainWindow *main) :
+MoreDialog::MoreDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MoreDialog)
 {
-    this->wt = wt;
-    this->main = main;
     ui->setupUi(this);
     lslayout = new QVBoxLayout(ui->scrollAreaWidgetContents);
 
@@ -106,16 +104,6 @@ void MoreDialog::setT(Task *value)
     t = value;
 }
 
-MainWindow *MoreDialog::getMain() const
-{
-    return main;
-}
-
-void MoreDialog::setMain(MainWindow *value)
-{
-    main = value;
-}
-
 
 
 Ui::MoreDialog *MoreDialog::getUi() const
@@ -126,16 +114,5 @@ Ui::MoreDialog *MoreDialog::getUi() const
 void MoreDialog::setUi(Ui::MoreDialog *value)
 {
     ui = value;
-}
-
-
-TaskWidget *MoreDialog::getWt() const
-{
-    return wt;
-}
-
-void MoreDialog::setWt(TaskWidget *value)
-{
-    wt = value;
 }
 

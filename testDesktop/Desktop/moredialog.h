@@ -15,7 +15,7 @@ class MoreDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit MoreDialog(QWidget *parent = 0, TaskWidget *wt = new TaskWidget(), MainWindow *main = new MainWindow());
+    explicit MoreDialog(QWidget *parent = 0);
     ~MoreDialog();
 
     TaskWidget *getWt() const;
@@ -38,9 +38,7 @@ public:
 
 private:
      Ui::MoreDialog *ui;
-     TaskWidget *wt;
      Task *t;
-     MainWindow *main;
      QVBoxLayout *lslayout;
 
     QList<Task *> *dlist;

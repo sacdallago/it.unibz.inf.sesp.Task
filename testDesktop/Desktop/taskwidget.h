@@ -15,7 +15,7 @@ class TaskWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = new Collection());
+    explicit TaskWidget(QWidget *parent = 0, Collection *tasks = NULL);
     ~TaskWidget();
     void fillWidget(Task *t);
 

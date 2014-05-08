@@ -23,6 +23,7 @@ SOURCES += main.cpp\
     collection.cpp \
     mainwindow.cpp \
     addtaskdialog.cpp \
+    aboutdialog.cpp \
     taskwidget.cpp \
     taskdatabase.cpp \
     relations.cpp \
@@ -39,6 +40,7 @@ HEADERS  += widget.h \
     collection.h \
     mainwindow.h \
     addtaskdialog.h \
+    aboutdialog.h \
     taskwidget.h \
     taskdatabase.h \
     relations.h \
@@ -51,6 +53,7 @@ HEADERS  += widget.h \
 FORMS    += widget.ui \
     mainwindow.ui \
     addtaskdialog.ui \
+    aboutdialog.ui \
     taskwidget.ui \
     relations.ui \
     moredialog.ui \

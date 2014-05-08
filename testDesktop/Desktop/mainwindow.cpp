@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <logindialog.h>
 #include <relations.h>
+#include <aboutdialog.h>
 
 using namespace std;
 MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
@@ -24,9 +25,14 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
 
 }
 
+void QWidget::closeEvent ( QCloseEvent * event ) {
+
+}
+
 
 MainWindow::~MainWindow()
 {
+    tasks->logout();
     clearList();
     delete ui;
 
@@ -203,7 +209,8 @@ void MainWindow::on_actionLog_in_triggered()
  */
 void MainWindow::on_actionAbout_triggered()
 {
-
+    AboutDialog about;
+    about.exec();
 }
 
 /**

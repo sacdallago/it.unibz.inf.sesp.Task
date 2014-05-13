@@ -1,4 +1,3 @@
-#include "widget.h"
 #include <iostream>
 #include <QApplication>
 #include <mainwindow.h>
@@ -31,6 +30,4 @@ int main(int argc, char *argv[]) {
         w.confirmLogin();
 
         return a.exec();
-
-
 }

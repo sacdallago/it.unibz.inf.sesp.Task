@@ -21,7 +21,6 @@ AddTaskDialog::~AddTaskDialog()
     delete ui;
 }
 
-//Here goes code for adding Task and refresh
 void AddTaskDialog::on_buttonBox_accepted()
 {
 

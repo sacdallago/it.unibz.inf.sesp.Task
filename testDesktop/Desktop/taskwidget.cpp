@@ -75,7 +75,7 @@ void TaskWidget::on_pushButton_3_clicked()
  */
 void TaskWidget::on_pushButton_2_clicked()
 {
-    MoreDialog more;
+    MoreDialog more (0, tasks);
     more.fillWidget(task);
 
     int result = more.exec();

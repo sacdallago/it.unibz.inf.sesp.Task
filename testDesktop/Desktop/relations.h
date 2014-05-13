@@ -19,6 +19,11 @@ class Relations : public QDialog
     Q_OBJECT
 
 public:
+	/*!
+     * \brief Relations create a Dialog that enables the user to set the dependencies of a task with others
+     * \param parent
+     * \param coll The collection containing the tasks
+     */
     explicit Relations(QWidget *parent = 0, Collection* coll = NULL);
     ~Relations();
 

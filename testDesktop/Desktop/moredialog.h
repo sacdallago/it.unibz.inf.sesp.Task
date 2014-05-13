@@ -20,17 +20,44 @@ public:
 
     TaskWidget *getWt() const;
     void setWt(TaskWidget *value);
+    /*!
+     * \brief fillWidget Fills all the fields in the current widget with the info of the Task passed as a parameter
+     * \param t Task which attributes will be displayed
+     */
      void fillWidget(Task *t);
 
      Ui::MoreDialog *getUi() const;
      void setUi(Ui::MoreDialog *value);
-
+    /**
+    * @brief MoreDialog::getTitle getter for the title
+    * @return
+    */
      QString getTitle() const;
+     /**
+    * @brief MoreDialog::getDescription getter for the description
+    * @return
+    */
      QString getDescription() const;
-     qint64  getPriority() const;
-     qint64  getEffort() const;
 
+    /**
+    * @brief MoreDialog::getPriority getter for the priority
+    * @return
+    */
+     qint64  getPriority() const;
+     /**
+    * @brief MoreDialog::getEffort getter for the effort/hours
+    * @return
+    */
+     qint64  getEffort() const;
+    /**
+    * @brief MoreDialog::getT getter for the task pointer
+    * @return
+    */
      Task *getT() const;
+    /**
+    * @brief MoreDialog::setT setter for the task pointer
+    * @param value
+    */
      void setT(Task *value);
 
      MainWindow *getMain() const;
@@ -42,7 +69,9 @@ private:
      QVBoxLayout *lslayout;
 
     QList<Task *> *dlist;
-
+    /*!
+     * \brief getDependList get the task predecessors list
+     */
     void getDependList();
 
 };

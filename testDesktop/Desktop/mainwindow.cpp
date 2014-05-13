@@ -25,8 +25,20 @@ MainWindow::MainWindow(QWidget *parent, Collection *tasks) :
 
 }
 
-void QWidget::closeEvent ( QCloseEvent * event ) {
+void MainWindow::closeEvent ( QCloseEvent * event ) {
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Confirm Exit", "Are you sure?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+        if(tasks->getConnection()->isUserLogged()){
+            tasks->logout();
+             clearList();
+        }
+        event->accept();
 
+      }else{
+          event->ignore();
+      }
 }
 
 

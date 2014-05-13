@@ -25,6 +25,11 @@ public:
     void refreshList();
 
 private slots:
+    /**
+     * @brief closeEvent confirm before exit
+     * @param event
+     */
+    void closeEvent(QCloseEvent *event);
      /**
      * @brief on_actionAdd_Task_triggered launch add task dialog
      */
@@ -42,7 +47,7 @@ private slots:
     void on_actionChange_color_triggered();
 
     /**
-     * @brief on_actionLog_in_triggered launch log in action and refresh
+     * @brief on_actionLog_in_triggered launches log in action and refresh
      */
     void on_actionLog_in_triggered();
 
@@ -52,7 +57,7 @@ private slots:
     void on_actionAbout_triggered();
 
     /**
-     * @brief on_actionView_Done_task_triggered refresh the task list with the "done" tasks
+     * @brief on_actionView_Done_task_triggered refreshes the task list with the "done" tasks
      */
     void on_actionView_Done_task_triggered();
 
@@ -60,9 +65,13 @@ private slots:
      * @brief on_actionView_Todo_Tasks_triggered
      */
     void on_actionView_Todo_Tasks_triggered();
-
+    /**
+     * @brief on_actionExit_triggered exits directly with this option
+     */
     void on_actionExit_triggered();
-
+    /**
+     * @brief on_actionAdd_Relation_triggered launches add relation dialog
+     */
     void on_actionAdd_Relation_triggered();
 
 private:

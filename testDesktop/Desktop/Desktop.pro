@@ -15,7 +15,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp \
     connection.cpp \
     task.cpp \
     taskutilities.cpp \
@@ -29,10 +28,9 @@ SOURCES += main.cpp\
     relations.cpp \
     moredialog.cpp \
     logindialog.cpp \
-    tests/mainwindowtest.cpp \
     tests/collectiontest.cpp
 
-HEADERS  += widget.h \
+HEADERS  += \
     connection.h \
     task.h \
     taskutilities.h \
@@ -47,10 +45,9 @@ HEADERS  += widget.h \
     moredialog.h \
     logindialog.h \
     tests/AutoTest.h \
-    tests/mainwindowtest.h \
     tests/collectiontest.h
 
-FORMS    += widget.ui \
+FORMS    += \
     mainwindow.ui \
     addtaskdialog.ui \
     aboutdialog.ui \

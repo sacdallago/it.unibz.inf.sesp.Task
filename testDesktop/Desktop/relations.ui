@@ -10,6 +10,13 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="windowTitle">
+   <string>Add Relation</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/buttons/images/PNG/Button Add.png</normaloff>:/buttons/images/PNG/Button Add.png</iconset>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -129,6 +136,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

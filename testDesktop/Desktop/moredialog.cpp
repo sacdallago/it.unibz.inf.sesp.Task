@@ -79,21 +79,5 @@ void MoreDialog::setUi(Ui::MoreDialog *value)
     ui = value;
 }
 
-void MoreDialog::on_buttonBox_accepted()
-{
-    //for each checkbox (relation)
-    for(QCheckBox *c : *cblist){
-        //if it is unchecked
-        if(!c->isChecked()){
-            //identify the task in the predecessors list by comparing
-            //the name of the unchecked task and all the other tasks
-            for ( Task *father : *t->getPredecessors()) {
-                if(father->getName().compare(c->text())==0){
-                    //unrelate the checked task (father) with the
-                    //current task
-                    tasks->unrelate(father,this->t);
-                }
-            }
-        }
-    }
-}
+void MoreDialog::on_buttonBox_accepted(){}
+void MoreDialog::on_buttonBox_rejected(){}

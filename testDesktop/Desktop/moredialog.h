@@ -15,7 +15,7 @@ class MoreDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit MoreDialog(QWidget *parent = 0);
+    explicit MoreDialog(QWidget *parent = 0, Collection *coll = NULL);
     ~MoreDialog();
 
     TaskWidget *getWt() const;
@@ -28,6 +28,12 @@ public:
 
      Ui::MoreDialog *getUi() const;
      void setUi(Ui::MoreDialog *value);
+
+
+     /**
+     * @brief MoreDialog::on_buttonBox_accepted Saves the changes
+     */
+     void on_buttonBox_accepted();
     /**
     * @brief MoreDialog::getTitle getter for the title
     * @return
@@ -63,11 +69,16 @@ public:
      MainWindow *getMain() const;
      void setMain(MainWindow *value);
 
+         QList<QCheckBox*> *cblist;
+private slots:
+     void on_buttonBox_rejected();
+
 private:
      Ui::MoreDialog *ui;
      Task *t;
      QVBoxLayout *lslayout;
 
+    Collection *tasks;
     QList<Task *> *dlist;
     /*!
      * \brief getDependList get the task predecessors list

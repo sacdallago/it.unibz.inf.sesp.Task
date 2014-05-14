@@ -82,6 +82,28 @@ void TaskWidget::on_pushButton_2_clicked()
     cout << result << endl;
     if(result == 1){
 
+        //for each checkbox (relation)
+        for(QCheckBox *c : *more.cblist){
+            //if it is unchecked
+            if(c->isChecked()){
+            }else{
+                //identify the task in the predecessors list by comparing
+                //the name of the unchecked task and all the other tasks
+                for ( Task *father : *this->task->getPredecessors()) {
+                    if(father->getName().compare(c->text())==0){
+                        //unrelate the checked task (father) with the
+                        //current task
+                        tasks->unrelate(father,task,true);
+                    } 
+                }
+            }
+        }
+
+
+
+
+
+
         this->task->setName( more.getTitle());
         this->task->setDescription(more.getDescription());
         this->task->setDurationInH(more.getEffort());

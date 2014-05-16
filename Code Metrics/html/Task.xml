@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module Task-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="262" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="45" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="14" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="18.714" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="3.214" level="0" />
+<weighted_methods_per_class_unity value="31" level="0" />
+<weighted_methods_per_class_visibility value="9" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="9" level="0" />
+<IF4 value="400" level="1" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="400" level="2" />
+<IF4_visible_per_member_function value="********" level="2" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="task.h" line="21" />
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>Task(...)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="50" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>Task(qint64,qint64,qint64,QString,QString,qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>Task(qint64,qint64,qint64,QString,QString,qint64,QString)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>addPredecessor(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="32" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="54" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>addSuccessor(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="29" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="53" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawGraph(QList *,qint64,bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="157" />
+</extent>
+<lines_of_code value="32" level="1" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>drawGraph(qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="124" />
+</extent>
+<lines_of_code value="31" level="1" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>drawTree(qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="70" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="60" />
+</extent>
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>getDescription()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="244" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getDurationInH()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="232" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getId()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="220" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getImportance()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="226" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getName()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="238" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getPredecessors()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="213" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getStatus()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="260" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getSuccessors()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="216" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getTime()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="250" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>graph(Task *,QList *,QList *,qint64 *,qint64 *,qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="92" />
+</extent>
+<lines_of_code value="31" level="1" />
+<McCabes_cyclomatic_complexity value="9" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>printTask()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="191" />
+</extent>
+<lines_of_code value="20" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>removePredecessor(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="38" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="56" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>removeSuccessor(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="35" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="55" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setDescription(const QString &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="247" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setDurationInH(const qint64 &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="235" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setId(const qint64 &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="223" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setImportance(const qint64 &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="229" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setName(const QString &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="241" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setStatus(const qint64 &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="263" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setTime(const QString &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="256" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setTimeToCurrentTime()</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="253" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>taskPredecessors(qint64 *,qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="53" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="59" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>taskSuccessors(qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="task.cpp" line="42" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="task.h" line="58" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>Task</name>
+<client_module>
+<name>Collection</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="24" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="47" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="108" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="117" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="147" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="147" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="197" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="197" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="42" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="58" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="85" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="85" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="101" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="101" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="110" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.h" line="116" />
+</extent>
+<name>MoreDialog</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="moredialog.cpp" line="36" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="moredialog.cpp" line="68" />
+</extent>
+<name>TaskDatabase</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="119" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="150" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="161" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="22" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="23" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="26" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="28" />
+</extent>
+<name>TaskUtilities</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskutilities.cpp" line="3" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskutilities.cpp" line="3" />
+</extent>
+<name>TaskWidget</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskwidget.cpp" line="34" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskwidget.cpp" line="108" />
+</extent>
+</client_module>
+<supplier_module>
+<name>QList</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="92" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="92" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="157" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="37" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="38" />
+</extent>
+<name>QString</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="241" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="247" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="256" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="33" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="34" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="35" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="157" />
+</extent>
+<name>qint64</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="7" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="17" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="42" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="53" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="53" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="70" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="92" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="92" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="92" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="124" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.cpp" line="157" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="223" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="229" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="235" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.cpp" line="263" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="30" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="31" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="32" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="task.h" line="36" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="51" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="58" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="task.h" line="59" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="59" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="task.h" line="60" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

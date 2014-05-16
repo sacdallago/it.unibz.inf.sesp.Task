@@ -1,0 +1,856 @@
+CCCC_Module@AboutDialog@class@
+CCCC_ModExt@AboutDialog@class@aboutdialog.h@7@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@AboutDialog@class@aboutdialog.h@10@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@AddTaskDialog@class@
+CCCC_ModExt@AddTaskDialog@class@addtaskdialog.h@8@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@AddTaskDialog@class@addtaskdialog.h@11@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@Collection@class@
+CCCC_ModExt@Collection@class@collection.h@8@definition@F???2@LOC:8 COM:12 MVG:0@2@d@
+CCCC_Module@Connection@class@
+CCCC_ModExt@Connection@class@connection.h@9@definition@F???2@LOC:5 COM:0 MVG:0@2@d@
+CCCC_Module@LoginDialog@class@
+CCCC_ModExt@LoginDialog@class@logindialog.h@7@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@LoginDialog@class@logindialog.h@10@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@MainWindow@class@
+CCCC_ModExt@MainWindow@class@mainwindow.h@14@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@MainWindow@class@mainwindow.h@17@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@MoreDialog@class@
+CCCC_ModExt@MoreDialog@class@moredialog.h@8@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@MoreDialog@class@moredialog.h@11@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@QCloseEvent@@
+CCCC_Module@QColor@@
+CCCC_Module@QDialog@@
+CCCC_Module@QList@@
+CCCC_Module@QMainWindow@@
+CCCC_Module@QMap@@
+CCCC_Module@QSqlDatabase@@
+CCCC_Module@QString@@
+CCCC_Module@QWidget@@
+CCCC_Module@Relations@class@
+CCCC_ModExt@Relations@class@relations.h@14@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@Relations@class@relations.h@17@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@Task@class@
+CCCC_ModExt@Task@class@task.h@21@definition@F???0@LOC:12 COM:0 MVG:0@0@d@
+CCCC_Module@TaskDatabase@class@
+CCCC_ModExt@TaskDatabase@class@taskdatabase.h@7@definition@T???0@LOC:6 COM:0 MVG:0@0@d@
+CCCC_Module@TaskUtilities@@
+CCCC_Module@TaskWidget@class@
+CCCC_ModExt@TaskWidget@class@taskwidget.h@10@declaration@????2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_ModExt@TaskWidget@class@taskwidget.h@13@definition@????0@LOC:4 COM:0 MVG:0@0@d@
+CCCC_Module@anonymous@@
+CCCC_Module@bool@@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@edge@struct@
+CCCC_ModExt@edge@struct@task.h@24@definition@????0@LOC:5 COM:0 MVG:0@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@qint64@@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@AboutDialog@AboutDialog@@(QWidget *)@
+CCCC_MemExt@AboutDialog@AboutDialog@@(QWidget *)@aboutdialog.cpp@7@definition@F????@LOC:6 COM:3 MVG:0@?@d@
+CCCC_Member@AboutDialog@on_buttonBox_accepted@@()@
+CCCC_MemExt@AboutDialog@on_buttonBox_accepted@@()@aboutdialog.cpp@19@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@AboutDialog@~AboutDialog@@()@
+CCCC_MemExt@AboutDialog@~AboutDialog@@()@aboutdialog.cpp@14@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@AddTaskDialog@AddTaskDialog@@(QWidget *,Collection *)@
+CCCC_MemExt@AddTaskDialog@AddTaskDialog@@(QWidget *,Collection *)@addtaskdialog.cpp@11@definition@F????@LOC:7 COM:1 MVG:0@?@d@
+CCCC_Member@AddTaskDialog@on_buttonBox_accepted@@()@
+CCCC_MemExt@AddTaskDialog@on_buttonBox_accepted@@()@addtaskdialog.cpp@25@definition@F????@LOC:13 COM:3 MVG:0@?@d@
+CCCC_Member@AddTaskDialog@on_buttonBox_rejected@@()@
+CCCC_MemExt@AddTaskDialog@on_buttonBox_rejected@@()@addtaskdialog.cpp@43@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@AddTaskDialog@~AddTaskDialog@@()@
+CCCC_MemExt@AddTaskDialog@~AddTaskDialog@@()@addtaskdialog.cpp@19@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@Collection@Collection@@(...)@
+CCCC_MemExt@Collection@Collection@@(...)@collection.h@35@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@Collection@@(TaskDatabase *)@
+CCCC_MemExt@Collection@Collection@@(TaskDatabase *)@collection.cpp@4@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@Collection@addItem@@(QString,qint64,qint64,QString,qint64)@
+CCCC_MemExt@Collection@addItem@@(QString,qint64,qint64,QString,qint64)@collection.cpp@35@definition@F????@LOC:7 COM:0 MVG:2@?@d@
+CCCC_MemExt@Collection@addItem@@(QString,qint64,qint64,QString,qint64)@collection.h@52@declaration@F???0@LOC:1 COM:9 MVG:0@0@D@
+CCCC_Member@Collection@addItem@@(Task *)@
+CCCC_MemExt@Collection@addItem@@(Task *)@collection.cpp@24@definition@F????@LOC:10 COM:0 MVG:2@?@d@
+CCCC_MemExt@Collection@addItem@@(Task *)@collection.h@42@declaration@F???0@LOC:1 COM:5 MVG:0@0@D@
+CCCC_Member@Collection@calculateMaxTime@@()@
+CCCC_MemExt@Collection@calculateMaxTime@@()@collection.cpp@16@definition@F????@LOC:7 COM:1 MVG:2@?@d@
+CCCC_MemExt@Collection@calculateMaxTime@@()@collection.h@25@declaration@F???2@LOC:1 COM:3 MVG:0@2@D@
+CCCC_Member@Collection@done@@(Task *)@
+CCCC_MemExt@Collection@done@@(Task *)@collection.cpp@108@definition@F????@LOC:8 COM:0 MVG:0@?@d@
+CCCC_MemExt@Collection@done@@(Task *)@collection.h@116@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@emptyCollection@@(bool)@
+CCCC_MemExt@Collection@emptyCollection@@(bool)@collection.cpp@125@definition@F????@LOC:7 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@emptyCollection@@(bool)@collection.h@69@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@get@@(qint64)@
+CCCC_MemExt@Collection@get@@(qint64)@collection.cpp@133@definition@F????@LOC:13 COM:0 MVG:7@?@d@
+CCCC_MemExt@Collection@get@@(qint64)@collection.h@141@declaration@F???0@LOC:1 COM:5 MVG:0@0@D@
+CCCC_Member@Collection@getAll@@()@
+CCCC_MemExt@Collection@getAll@@()@collection.cpp@261@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@getAll@@()@collection.h@166@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@getConnection@@()@
+CCCC_MemExt@Collection@getConnection@@()@collection.cpp@43@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@getConnection@@()@collection.h@176@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@getDoneList@@()@
+CCCC_MemExt@Collection@getDoneList@@()@collection.cpp@294@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@getDoneList@@()@collection.h@156@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@getLeaves@@()@
+CCCC_MemExt@Collection@getLeaves@@()@collection.cpp@252@definition@F????@LOC:8 COM:0 MVG:2@?@d@
+CCCC_MemExt@Collection@getLeaves@@()@collection.h@151@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@getRoots@@()@
+CCCC_MemExt@Collection@getRoots@@()@collection.cpp@229@definition@F????@LOC:8 COM:0 MVG:2@?@d@
+CCCC_MemExt@Collection@getRoots@@()@collection.h@146@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@getTodoList@@()@
+CCCC_MemExt@Collection@getTodoList@@()@collection.cpp@298@definition@F????@LOC:54 COM:5 MVG:12@?@d@
+CCCC_MemExt@Collection@getTodoList@@()@collection.h@161@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@login@@(QString,QString)@
+CCCC_MemExt@Collection@login@@(QString,QString)@collection.cpp@365@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@login@@(QString,QString)@collection.h@124@declaration@F???0@LOC:1 COM:6 MVG:0@0@D@
+CCCC_Member@Collection@logout@@()@
+CCCC_MemExt@Collection@logout@@()@collection.cpp@369@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Collection@logout@@()@collection.h@129@declaration@F???0@LOC:1 COM:3 MVG:0@0@D@
+CCCC_Member@Collection@populateFromDatabase@@()@
+CCCC_MemExt@Collection@populateFromDatabase@@()@collection.cpp@374@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_MemExt@Collection@populateFromDatabase@@()@collection.h@134@declaration@F???0@LOC:1 COM:3 MVG:0@0@D@
+CCCC_Member@Collection@printForest@@()@
+CCCC_MemExt@Collection@printForest@@()@collection.cpp@265@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@Collection@printForest@@()@collection.h@171@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Collection@relate@@(Task *,Task *,bool)@
+CCCC_MemExt@Collection@relate@@(Task *,Task *,bool)@collection.cpp@147@definition@F????@LOC:15 COM:0 MVG:7@?@d@
+CCCC_MemExt@Collection@relate@@(Task *,Task *,bool)@collection.h@85@declaration@F???0@LOC:1 COM:7 MVG:0@0@D@
+CCCC_Member@Collection@relate@@(qint64,qint64,bool)@
+CCCC_MemExt@Collection@relate@@(qint64,qint64,bool)@collection.cpp@163@definition@F????@LOC:15 COM:0 MVG:7@?@d@
+CCCC_MemExt@Collection@relate@@(qint64,qint64,bool)@collection.h@77@declaration@F???0@LOC:1 COM:7 MVG:0@0@D@
+CCCC_Member@Collection@removeItem@@(Task *,bool)@
+CCCC_MemExt@Collection@removeItem@@(Task *,bool)@collection.cpp@47@definition@F????@LOC:55 COM:5 MVG:19@?@d@
+CCCC_MemExt@Collection@removeItem@@(Task *,bool)@collection.h@58@declaration@F???0@LOC:1 COM:5 MVG:0@0@D@
+CCCC_Member@Collection@removeItem@@(qint64,bool)@
+CCCC_MemExt@Collection@removeItem@@(qint64,bool)@collection.cpp@121@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@removeItem@@(qint64,bool)@collection.h@64@declaration@F???0@LOC:1 COM:5 MVG:0@0@D@
+CCCC_Member@Collection@unrelate@@(Task *,Task *,bool)@
+CCCC_MemExt@Collection@unrelate@@(Task *,Task *,bool)@collection.cpp@197@definition@F????@LOC:17 COM:0 MVG:7@?@d@
+CCCC_MemExt@Collection@unrelate@@(Task *,Task *,bool)@collection.h@101@declaration@F???0@LOC:1 COM:7 MVG:0@0@D@
+CCCC_Member@Collection@unrelate@@(qint64,qint64,bool)@
+CCCC_MemExt@Collection@unrelate@@(qint64,qint64,bool)@collection.cpp@179@definition@F????@LOC:17 COM:0 MVG:7@?@d@
+CCCC_MemExt@Collection@unrelate@@(qint64,qint64,bool)@collection.h@93@declaration@F???0@LOC:1 COM:7 MVG:0@0@D@
+CCCC_Member@Collection@update@@(Task *)@
+CCCC_MemExt@Collection@update@@(Task *)@collection.cpp@117@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@update@@(Task *)@collection.h@110@declaration@F???0@LOC:1 COM:6 MVG:0@0@D@
+CCCC_Member@Collection@~Collection@@()@
+CCCC_MemExt@Collection@~Collection@@()@collection.cpp@8@definition@F????@LOC:6 COM:0 MVG:1@?@d@
+CCCC_MemExt@Collection@~Collection@@()@collection.h@177@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Connection@Connection@@(QString,QString,QString,QString,QString)@
+CCCC_MemExt@Connection@Connection@@(QString,QString,QString,QString,QString)@connection.cpp@4@definition@F????@LOC:9 COM:0 MVG:0@?@d@
+CCCC_MemExt@Connection@Connection@@(QString,QString,QString,QString,QString)@connection.h@39@declaration@F???0@LOC:1 COM:8 MVG:0@0@D@
+CCCC_Member@Connection@close@@()@
+CCCC_MemExt@Connection@close@@()@connection.cpp@14@definition@F????@LOC:9 COM:0 MVG:3@?@d@
+CCCC_MemExt@Connection@close@@()@connection.h@45@declaration@F???0@LOC:1 COM:4 MVG:0@0@D@
+CCCC_Member@Connection@filterCreator@@(QList)@
+CCCC_MemExt@Connection@filterCreator@@(QList)@connection.cpp@40@definition@F????@LOC:13 COM:0 MVG:5@?@d@
+CCCC_MemExt@Connection@filterCreator@@(QList)@connection.h@23@declaration@F???1@LOC:1 COM:5 MVG:0@1@D@
+CCCC_Member@Connection@getColumnNames@@(QString)@
+CCCC_MemExt@Connection@getColumnNames@@(QString)@connection.cpp@54@definition@F????@LOC:10 COM:0 MVG:2@?@d@
+CCCC_MemExt@Connection@getColumnNames@@(QString)@connection.h@29@declaration@F???1@LOC:1 COM:5 MVG:0@1@D@
+CCCC_Member@Connection@printQuery@@(const QMap *,bool)@
+CCCC_MemExt@Connection@printQuery@@(const QMap *,bool)@connection.cpp@121@definition@F????@LOC:14 COM:0 MVG:3@?@d@
+CCCC_MemExt@Connection@printQuery@@(const QMap *,bool)@connection.h@71@declaration@F???0@LOC:1 COM:5 MVG:0@0@D@
+CCCC_Member@Connection@select@@(...)@
+CCCC_MemExt@Connection@select@@(...)@connection.h@57@declaration@F???0@LOC:1 COM:10 MVG:0@0@D@
+CCCC_Member@Connection@select@@(QString,QList *,QList *)@
+CCCC_MemExt@Connection@select@@(QString,QList *,QList *)@connection.cpp@66@definition@F????@LOC:28 COM:0 MVG:7@?@d@
+CCCC_Member@Connection@select@@(QString,QString)@
+CCCC_MemExt@Connection@select@@(QString,QString)@connection.cpp@97@definition@F????@LOC:21 COM:0 MVG:4@?@d@
+CCCC_MemExt@Connection@select@@(QString,QString)@connection.h@64@declaration@F???0@LOC:1 COM:6 MVG:0@0@D@
+CCCC_Member@Connection@whereCreator@@(...)@
+CCCC_MemExt@Connection@whereCreator@@(...)@connection.h@17@declaration@F???1@LOC:1 COM:5 MVG:0@1@D@
+CCCC_Member@Connection@whereCreator@@(QList *)@
+CCCC_MemExt@Connection@whereCreator@@(QList *)@connection.cpp@24@definition@F????@LOC:14 COM:0 MVG:8@?@d@
+CCCC_Member@Connection@~Connection@@()@
+CCCC_MemExt@Connection@~Connection@@()@connection.cpp@136@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@Connection@~Connection@@()@connection.h@73@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@LoginDialog@LoginDialog@@(QWidget *)@
+CCCC_MemExt@LoginDialog@LoginDialog@@(QWidget *)@logindialog.cpp@5@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@getExit@@()@
+CCCC_MemExt@LoginDialog@getExit@@()@logindialog.cpp@31@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@LoginDialog@getPassword@@()@
+CCCC_MemExt@LoginDialog@getPassword@@()@logindialog.cpp@57@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@LoginDialog@getUi@@()@
+CCCC_MemExt@LoginDialog@getUi@@()@logindialog.cpp@47@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@LoginDialog@getUser@@()@
+CCCC_MemExt@LoginDialog@getUser@@()@logindialog.cpp@67@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@LoginDialog@on_buttonBox_accepted@@()@
+CCCC_MemExt@LoginDialog@on_buttonBox_accepted@@()@logindialog.cpp@20@definition@F????@LOC:5 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@on_buttonBox_rejected@@()@
+CCCC_MemExt@LoginDialog@on_buttonBox_rejected@@()@logindialog.cpp@27@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@setExit@@(bool)@
+CCCC_MemExt@LoginDialog@setExit@@(bool)@logindialog.cpp@36@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@setMessage@@(QString *)@
+CCCC_MemExt@LoginDialog@setMessage@@(QString *)@logindialog.cpp@42@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@setPassword@@(const QString &)@
+CCCC_MemExt@LoginDialog@setPassword@@(const QString &)@logindialog.cpp@62@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@setUi@@(LoginDialog *)@
+CCCC_MemExt@LoginDialog@setUi@@(LoginDialog *)@logindialog.cpp@52@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@setUser@@(const QString &)@
+CCCC_MemExt@LoginDialog@setUser@@(const QString &)@logindialog.cpp@72@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoginDialog@~LoginDialog@@()@
+CCCC_MemExt@LoginDialog@~LoginDialog@@()@logindialog.cpp@15@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@MainWindow@MainWindow@@(QWidget *,Collection *)@
+CCCC_MemExt@MainWindow@MainWindow@@(QWidget *,Collection *)@mainwindow.cpp@8@definition@F????@LOC:15 COM:0 MVG:0@?@d@
+CCCC_Member@MainWindow@clearList@@()@
+CCCC_MemExt@MainWindow@clearList@@()@mainwindow.cpp@96@definition@F????@LOC:11 COM:3 MVG:1@?@d@
+CCCC_Member@MainWindow@closeEvent@@(QCloseEvent *)@
+CCCC_MemExt@MainWindow@closeEvent@@(QCloseEvent *)@mainwindow.cpp@28@definition@F????@LOC:14 COM:0 MVG:2@?@d@
+CCCC_Member@MainWindow@confirmLogin@@()@
+CCCC_MemExt@MainWindow@confirmLogin@@()@mainwindow.cpp@57@definition@F????@LOC:20 COM:4 MVG:2@?@d@
+CCCC_Member@MainWindow@generateRandomColor@@(QColor)@
+CCCC_MemExt@MainWindow@generateRandomColor@@(QColor)@mainwindow.cpp@154@definition@F????@LOC:16 COM:6 MVG:2@?@d@
+CCCC_Member@MainWindow@login@@()@
+CCCC_MemExt@MainWindow@login@@()@mainwindow.cpp@87@definition@F????@LOC:4 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@on_actionAbout_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionAbout_triggered@@()@mainwindow.cpp@222@definition@F????@LOC:5 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@on_actionAdd_Relation_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionAdd_Relation_triggered@@()@mainwindow.cpp@259@definition@F????@LOC:10 COM:3 MVG:1@?@d@
+CCCC_Member@MainWindow@on_actionAdd_Task_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionAdd_Task_triggered@@()@mainwindow.cpp@177@definition@F????@LOC:10 COM:3 MVG:1@?@d@
+CCCC_Member@MainWindow@on_actionChange_color_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionChange_color_triggered@@()@mainwindow.cpp@199@definition@F????@LOC:10 COM:3 MVG:1@?@d@
+CCCC_Member@MainWindow@on_actionExit_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionExit_triggered@@()@mainwindow.cpp@249@definition@F????@LOC:6 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@on_actionLog_in_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionLog_in_triggered@@()@mainwindow.cpp@214@definition@F????@LOC:4 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@on_actionRefresh_2_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionRefresh_2_triggered@@()@mainwindow.cpp@191@definition@F????@LOC:4 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@on_actionView_Done_task_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionView_Done_task_triggered@@()@mainwindow.cpp@231@definition@F????@LOC:5 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@on_actionView_Todo_Tasks_triggered@@()@
+CCCC_MemExt@MainWindow@on_actionView_Todo_Tasks_triggered@@()@mainwindow.cpp@240@definition@F????@LOC:5 COM:3 MVG:0@?@d@
+CCCC_Member@MainWindow@refreshList@@()@
+CCCC_MemExt@MainWindow@refreshList@@()@mainwindow.cpp@112@definition@F????@LOC:26 COM:3 MVG:2@?@d@
+CCCC_Member@MainWindow@~MainWindow@@()@
+CCCC_MemExt@MainWindow@~MainWindow@@()@mainwindow.cpp@45@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_Member@MoreDialog@MoreDialog@@(QWidget *,Collection *)@
+CCCC_MemExt@MoreDialog@MoreDialog@@(QWidget *,Collection *)@moredialog.cpp@6@definition@F????@LOC:9 COM:0 MVG:0@?@d@
+CCCC_Member@MoreDialog@fillWidget@@(Task *)@
+CCCC_MemExt@MoreDialog@fillWidget@@(Task *)@moredialog.cpp@36@definition@F????@LOC:9 COM:4 MVG:0@?@d@
+CCCC_Member@MoreDialog@getDependList@@()@
+CCCC_MemExt@MoreDialog@getDependList@@()@moredialog.cpp@16@definition@F????@LOC:9 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@getDescription@@()@
+CCCC_MemExt@MoreDialog@getDescription@@()@moredialog.cpp@46@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@getEffort@@()@
+CCCC_MemExt@MoreDialog@getEffort@@()@moredialog.cpp@58@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@getPriority@@()@
+CCCC_MemExt@MoreDialog@getPriority@@()@moredialog.cpp@54@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@getT@@()@
+CCCC_MemExt@MoreDialog@getT@@()@moredialog.cpp@62@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@getTitle@@()@
+CCCC_MemExt@MoreDialog@getTitle@@()@moredialog.cpp@50@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@getUi@@()@
+CCCC_MemExt@MoreDialog@getUi@@()@moredialog.cpp@75@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@MoreDialog@on_buttonBox_accepted@@()@
+CCCC_MemExt@MoreDialog@on_buttonBox_accepted@@()@moredialog.cpp@86@definition@F????@LOC:11 COM:6 MVG:4@?@d@
+CCCC_Member@MoreDialog@setT@@(Task *)@
+CCCC_MemExt@MoreDialog@setT@@(Task *)@moredialog.cpp@68@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@MoreDialog@setUi@@(MoreDialog *)@
+CCCC_MemExt@MoreDialog@setUi@@(MoreDialog *)@moredialog.cpp@80@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@MoreDialog@~MoreDialog@@()@
+CCCC_MemExt@MoreDialog@~MoreDialog@@()@moredialog.cpp@27@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@Relations@Relations@@(QWidget *,Collection *)@
+CCCC_MemExt@Relations@Relations@@(QWidget *,Collection *)@relations.cpp@4@definition@F????@LOC:22 COM:3 MVG:1@?@d@
+CCCC_Member@Relations@on_pushButton_2_clicked@@()@
+CCCC_MemExt@Relations@on_pushButton_2_clicked@@()@relations.cpp@53@definition@F????@LOC:39 COM:8 MVG:8@?@d@
+CCCC_Member@Relations@on_pushButton_3_clicked@@()@
+CCCC_MemExt@Relations@on_pushButton_3_clicked@@()@relations.cpp@44@definition@F????@LOC:4 COM:5 MVG:0@?@d@
+CCCC_Member@Relations@~Relations@@()@
+CCCC_MemExt@Relations@~Relations@@()@relations.cpp@35@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@Task@Task@@(...)@
+CCCC_MemExt@Task@Task@@(...)@task.h@50@declaration@F???0@LOC:1 COM:10 MVG:0@0@D@
+CCCC_Member@Task@Task@@(qint64,qint64,qint64,QString,QString,qint64)@
+CCCC_MemExt@Task@Task@@(qint64,qint64,qint64,QString,QString,qint64)@task.cpp@7@definition@F????@LOC:9 COM:1 MVG:0@?@d@
+CCCC_Member@Task@Task@@(qint64,qint64,qint64,QString,QString,qint64,QString)@
+CCCC_MemExt@Task@Task@@(qint64,qint64,qint64,QString,QString,qint64,QString)@task.cpp@17@definition@F????@LOC:9 COM:0 MVG:0@?@d@
+CCCC_MemExt@Task@Task@@(qint64,qint64,qint64,QString,QString,qint64,QString)@task.h@51@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@addPredecessor@@(Task *)@
+CCCC_MemExt@Task@addPredecessor@@(Task *)@task.cpp@32@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@Task@addPredecessor@@(Task *)@task.h@54@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@addSuccessor@@(Task *)@
+CCCC_MemExt@Task@addSuccessor@@(Task *)@task.cpp@29@definition@F????@LOC:3 COM:1 MVG:0@?@d@
+CCCC_MemExt@Task@addSuccessor@@(Task *)@task.h@53@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@drawGraph@@(QList *,qint64,bool)@
+CCCC_MemExt@Task@drawGraph@@(QList *,qint64,bool)@task.cpp@157@definition@F????@LOC:32 COM:0 MVG:7@?@d@
+CCCC_Member@Task@drawGraph@@(qint64)@
+CCCC_MemExt@Task@drawGraph@@(qint64)@task.cpp@124@definition@F????@LOC:31 COM:0 MVG:6@?@d@
+CCCC_Member@Task@drawTree@@(qint64)@
+CCCC_MemExt@Task@drawTree@@(qint64)@task.cpp@70@definition@F????@LOC:20 COM:0 MVG:5@?@d@
+CCCC_MemExt@Task@drawTree@@(qint64)@task.h@60@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@getDescription@@()@
+CCCC_MemExt@Task@getDescription@@()@task.cpp@244@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@getDurationInH@@()@
+CCCC_MemExt@Task@getDurationInH@@()@task.cpp@232@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@getId@@()@
+CCCC_MemExt@Task@getId@@()@task.cpp@220@definition@T????@LOC:3 COM:1 MVG:1@?@d@
+CCCC_Member@Task@getImportance@@()@
+CCCC_MemExt@Task@getImportance@@()@task.cpp@226@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@getName@@()@
+CCCC_MemExt@Task@getName@@()@task.cpp@238@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@getPredecessors@@()@
+CCCC_MemExt@Task@getPredecessors@@()@task.cpp@213@definition@F????@LOC:3 COM:1 MVG:1@?@d@
+CCCC_Member@Task@getStatus@@()@
+CCCC_MemExt@Task@getStatus@@()@task.cpp@260@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@getSuccessors@@()@
+CCCC_MemExt@Task@getSuccessors@@()@task.cpp@216@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@getTime@@()@
+CCCC_MemExt@Task@getTime@@()@task.cpp@250@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_Member@Task@graph@@(Task *,QList *,QList *,qint64 *,qint64 *,qint64)@
+CCCC_MemExt@Task@graph@@(Task *,QList *,QList *,qint64 *,qint64 *,qint64)@task.cpp@92@definition@F????@LOC:31 COM:0 MVG:9@?@d@
+CCCC_Member@Task@printTask@@()@
+CCCC_MemExt@Task@printTask@@()@task.cpp@191@definition@F????@LOC:20 COM:0 MVG:3@?@d@
+CCCC_Member@Task@removePredecessor@@(Task *)@
+CCCC_MemExt@Task@removePredecessor@@(Task *)@task.cpp@38@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@Task@removePredecessor@@(Task *)@task.h@56@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@removeSuccessor@@(Task *)@
+CCCC_MemExt@Task@removeSuccessor@@(Task *)@task.cpp@35@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@Task@removeSuccessor@@(Task *)@task.h@55@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@setDescription@@(const QString &)@
+CCCC_MemExt@Task@setDescription@@(const QString &)@task.cpp@247@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setDurationInH@@(const qint64 &)@
+CCCC_MemExt@Task@setDurationInH@@(const qint64 &)@task.cpp@235@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setId@@(const qint64 &)@
+CCCC_MemExt@Task@setId@@(const qint64 &)@task.cpp@223@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setImportance@@(const qint64 &)@
+CCCC_MemExt@Task@setImportance@@(const qint64 &)@task.cpp@229@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setName@@(const QString &)@
+CCCC_MemExt@Task@setName@@(const QString &)@task.cpp@241@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setStatus@@(const qint64 &)@
+CCCC_MemExt@Task@setStatus@@(const qint64 &)@task.cpp@263@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setTime@@(const QString &)@
+CCCC_MemExt@Task@setTime@@(const QString &)@task.cpp@256@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@setTimeToCurrentTime@@()@
+CCCC_MemExt@Task@setTimeToCurrentTime@@()@task.cpp@253@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@Task@taskPredecessors@@(qint64 *,qint64)@
+CCCC_MemExt@Task@taskPredecessors@@(qint64 *,qint64)@task.cpp@53@definition@F????@LOC:16 COM:0 MVG:4@?@d@
+CCCC_MemExt@Task@taskPredecessors@@(qint64 *,qint64)@task.h@59@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@Task@taskSuccessors@@(qint64)@
+CCCC_MemExt@Task@taskSuccessors@@(qint64)@task.cpp@42@definition@F????@LOC:10 COM:0 MVG:2@?@d@
+CCCC_MemExt@Task@taskSuccessors@@(qint64)@task.h@58@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@TaskDatabase@@(QString,QString,QString,QString,QString)@
+CCCC_MemExt@TaskDatabase@TaskDatabase@@(QString,QString,QString,QString,QString)@taskdatabase.cpp@8@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@TaskDatabase@TaskDatabase@@(QString,QString,QString,QString,QString)@taskdatabase.h@12@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@clear@@()@
+CCCC_MemExt@TaskDatabase@clear@@()@taskdatabase.cpp@172@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@clear@@()@taskdatabase.h@29@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@createUser@@(QString,QString)@
+CCCC_MemExt@TaskDatabase@createUser@@(QString,QString)@taskdatabase.cpp@39@definition@F????@LOC:7 COM:0 MVG:1@?@d@
+CCCC_MemExt@TaskDatabase@createUser@@(QString,QString)@taskdatabase.h@15@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@deleteRelation@@(qint64,qint64)@
+CCCC_MemExt@TaskDatabase@deleteRelation@@(qint64,qint64)@taskdatabase.cpp@97@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@deleteRelation@@(qint64,qint64)@taskdatabase.h@24@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@deleteUser@@(QString)@
+CCCC_MemExt@TaskDatabase@deleteUser@@(QString)@taskdatabase.cpp@47@definition@F????@LOC:7 COM:0 MVG:1@?@d@
+CCCC_MemExt@TaskDatabase@deleteUser@@(QString)@taskdatabase.h@16@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@getTask@@(qint64)@
+CCCC_MemExt@TaskDatabase@getTask@@(qint64)@taskdatabase.cpp@64@definition@F????@LOC:16 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@getTask@@(qint64)@taskdatabase.h@19@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@getUsername@@()@
+CCCC_MemExt@TaskDatabase@getUsername@@()@taskdatabase.cpp@4@definition@T????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@TaskDatabase@getUsername@@()@taskdatabase.h@31@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@insertRelation@@(qint64,qint64)@
+CCCC_MemExt@TaskDatabase@insertRelation@@(qint64,qint64)@taskdatabase.cpp@108@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@insertRelation@@(qint64,qint64)@taskdatabase.h@25@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@insertRelations@@(QList *,QList *)@
+CCCC_MemExt@TaskDatabase@insertRelations@@(QList *,QList *)@taskdatabase.cpp@133@definition@F????@LOC:15 COM:0 MVG:5@?@d@
+CCCC_MemExt@TaskDatabase@insertRelations@@(QList *,QList *)@taskdatabase.h@27@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@insertRelations@@(Task *)@
+CCCC_MemExt@TaskDatabase@insertRelations@@(Task *)@taskdatabase.cpp@119@definition@F????@LOC:13 COM:0 MVG:4@?@d@
+CCCC_MemExt@TaskDatabase@insertRelations@@(Task *)@taskdatabase.h@26@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@insertTask@@(QString,qint64,qint64,QString,qint64)@
+CCCC_MemExt@TaskDatabase@insertTask@@(QString,qint64,qint64,QString,qint64)@taskdatabase.cpp@81@definition@F????@LOC:15 COM:0 MVG:5@?@d@
+CCCC_MemExt@TaskDatabase@insertTask@@(QString,qint64,qint64,QString,qint64)@taskdatabase.h@20@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@insertTask@@(Task *)@
+CCCC_MemExt@TaskDatabase@insertTask@@(Task *)@taskdatabase.h@22@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@isUserLogged@@()@
+CCCC_MemExt@TaskDatabase@isUserLogged@@()@taskdatabase.cpp@59@definition@F????@LOC:3 COM:0 MVG:1@?@d@
+CCCC_MemExt@TaskDatabase@isUserLogged@@()@taskdatabase.h@30@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@login@@(QString,QString)@
+CCCC_MemExt@TaskDatabase@login@@(QString,QString)@taskdatabase.cpp@13@definition@F????@LOC:22 COM:0 MVG:4@?@d@
+CCCC_MemExt@TaskDatabase@login@@(QString,QString)@taskdatabase.h@14@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@logout@@()@
+CCCC_MemExt@TaskDatabase@logout@@()@taskdatabase.cpp@55@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@TaskDatabase@logout@@()@taskdatabase.h@17@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@removeTask@@(Task *)@
+CCCC_MemExt@TaskDatabase@removeTask@@(Task *)@taskdatabase.cpp@150@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@removeTask@@(Task *)@taskdatabase.h@23@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@signalDone@@(qint64)@
+CCCC_MemExt@TaskDatabase@signalDone@@(qint64)@taskdatabase.cpp@183@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@signalDone@@(qint64)@taskdatabase.h@21@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskDatabase@update@@(Task *)@
+CCCC_MemExt@TaskDatabase@update@@(Task *)@taskdatabase.cpp@161@definition@F????@LOC:10 COM:0 MVG:3@?@d@
+CCCC_MemExt@TaskDatabase@update@@(Task *)@taskdatabase.h@28@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@TaskUtilities@printList@@(QList *)@
+CCCC_MemExt@TaskUtilities@printList@@(QList *)@taskutilities.cpp@18@definition@F????@LOC:7 COM:0 MVG:2@?@d@
+CCCC_Member@TaskUtilities@relate@@(Task *,Task *)@
+CCCC_MemExt@TaskUtilities@relate@@(Task *,Task *)@taskutilities.cpp@3@definition@F????@LOC:14 COM:0 MVG:3@?@d@
+CCCC_Member@TaskUtilities@relateFromQuery@@(Collection *,const QMap *)@
+CCCC_MemExt@TaskUtilities@relateFromQuery@@(Collection *,const QMap *)@taskutilities.cpp@44@definition@F????@LOC:8 COM:0 MVG:3@?@d@
+CCCC_Member@TaskUtilities@tasksFromQuery@@(Collection *,const QMap *)@
+CCCC_MemExt@TaskUtilities@tasksFromQuery@@(Collection *,const QMap *)@taskutilities.cpp@26@definition@F????@LOC:17 COM:0 MVG:3@?@d@
+CCCC_Member@TaskWidget@TaskWidget@@(QWidget *,Collection *)@
+CCCC_MemExt@TaskWidget@TaskWidget@@(QWidget *,Collection *)@taskwidget.cpp@18@definition@F????@LOC:7 COM:6 MVG:0@?@d@
+CCCC_Member@TaskWidget@fillWidget@@(Task *)@
+CCCC_MemExt@TaskWidget@fillWidget@@(Task *)@taskwidget.cpp@34@definition@F????@LOC:14 COM:6 MVG:1@?@d@
+CCCC_Member@TaskWidget@getTask@@()@
+CCCC_MemExt@TaskWidget@getTask@@()@taskwidget.cpp@99@definition@T????@LOC:4 COM:4 MVG:1@?@d@
+CCCC_Member@TaskWidget@on_pushButton_2_clicked@@()@
+CCCC_MemExt@TaskWidget@on_pushButton_2_clicked@@()@taskwidget.cpp@76@definition@F????@LOC:15 COM:4 MVG:1@?@d@
+CCCC_Member@TaskWidget@on_pushButton_3_clicked@@()@
+CCCC_MemExt@TaskWidget@on_pushButton_3_clicked@@()@taskwidget.cpp@59@definition@F????@LOC:9 COM:4 MVG:1@?@d@
+CCCC_Member@TaskWidget@on_pushButton_clicked@@()@
+CCCC_MemExt@TaskWidget@on_pushButton_clicked@@()@taskwidget.cpp@116@definition@F????@LOC:4 COM:3 MVG:0@?@d@
+CCCC_Member@TaskWidget@setTask@@(Task *)@
+CCCC_MemExt@TaskWidget@setTask@@(Task *)@taskwidget.cpp@108@definition@F????@LOC:4 COM:4 MVG:0@?@d@
+CCCC_Member@TaskWidget@~TaskWidget@@()@
+CCCC_MemExt@TaskWidget@~TaskWidget@@()@taskwidget.cpp@50@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@anonymous@AboutDialog@@(QWidget *)@
+CCCC_MemExt@anonymous@AboutDialog@@(QWidget *)@aboutdialog.h@15@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@AddTaskDialog@@(...)@
+CCCC_MemExt@anonymous@AddTaskDialog@@(...)@addtaskdialog.h@16@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@LoginDialog@@(QWidget *)@
+CCCC_MemExt@anonymous@LoginDialog@@(QWidget *)@logindialog.h@15@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@MainWindow@@(...)@
+CCCC_MemExt@anonymous@MainWindow@@(...)@mainwindow.h@22@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@MoreDialog@@(...)@
+CCCC_MemExt@anonymous@MoreDialog@@(...)@moredialog.h@16@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@Relations@@(...)@
+CCCC_MemExt@anonymous@Relations@@(...)@relations.h@22@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@TaskWidget@@(...)@
+CCCC_MemExt@anonymous@TaskWidget@@(...)@taskwidget.h@18@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@confirmLogin@@()@
+CCCC_MemExt@anonymous@confirmLogin@@()@mainwindow.h@24@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@downwalk@@(Task *,QList *,QList *)@
+CCCC_MemExt@anonymous@downwalk@@(Task *,QList *,QList *)@collection.cpp@238@definition@F????@LOC:13 COM:0 MVG:3@?@d@
+CCCC_Member@anonymous@drawGraph@@(QList *,qint64,bool)@
+CCCC_MemExt@anonymous@drawGraph@@(QList *,qint64,bool)@task.h@66@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@drawGraph@@(qint64)@
+CCCC_MemExt@anonymous@drawGraph@@(qint64)@task.h@65@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@fillWidget@@(Task *)@
+CCCC_MemExt@anonymous@fillWidget@@(Task *)@moredialog.h@21@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_MemExt@anonymous@fillWidget@@(Task *)@taskwidget.h@20@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getCurrentTime@@()@
+CCCC_MemExt@anonymous@getCurrentTime@@()@utilities.cpp@3@definition@F????@LOC:7 COM:0 MVG:1@?@d@
+CCCC_MemExt@anonymous@getCurrentTime@@()@utilities.h@11@declaration@F????@LOC:1 COM:4 MVG:0@?@D@
+CCCC_Member@anonymous@getDescription@@()@
+CCCC_MemExt@anonymous@getDescription@@()@moredialog.h@27@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_MemExt@anonymous@getDescription@@()@task.h@81@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getDurationInH@@()@
+CCCC_MemExt@anonymous@getDurationInH@@()@task.h@77@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getEffort@@()@
+CCCC_MemExt@anonymous@getEffort@@()@moredialog.h@29@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getExit@@()@
+CCCC_MemExt@anonymous@getExit@@()@logindialog.h@29@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getId@@()@
+CCCC_MemExt@anonymous@getId@@()@task.h@73@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getImportance@@()@
+CCCC_MemExt@anonymous@getImportance@@()@task.h@75@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getMain@@()@
+CCCC_MemExt@anonymous@getMain@@()@moredialog.h@34@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getName@@()@
+CCCC_MemExt@anonymous@getName@@()@task.h@79@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getPassword@@()@
+CCCC_MemExt@anonymous@getPassword@@()@logindialog.h@21@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getPredecessors@@()@
+CCCC_MemExt@anonymous@getPredecessors@@()@task.h@70@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getPriority@@()@
+CCCC_MemExt@anonymous@getPriority@@()@moredialog.h@28@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getStatus@@()@
+CCCC_MemExt@anonymous@getStatus@@()@task.h@86@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getSuccessors@@()@
+CCCC_MemExt@anonymous@getSuccessors@@()@task.h@71@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getT@@()@
+CCCC_MemExt@anonymous@getT@@()@moredialog.h@31@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getTask@@()@
+CCCC_MemExt@anonymous@getTask@@()@taskwidget.h@22@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getTime@@()@
+CCCC_MemExt@anonymous@getTime@@()@task.h@83@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getTitle@@()@
+CCCC_MemExt@anonymous@getTitle@@()@moredialog.h@26@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getUi@@()@
+CCCC_MemExt@anonymous@getUi@@()@logindialog.h@24@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_MemExt@anonymous@getUi@@()@moredialog.h@23@declaration@T????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@getUser@@()@
+CCCC_MemExt@anonymous@getUser@@()@logindialog.h@18@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@getWt@@()@
+CCCC_MemExt@anonymous@getWt@@()@moredialog.h@19@declaration@T???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@graph@@(Task *,QList *,QList *,qint64 *,qint64 *,qint64)@
+CCCC_MemExt@anonymous@graph@@(Task *,QList *,QList *,qint64 *,qint64 *,qint64)@task.h@64@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@main@@(...)@
+CCCC_MemExt@anonymous@main@@(...)@main.cpp@10@definition@F????@LOC:17 COM:2 MVG:2@?@d@
+CCCC_Member@anonymous@printList@@(QList *)@
+CCCC_MemExt@anonymous@printList@@(QList *)@taskutilities.h@21@declaration@F????@LOC:1 COM:4 MVG:0@?@D@
+CCCC_Member@anonymous@printTask@@()@
+CCCC_MemExt@anonymous@printTask@@()@task.h@68@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@refreshList@@()@
+CCCC_MemExt@anonymous@refreshList@@()@mainwindow.h@25@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@relate@@(Task *,Task *)@
+CCCC_MemExt@anonymous@relate@@(Task *,Task *)@taskutilities.h@16@declaration@F????@LOC:1 COM:6 MVG:0@?@D@
+CCCC_Member@anonymous@relateFromQuery@@(Collection *,const QMap *)@
+CCCC_MemExt@anonymous@relateFromQuery@@(Collection *,const QMap *)@taskutilities.h@33@declaration@F????@LOC:1 COM:5 MVG:0@?@D@
+CCCC_Member@anonymous@setDescription@@(const QString &)@
+CCCC_MemExt@anonymous@setDescription@@(const QString &)@task.h@82@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setDurationInH@@(const qint64 &)@
+CCCC_MemExt@anonymous@setDurationInH@@(const qint64 &)@task.h@78@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setExit@@(bool)@
+CCCC_MemExt@anonymous@setExit@@(bool)@logindialog.h@30@declaration@F????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@setId@@(const qint64 &)@
+CCCC_MemExt@anonymous@setId@@(const qint64 &)@task.h@74@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setImportance@@(const qint64 &)@
+CCCC_MemExt@anonymous@setImportance@@(const qint64 &)@task.h@76@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setMain@@(MainWindow *)@
+CCCC_MemExt@anonymous@setMain@@(MainWindow *)@moredialog.h@35@declaration@F????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@setMessage@@(QString *)@
+CCCC_MemExt@anonymous@setMessage@@(QString *)@logindialog.h@27@declaration@F????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@setName@@(const QString &)@
+CCCC_MemExt@anonymous@setName@@(const QString &)@task.h@80@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setPassword@@(const QString &)@
+CCCC_MemExt@anonymous@setPassword@@(const QString &)@logindialog.h@22@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setStatus@@(const qint64 &)@
+CCCC_MemExt@anonymous@setStatus@@(const qint64 &)@task.h@87@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setT@@(Task *)@
+CCCC_MemExt@anonymous@setT@@(Task *)@moredialog.h@32@declaration@F????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@setTask@@(Task *)@
+CCCC_MemExt@anonymous@setTask@@(Task *)@taskwidget.h@23@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setTime@@(const QString &)@
+CCCC_MemExt@anonymous@setTime@@(const QString &)@task.h@85@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setTimeToCurrentTime@@()@
+CCCC_MemExt@anonymous@setTimeToCurrentTime@@()@task.h@84@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setUi@@(LoginDialog *)@
+CCCC_MemExt@anonymous@setUi@@(LoginDialog *)@logindialog.h@25@declaration@F????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@setUi@@(MoreDialog *)@
+CCCC_MemExt@anonymous@setUi@@(MoreDialog *)@moredialog.h@24@declaration@F????@LOC:1 COM:0 MVG:0@?@D@
+CCCC_Member@anonymous@setUser@@(const QString &)@
+CCCC_MemExt@anonymous@setUser@@(const QString &)@logindialog.h@19@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@setWt@@(TaskWidget *)@
+CCCC_MemExt@anonymous@setWt@@(TaskWidget *)@moredialog.h@20@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@tasksFromQuery@@(Collection *,const QMap *)@
+CCCC_MemExt@anonymous@tasksFromQuery@@(Collection *,const QMap *)@taskutilities.h@27@declaration@F????@LOC:1 COM:5 MVG:0@?@D@
+CCCC_Member@anonymous@todoListAccessory@@(Task *,QHash *,qint64,qint64 *)@
+CCCC_MemExt@anonymous@todoListAccessory@@(Task *,QHash *,qint64,qint64 *)@collection.cpp@277@definition@F????@LOC:15 COM:2 MVG:4@?@d@
+CCCC_Member@anonymous@upwalk@@(Task *,QList *,QList *)@
+CCCC_MemExt@anonymous@upwalk@@(Task *,QList *,QList *)@collection.cpp@215@definition@F????@LOC:13 COM:0 MVG:3@?@d@
+CCCC_Member@anonymous@~AboutDialog@@()@
+CCCC_MemExt@anonymous@~AboutDialog@@()@aboutdialog.h@16@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@~AddTaskDialog@@()@
+CCCC_MemExt@anonymous@~AddTaskDialog@@()@addtaskdialog.h@17@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@~LoginDialog@@()@
+CCCC_MemExt@anonymous@~LoginDialog@@()@logindialog.h@16@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@~MainWindow@@()@
+CCCC_MemExt@anonymous@~MainWindow@@()@mainwindow.h@23@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@~MoreDialog@@()@
+CCCC_MemExt@anonymous@~MoreDialog@@()@moredialog.h@17@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@~Relations@@()@
+CCCC_MemExt@anonymous@~Relations@@()@relations.h@23@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_Member@anonymous@~TaskWidget@@()@
+CCCC_MemExt@anonymous@~TaskWidget@@()@taskwidget.h@19@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_UseRel@QDialog@AboutDialog@
+CCCC_UseExt@QDialog@AboutDialog@aboutdialog.h@10@inheritance@????0@*@0@I@
+CCCC_UseRel@QWidget@AboutDialog@
+CCCC_UseExt@QWidget@AboutDialog@aboutdialog.cpp@7@pass by reference@?????@*@?@p@
+CCCC_UseRel@Collection@AddTaskDialog@
+CCCC_UseExt@Collection@AddTaskDialog@addtaskdialog.cpp@11@pass by reference@?????@*@?@p@
+CCCC_UseRel@QDialog@AddTaskDialog@
+CCCC_UseExt@QDialog@AddTaskDialog@addtaskdialog.h@11@inheritance@????0@*@0@I@
+CCCC_UseRel@QWidget@AddTaskDialog@
+CCCC_UseExt@QWidget@AddTaskDialog@addtaskdialog.cpp@11@pass by reference@?????@*@?@p@
+CCCC_UseRel@QList@Collection@
+CCCC_UseExt@QList@Collection@collection.h@13@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@QList@Collection@collection.h@17@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseRel@QString@Collection@
+CCCC_UseExt@QString@Collection@collection.cpp@35@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Collection@collection.cpp@35@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Collection@collection.cpp@365@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Collection@collection.cpp@365@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Collection@collection.h@52@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Collection@collection.h@52@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Collection@collection.h@124@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Collection@collection.h@124@pass by value@F???0@*@0@P@
+CCCC_UseRel@Task@Collection@
+CCCC_UseExt@Task@Collection@collection.cpp@24@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@47@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@108@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@117@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@147@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@147@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@197@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.cpp@197@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@Collection@collection.h@42@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@58@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@85@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@85@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@101@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@101@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@110@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@Collection@collection.h@116@pass by reference@F???0@*@0@p@
+CCCC_UseRel@TaskDatabase@Collection@
+CCCC_UseExt@TaskDatabase@Collection@collection.cpp@4@pass by reference@?????@*@?@p@
+CCCC_UseExt@TaskDatabase@Collection@collection.h@29@has by reference@F???2@LOC:0 COM:0 MVG:0@2@h@
+CCCC_UseRel@bool@Collection@
+CCCC_UseExt@bool@Collection@collection.cpp@47@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.cpp@121@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.cpp@125@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.cpp@147@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.cpp@163@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.cpp@179@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.cpp@197@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Collection@collection.h@58@pass by value@F???0@*@0@P@
+CCCC_UseExt@bool@Collection@collection.h@64@pass by value@F???0@*@0@P@
+CCCC_UseExt@bool@Collection@collection.h@69@pass by value@F???0@*@0@P@
+CCCC_UseExt@bool@Collection@collection.h@77@pass by value@F???0@*@0@P@
+CCCC_UseExt@bool@Collection@collection.h@85@pass by value@F???0@*@0@P@
+CCCC_UseExt@bool@Collection@collection.h@93@pass by value@F???0@*@0@P@
+CCCC_UseExt@bool@Collection@collection.h@101@pass by value@F???0@*@0@P@
+CCCC_UseRel@qint64@Collection@
+CCCC_UseExt@qint64@Collection@collection.cpp@35@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@35@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@35@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@121@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@133@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@163@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@163@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@179@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.cpp@179@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Collection@collection.h@21@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@qint64@Collection@collection.h@52@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@52@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@52@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@64@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@77@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@77@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@93@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@93@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Collection@collection.h@141@pass by value@F???0@*@0@P@
+CCCC_UseRel@QList@Connection@
+CCCC_UseExt@QList@Connection@connection.cpp@24@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@Connection@connection.cpp@40@pass by value@F????@*@?@P@
+CCCC_UseExt@QList@Connection@connection.cpp@66@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@Connection@connection.cpp@66@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@Connection@connection.h@23@pass by value@F???1@*@1@P@
+CCCC_UseRel@QMap@Connection@
+CCCC_UseExt@QMap@Connection@connection.cpp@121@pass by reference@F????@*@?@p@
+CCCC_UseExt@QMap@Connection@connection.h@71@pass by reference@F???0@*@0@p@
+CCCC_UseRel@QSqlDatabase@Connection@
+CCCC_UseExt@QSqlDatabase@Connection@connection.h@11@has by value@????1@LOC:0 COM:0 MVG:0@1@H@
+CCCC_UseRel@QString@Connection@
+CCCC_UseExt@QString@Connection@connection.cpp@4@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@4@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@4@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@4@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@4@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@54@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@66@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@97@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.cpp@97@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Connection@connection.h@29@pass by value@F???1@*@1@P@
+CCCC_UseExt@QString@Connection@connection.h@39@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Connection@connection.h@39@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Connection@connection.h@39@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Connection@connection.h@39@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Connection@connection.h@39@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Connection@connection.h@64@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Connection@connection.h@64@pass by value@F???0@*@0@P@
+CCCC_UseRel@bool@Connection@
+CCCC_UseExt@bool@Connection@connection.cpp@121@pass by value@F????@*@?@P@
+CCCC_UseExt@bool@Connection@connection.h@71@pass by value@F???0@*@0@P@
+CCCC_UseRel@QDialog@LoginDialog@
+CCCC_UseExt@QDialog@LoginDialog@logindialog.h@10@inheritance@????0@*@0@I@
+CCCC_UseRel@QString@LoginDialog@
+CCCC_UseExt@QString@LoginDialog@logindialog.cpp@42@pass by reference@F????@*@?@p@
+CCCC_UseExt@QString@LoginDialog@logindialog.cpp@62@pass by reference@T????@*@?@p@
+CCCC_UseExt@QString@LoginDialog@logindialog.cpp@72@pass by reference@T????@*@?@p@
+CCCC_UseRel@QWidget@LoginDialog@
+CCCC_UseExt@QWidget@LoginDialog@logindialog.cpp@5@pass by reference@?????@*@?@p@
+CCCC_UseRel@bool@LoginDialog@
+CCCC_UseExt@bool@LoginDialog@logindialog.cpp@36@pass by value@T????@*@?@P@
+CCCC_UseRel@Collection@MainWindow@
+CCCC_UseExt@Collection@MainWindow@mainwindow.cpp@8@pass by reference@?????@*@?@p@
+CCCC_UseRel@QCloseEvent@MainWindow@
+CCCC_UseExt@QCloseEvent@MainWindow@mainwindow.cpp@28@pass by reference@F????@*@?@p@
+CCCC_UseRel@QColor@MainWindow@
+CCCC_UseExt@QColor@MainWindow@mainwindow.cpp@154@pass by value@F????@*@?@P@
+CCCC_UseRel@QMainWindow@MainWindow@
+CCCC_UseExt@QMainWindow@MainWindow@mainwindow.h@17@inheritance@????0@*@0@I@
+CCCC_UseRel@QWidget@MainWindow@
+CCCC_UseExt@QWidget@MainWindow@mainwindow.cpp@8@pass by reference@?????@*@?@p@
+CCCC_UseRel@Collection@MoreDialog@
+CCCC_UseExt@Collection@MoreDialog@moredialog.cpp@6@pass by reference@?????@*@?@p@
+CCCC_UseRel@QDialog@MoreDialog@
+CCCC_UseExt@QDialog@MoreDialog@moredialog.h@11@inheritance@????0@*@0@I@
+CCCC_UseRel@QWidget@MoreDialog@
+CCCC_UseExt@QWidget@MoreDialog@moredialog.cpp@6@pass by reference@?????@*@?@p@
+CCCC_UseRel@Task@MoreDialog@
+CCCC_UseExt@Task@MoreDialog@moredialog.cpp@36@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@MoreDialog@moredialog.cpp@68@pass by reference@T????@*@?@p@
+CCCC_UseRel@Collection@Relations@
+CCCC_UseExt@Collection@Relations@relations.cpp@4@pass by reference@?????@*@?@p@
+CCCC_UseRel@QDialog@Relations@
+CCCC_UseExt@QDialog@Relations@relations.h@17@inheritance@????0@*@0@I@
+CCCC_UseRel@QWidget@Relations@
+CCCC_UseExt@QWidget@Relations@relations.cpp@4@pass by reference@?????@*@?@p@
+CCCC_UseRel@QList@Task@
+CCCC_UseExt@QList@Task@task.cpp@92@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@Task@task.cpp@92@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@Task@task.cpp@157@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@Task@task.h@37@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@QList@Task@task.h@38@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseRel@QString@Task@
+CCCC_UseExt@QString@Task@task.cpp@7@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Task@task.cpp@7@pass by value@?????@*@?@P@
+CCCC_UseExt@QString@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@Task@task.cpp@241@pass by reference@T????@*@?@p@
+CCCC_UseExt@QString@Task@task.cpp@247@pass by reference@T????@*@?@p@
+CCCC_UseExt@QString@Task@task.cpp@256@pass by reference@F????@*@?@p@
+CCCC_UseExt@QString@Task@task.h@33@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@QString@Task@task.h@34@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@QString@Task@task.h@35@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@QString@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseRel@bool@Task@
+CCCC_UseExt@bool@Task@task.cpp@157@pass by value@F????@*@?@P@
+CCCC_UseRel@qint64@Task@
+CCCC_UseExt@qint64@Task@task.cpp@7@pass by value@?????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@7@pass by value@?????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@7@pass by value@?????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@7@pass by value@?????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@17@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@42@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@53@pass by reference@F????@*@?@p@
+CCCC_UseExt@qint64@Task@task.cpp@53@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@70@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@92@pass by reference@F????@*@?@p@
+CCCC_UseExt@qint64@Task@task.cpp@92@pass by reference@F????@*@?@p@
+CCCC_UseExt@qint64@Task@task.cpp@92@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@124@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@157@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@Task@task.cpp@223@pass by reference@T????@*@?@p@
+CCCC_UseExt@qint64@Task@task.cpp@229@pass by reference@T????@*@?@p@
+CCCC_UseExt@qint64@Task@task.cpp@235@pass by reference@T????@*@?@p@
+CCCC_UseExt@qint64@Task@task.cpp@263@pass by reference@T????@*@?@p@
+CCCC_UseExt@qint64@Task@task.h@30@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@qint64@Task@task.h@31@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@qint64@Task@task.h@32@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@qint64@Task@task.h@36@has by value@????0@LOC:0 COM:0 MVG:0@0@H@
+CCCC_UseExt@qint64@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Task@task.h@51@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Task@task.h@58@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Task@task.h@59@pass by reference@F???0@*@0@p@
+CCCC_UseExt@qint64@Task@task.h@59@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@Task@task.h@60@pass by value@F???0@*@0@P@
+CCCC_UseRel@Connection@TaskDatabase@
+CCCC_UseExt@Connection@TaskDatabase@taskdatabase.h@7@inheritance@????0@*@0@I@
+CCCC_UseRel@QList@TaskDatabase@
+CCCC_UseExt@QList@TaskDatabase@taskdatabase.cpp@133@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@TaskDatabase@taskdatabase.cpp@133@pass by reference@F????@*@?@p@
+CCCC_UseExt@QList@TaskDatabase@taskdatabase.h@27@pass by reference@F???0@*@0@p@
+CCCC_UseExt@QList@TaskDatabase@taskdatabase.h@27@pass by reference@F???0@*@0@p@
+CCCC_UseRel@QString@TaskDatabase@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@8@pass by value@T????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@8@pass by value@T????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@8@pass by value@T????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@8@pass by value@T????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@8@pass by value@T????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@13@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@13@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@39@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@39@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@47@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@81@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.cpp@81@pass by value@F????@*@?@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@10@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@12@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@14@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@14@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@15@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@15@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@16@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@20@pass by value@F???0@*@0@P@
+CCCC_UseExt@QString@TaskDatabase@taskdatabase.h@20@pass by value@F???0@*@0@P@
+CCCC_UseRel@Task@TaskDatabase@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.cpp@119@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.cpp@150@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.cpp@161@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.h@22@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.h@23@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.h@26@pass by reference@F???0@*@0@p@
+CCCC_UseExt@Task@TaskDatabase@taskdatabase.h@28@pass by reference@F???0@*@0@p@
+CCCC_UseRel@qint64@TaskDatabase@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@64@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@81@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@81@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@81@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@97@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@97@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@108@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@108@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.cpp@183@pass by value@F????@*@?@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@9@has by value@????2@LOC:0 COM:0 MVG:0@2@H@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@19@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@20@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@20@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@20@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@21@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@24@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@24@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@25@pass by value@F???0@*@0@P@
+CCCC_UseExt@qint64@TaskDatabase@taskdatabase.h@25@pass by value@F???0@*@0@P@
+CCCC_UseRel@Collection@TaskUtilities@
+CCCC_UseExt@Collection@TaskUtilities@taskutilities.cpp@26@pass by reference@F????@*@?@p@
+CCCC_UseExt@Collection@TaskUtilities@taskutilities.cpp@44@pass by reference@F????@*@?@p@
+CCCC_UseRel@QList@TaskUtilities@
+CCCC_UseExt@QList@TaskUtilities@taskutilities.cpp@18@pass by reference@F????@*@?@p@
+CCCC_UseRel@QMap@TaskUtilities@
+CCCC_UseExt@QMap@TaskUtilities@taskutilities.cpp@26@pass by reference@F????@*@?@p@
+CCCC_UseExt@QMap@TaskUtilities@taskutilities.cpp@44@pass by reference@F????@*@?@p@
+CCCC_UseRel@Task@TaskUtilities@
+CCCC_UseExt@Task@TaskUtilities@taskutilities.cpp@3@pass by reference@?????@*@?@p@
+CCCC_UseExt@Task@TaskUtilities@taskutilities.cpp@3@pass by reference@?????@*@?@p@
+CCCC_UseRel@Collection@TaskWidget@
+CCCC_UseExt@Collection@TaskWidget@taskwidget.cpp@18@pass by reference@?????@*@?@p@
+CCCC_UseRel@QWidget@TaskWidget@
+CCCC_UseExt@QWidget@TaskWidget@taskwidget.cpp@18@pass by reference@?????@*@?@p@
+CCCC_UseExt@QWidget@TaskWidget@taskwidget.h@13@inheritance@????0@*@0@I@
+CCCC_UseRel@Task@TaskWidget@
+CCCC_UseExt@Task@TaskWidget@taskwidget.cpp@34@pass by reference@F????@*@?@p@
+CCCC_UseExt@Task@TaskWidget@taskwidget.cpp@108@pass by reference@T????@*@?@p@
+CCCC_RejExt@aboutdialog.cpp@1@<file scope items>@F????@LOC:0 COM:0 MVG:0@?@r@
+CCCC_RejExt@addtaskdialog.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@collection.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@connection.cpp@1@<file scope items>@F????@LOC:2 COM:0 MVG:0@?@r@
+CCCC_RejExt@logindialog.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@main.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@mainwindow.cpp@1@<file scope items>@F????@LOC:2 COM:0 MVG:0@?@r@
+CCCC_RejExt@moredialog.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@relations.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@task.cpp@1@<file scope items>@F????@LOC:2 COM:0 MVG:0@?@r@
+CCCC_RejExt@taskdatabase.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@taskutilities.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@taskwidget.cpp@1@<file scope items>@F????@LOC:2 COM:0 MVG:0@?@r@
+CCCC_RejExt@utilities.cpp@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@
+CCCC_RejExt@collection.h@1@<file scope items>@F???2@LOC:1 COM:0 MVG:0@2@r@
+CCCC_RejExt@connection.h@1@<file scope items>@F???2@LOC:1 COM:0 MVG:0@2@r@
+CCCC_RejExt@taskdatabase.h@1@<file scope items>@T???0@LOC:1 COM:0 MVG:0@0@r@
+CCCC_RejExt@taskutilities.h@1@<file scope items>@F????@LOC:3 COM:0 MVG:0@?@r@
+CCCC_RejExt@utilities.h@1@<file scope items>@F????@LOC:1 COM:0 MVG:0@?@r@

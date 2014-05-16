@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module TaskDatabase-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="192" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="43" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+<weighted_methods_per_class_unity value="18" level="0" />
+<weighted_methods_per_class_visibility value="18" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="6" level="0" />
+<IF4 value="25" level="0" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="taskdatabase.h" line="7" />
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>TaskDatabase(QString,QString,QString,QString,QString)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="8" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="12" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>clear()</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="172" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="29" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>createUser(QString,QString)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="39" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="15" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>deleteRelation(qint64,qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="97" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="24" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>deleteUser(QString)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="47" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="16" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getTask(qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="64" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="19" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getUsername()</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="4" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="31" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>insertRelation(qint64,qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="108" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="25" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>insertRelations(QList *,QList *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="133" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="27" />
+</extent>
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>insertRelations(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="119" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="26" />
+</extent>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>insertTask(QString,qint64,qint64,QString,qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="81" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="20" />
+</extent>
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>insertTask(Task *)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="22" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>isUserLogged()</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="59" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="30" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>login(QString,QString)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="13" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="14" />
+</extent>
+<lines_of_code value="23" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>logout()</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="55" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="17" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>removeTask(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="150" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="23" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>signalDone(qint64)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="183" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="21" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update(Task *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="taskdatabase.cpp" line="161" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="taskdatabase.h" line="28" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>TaskDatabase</name>
+<client_module>
+<name>Collection</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="collection.cpp" line="4" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="collection.h" line="29" />
+</extent>
+</client_module>
+<supplier_module>
+<name>Connection</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="taskdatabase.h" line="7" />
+</extent>
+<name>QList</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="133" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="133" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="27" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="27" />
+</extent>
+<name>QString</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="8" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="13" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="13" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="39" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="39" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="47" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="81" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="81" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="taskdatabase.h" line="10" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="12" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="14" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="14" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="15" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="15" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="16" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="20" />
+</extent>
+<name>Task</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="119" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="150" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.cpp" line="161" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="22" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="23" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="26" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="taskdatabase.h" line="28" />
+</extent>
+<name>qint64</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="64" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="81" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="81" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="81" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="97" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="97" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="108" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="108" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.cpp" line="183" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="taskdatabase.h" line="9" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="19" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="20" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="21" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="24" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="24" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="25" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="taskdatabase.h" line="25" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

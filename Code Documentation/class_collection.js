@@ -1,0 +1,27 @@
+var class_collection =
+[
+    [ "Collection", "class_collection.html#aee794383519385c6d0b53824121a9404", null ],
+    [ "~Collection", "class_collection.html#a017dd492156e6b570a21f58a07dd73f5", null ],
+    [ "addItem", "class_collection.html#a0cf0ad6d3981e7a5725820542c20cdf3", null ],
+    [ "addItem", "class_collection.html#ad0780cf4f712bd09525d48980d59268e", null ],
+    [ "done", "class_collection.html#a1a9ce4c5663b0a3ec51ad19093f18115", null ],
+    [ "emptyCollection", "class_collection.html#a8114252c33cf0985167d370413798a06", null ],
+    [ "get", "class_collection.html#a4beedb301ce04e82fc610d6c20452575", null ],
+    [ "getAll", "class_collection.html#a7967711b31f9ee9c980b0a315a2f248f", null ],
+    [ "getConnection", "class_collection.html#a7ff8dc706d649f9eed7df697834085f4", null ],
+    [ "getDoneList", "class_collection.html#a225bbb49f601b7eff1116b2e89f2b50e", null ],
+    [ "getLeaves", "class_collection.html#a019c8ea2720bb5f9d7ac2e0772a9facb", null ],
+    [ "getRoots", "class_collection.html#a2d786181d258f893d1054fb14fb601cf", null ],
+    [ "getTodoList", "class_collection.html#a5cf1b5afa4fdbb07dd1c06e1e8403b49", null ],
+    [ "login", "class_collection.html#a1468faa439c9b1a54a72e6df4ca0f25a", null ],
+    [ "logout", "class_collection.html#a4e5a69d3a263857002d071bac2bd1bee", null ],
+    [ "populateFromDatabase", "class_collection.html#a739c9f5179b9e91f6b07c13357d63ba3", null ],
+    [ "printForest", "class_collection.html#ac87cb8ee1bc4dfb59a044bdf6b29a3e8", null ],
+    [ "relate", "class_collection.html#a1445df2a113214c58f7e202149262fd1", null ],
+    [ "relate", "class_collection.html#a5e1ccf47d85b30643c6d97e57bba6041", null ],
+    [ "removeItem", "class_collection.html#a378a406042938e9ad6710723c1f6282c", null ],
+    [ "removeItem", "class_collection.html#a4d090acdf94eddfb87ed5826360f88e3", null ],
+    [ "unrelate", "class_collection.html#a8cc7c17045349ce26c4fedec0d0346c7", null ],
+    [ "unrelate", "class_collection.html#a9feffb5ec380d9ddc8dc0db039d4ad30", null ],
+    [ "update", "class_collection.html#ad708784d666d8b215ec64d58fc1d16ba", null ]
+];
